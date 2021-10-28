@@ -39,16 +39,18 @@
                         <span class="icon"><x-icon name="dots-vertical" class="h-4 w-4" /></span>
                     </a>
                 </div>
-                <div class="navbar-menu" id="navbar-menu" x-bind:class="{ 'active' : displayProfileMenu  }">
+
                     <div class="navbar-end">
                         <div class="navbar-item dropdown has-divider has-user-avatar" x-bind:class="{ 'active' : displayProfileMenu  }" x-on:click.away="displayProfileMenu = false">
-                            <a class="navbar-link" x-on:click="displayProfileMenu = !displayProfileMenu">
+                            <a class="navbar-link" x-on:click="displayProfileMenu = !displayProfileMenu" x-ignore>
                                 <div class="user-avatar">
                                     <img src="https://avatars.dicebear.com/v2/initials/john-doe.svg" alt="John Doe" class="rounded-full">
                                 </div>
                                 <div class="is-user-name"><span>John Doe</span></div>
                                 <span class="icon"><x-icon name="dots-vertical" class="h-4 w-4" /></span>
                             </a>
+                        </div>
+                        <div class="navbar-menu" id="navbar-menu" x-show="displayProfileMenu" x-cloak>
                             <div class="navbar-dropdown">
                                 <a href="profile.html" class="navbar-item">
                                     <span class="icon"><x-icon name="user" class="h-4 w-4" /></span>
@@ -62,7 +64,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+
             </nav>
             <aside class="aside is-placed-left is-expanded" x-cloak>
                 <div class="aside-tools">

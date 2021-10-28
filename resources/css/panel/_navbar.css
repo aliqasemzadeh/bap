@@ -74,7 +74,7 @@
 
   .navbar-menu {
     max-height: calc(100vh - 3.5rem);
-    @apply hidden absolute w-screen top-14 left-0 bg-white border-b border-gray-100 overflow-auto shadow
+    @apply absolute w-screen top-14 left-0 bg-white border-b border-gray-100 overflow-auto shadow
     lg:flex lg:flex-grow lg:static lg:border-b-0 lg:overflow-visible lg:shadow-none;
   }
 
