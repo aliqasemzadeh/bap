@@ -16,3 +16,6 @@
 @import 'panel/_modal.css';
 @import 'panel/_notifications.css';
 @import 'panel/_footer.css';
+
+
+[x-cloak] { display: none !important; }
