@@ -1,7 +1,0 @@
-.image {
-  @apply block relative;
-}
-
-.image img {
-  @apply block h-auto w-full max-w-full;
-}

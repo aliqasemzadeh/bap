@@ -10,19 +10,9 @@
         "production": "mix --production"
     },
     "devDependencies": {
-        "@tailwindcss/forms": "^0.3.4",
-        "@tailwindcss/typography": "^0.4.1",
-        "alpinejs": "^3.0.6",
         "axios": "^0.21",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
-        "postcss": "^8.1.14",
-        "postcss-import": "^14.0.1",
-        "tailwindcss": "^2.2.2"
-    },
-    "dependencies": {
-        "@tailwindcss/aspect-ratio": "^0.3.0",
-        "tailwindcss-flip": "^1.0.0",
-        "tailwindcss-rtl": "^0.7.3"
+        "postcss": "^8.1.14"
     }
 }
