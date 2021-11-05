@@ -16,7 +16,11 @@
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body class="bg-light font-sans antialiased">
+    <body class="antialiased border-top-wide border-primary d-flex flex-column">
+    <div class="page page-center">
+
         {{ $slot }}
+    </div>
+
     </body>
 </html>

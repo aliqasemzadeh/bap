@@ -3,10 +3,12 @@
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
         </x-slot>
-
+        <div class="card-header">
+            <h4 class="card-title">{{ __('Login') }}</h4>
+        </div>
         <div class="card-body">
 
-            <x-jet-validation-errors class="mb-3 rounded-0" />
+
 
             @if (session('status'))
                 <div class="alert alert-success mb-3 rounded-0" role="alert">

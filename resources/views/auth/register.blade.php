@@ -4,9 +4,12 @@
             <x-jet-authentication-card-logo />
         </x-slot>
 
-        <x-jet-validation-errors class="mb-3" />
 
+        <div class="card-header">
+            <h4 class="card-title">{{ __('Register') }}</h4>
+        </div>
         <div class="card-body">
+            <x-jet-validation-errors class="mb-3" />
             <form method="POST" action="{{ route('register') }}">
                 @csrf
 
@@ -26,11 +29,6 @@
                     <x-jet-input-error for="password"></x-jet-input-error>
                 </div>
 
-                <div class="mb-3">
-                    <x-jet-label value="{{ __('Confirm Password') }}" />
-
-                    <x-jet-input class="form-control" type="password" name="password_confirmation" required autocomplete="new-password" />
-                </div>
 
                 @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                     <div class="mb-3">
