@@ -16,5 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', \App\Http\Livewire\App\Main\Index::class)->name('home');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::get('/panel/dashboard/index', \App\Http\Livewire\App\Main\Index::class)->name('panel.dashboard.index');
+    Route::get('/panel/dashboard/index', \App\Http\Livewire\Panel\Dashboard\Index::class)->name('panel.dashboard.index');
 });
