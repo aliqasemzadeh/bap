@@ -35,18 +35,8 @@
             </div>
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="navbar-nav pt-lg-3">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}" >
-                          <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="5 12 3 12 12 3 21 12 19 12" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
-                          </span>
-                          <span class="nav-link-title">
-                            {{ __('bap.home') }}
-                          </span>
-                        </a>
-                    </li>
                     @auth
-                    <li class="nav-item">
+                    <li class="nav-item @if(\Illuminate\Support\Facades\Route::is('panel.dashboard.index')) active @endif">
                         <a class="nav-link" href="{{ route('panel.dashboard.index') }}" >
                                     <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
 	                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="12" cy="13" r="2" /><line x1="13.45" y1="11.55" x2="15.5" y2="9.5" /><path d="M6.4 20a9 9 0 1 1 11.2 0z" /></svg>
