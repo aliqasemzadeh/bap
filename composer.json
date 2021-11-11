@@ -12,7 +12,9 @@
         "laravel/jetstream": "^2.4",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "livewire/livewire": "^2.5"
+        "livewire/livewire": "^2.5",
+        "morilog/jalali": "^3.2",
+        "yadahan/laravel-authentication-log": "^1.4"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
