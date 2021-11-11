@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Questocat\Referral\Traits\UserReferral;
 use Yadahan\AuthenticationLog\AuthenticationLogable;
 
 class User extends Authenticatable
@@ -19,6 +20,7 @@ class User extends Authenticatable
     use Notifiable;
     use TwoFactorAuthenticatable;
     use AuthenticationLogable;
+    use UserReferral;
 
     /**
      * The attributes that are mass assignable.

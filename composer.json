@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "arcanedev/log-viewer": "^8.1",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.65",
@@ -14,6 +15,7 @@
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.5",
         "morilog/jalali": "^3.2",
+        "questocat/laravel-referral": "^1.0",
         "yadahan/laravel-authentication-log": "^1.4"
     },
     "require-dev": {
