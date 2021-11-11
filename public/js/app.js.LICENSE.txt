@@ -4,6 +4,13 @@
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 
+/*!
+ * Chart.js v3.6.0
+ * https://www.chartjs.org
+ * (c) 2021 Chart.js Contributors
+ * Released under the MIT License
+ */
+
 /**
  * @license
  * Lodash <https://lodash.com/>

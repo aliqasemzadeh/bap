@@ -7,8 +7,7 @@
     <meta name="author" content="ARCANEDEV">
     <title>LogViewer - Created by ARCANEDEV</title>
     {{-- Styles --}}
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
     <style>
         html {
@@ -210,16 +209,18 @@
         .badge.badge-env {
             background-color: #6A1B9A;
         }
-        
+
         #entries {
             overflow-wrap: anywhere;
         }
     </style>
+    <script src="{{ mix('js/app.js') }}"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark p-0">
         <a href="{{ route('log-viewer::dashboard') }}" class="navbar-brand mr-0">
-            <i class="fa fa-fw fa-book"></i> LogViewer
+            <!-- Download SVG icon from http://tabler-icons.io/i/files -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 3v4a1 1 0 0 0 1 1h4" /><path d="M18 17h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h4l5 5v7a2 2 0 0 1 -2 2z" /><path d="M16 17v2a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h2" /></svg> LogViewer
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -228,19 +229,22 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item {{ Route::is('log-viewer::dashboard') ? 'active' : '' }}">
                     <a href="{{ route('log-viewer::dashboard') }}" class="nav-link">
-                        <i class="fa fa-dashboard"></i> @lang('Dashboard')
+                        <!-- Download SVG icon from http://tabler-icons.io/i/dashboard -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="12" cy="13" r="2" /><line x1="13.45" y1="11.55" x2="15.5" y2="9.5" /><path d="M6.4 20a9 9 0 1 1 11.2 0z" /></svg>
+                         @lang('Dashboard')
                     </a>
                 </li>
                 <li class="nav-item {{ Route::is('log-viewer::logs.list') ? 'active' : '' }}">
                     <a href="{{ route('log-viewer::logs.list') }}" class="nav-link">
-                        <i class="fa fa-archive"></i> @lang('Logs')
+                        <!-- Download SVG icon from http://tabler-icons.io/i/files -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 3v4a1 1 0 0 0 1 1h4" /><path d="M18 17h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h4l5 5v7a2 2 0 0 1 -2 2z" /><path d="M16 17v2a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h2" /></svg> @lang('Logs')
                     </a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <div class="container-fluid">
+    <div class="{{ config('bap.container', 'container-fluid') }}">
         <main role="main" class="pt-3">
             @yield('content')
         </main>
@@ -248,7 +252,7 @@
 
     {{-- Footer --}}
     <footer class="main-footer">
-        <div class="container-fluid">
+        <div class="{{ config('bap.container', 'container-fluid') }}">
             <p class="text-muted pull-left">
                 LogViewer - <span class="badge badge-info">version {{ log_viewer()->version() }}</span>
             </p>
@@ -258,11 +262,6 @@
         </div>
     </footer>
 
-    {{-- Scripts --}}
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
 
     @yield('modals')
     @yield('scripts')

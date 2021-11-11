@@ -21,7 +21,7 @@
     <body class="antialiased">
     <div class="wrapper">
         <header class="navbar navbar-expand-md navbar-dark d-print-none">
-            <div class="container-xl">
+            <div class="{{ config('bap.container', 'container-fluid') }}">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -51,9 +51,27 @@
         </header>
         <!-- Page Content -->
         <div class="page-wrapper">
-        <main class="container-xl">
-            {{ $slot }}
-        </main>
+            <main class="{{ config('bap.container', 'container-fluid') }}">
+                @if(isset($pretitle))
+                    <div class="page-pretitle">
+                        {{ $pretitle }}
+                    </div>
+                @endif
+                @if(isset($title))
+                <div class="page-header d-print-none">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h2 class="page-title">
+                                {{ $title }}
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                @endif
+                <div class="page-body">
+                    {{ $slot }}
+                </div>
+            </main>
         </div>
     </div>
 

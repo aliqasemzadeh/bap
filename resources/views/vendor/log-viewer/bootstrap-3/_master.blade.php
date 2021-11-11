@@ -281,7 +281,7 @@
 <body>
     {{-- Navbar --}}
     <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
+        <div class="{{ config('bap.container', 'container-fluid') }}">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">@lang('Toggle navigation')</span>
@@ -311,7 +311,7 @@
     </nav>
 
     {{-- Main container --}}
-    <main class="container-fluid">
+    <main class="{{ config('bap.container', 'container-fluid') }}">
         @yield('content')
     </main>
 

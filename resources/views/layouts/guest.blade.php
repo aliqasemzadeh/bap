@@ -18,7 +18,6 @@
     </head>
     <body class="antialiased border-top-wide border-primary d-flex flex-column">
     <div class="page page-center">
-
         {{ $slot }}
     </div>
 

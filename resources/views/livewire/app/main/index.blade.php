@@ -1,3 +1,7 @@
 <div>
-    {{-- In work, do what you enjoy. --}}
+    <x-slot name="title">
+        {{ __('bap.home') }}
+    </x-slot>
+
+    Hi World
 </div>
