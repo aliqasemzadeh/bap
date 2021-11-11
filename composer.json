@@ -19,6 +19,7 @@
         "nesbot/carbon": "^2.54",
         "nwidart/laravel-modules": "^8.2",
         "questocat/laravel-referral": "^1.0",
+        "spatie/laravel-permission": "^5.3",
         "yadahan/laravel-authentication-log": "^1.4"
     },
     "require-dev": {

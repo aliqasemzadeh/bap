@@ -15,11 +15,19 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['referral']], function() {
-    Route::get('/', \App\Http\Livewire\App\Main\Index::class)->name('home');
 
-    Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-        Route::get('/panel/dashboard/index', \App\Http\Livewire\Panel\Dashboard\Index::class)->name('panel.dashboard.index');
+    Route::get('/', \App\Http\Livewire\App\Main\Index::class)->name('home');
+    Route::group(['middleware' => ['auth:sanctum', 'verified']], function() {
+        Route::group(['prefix' => config('bap.panel-prefix-url')], function() {
+            Route::get('/dashboard/index', \App\Http\Livewire\Panel\Dashboard\Index::class)->name('panel.dashboard.index');
+        });
+
+
+        Route::group(['prefix' => config('bap.admin-prefix-url'), 'middleware' => ['auth:sanctum', 'verified']], function () {
+            Route::get('/dashboard/index', \App\Http\Livewire\Admin\Dashboard\Index::class)->name('admin.dashboard.index');
+        });
     });
+
 });
 
 
