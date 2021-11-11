@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware(['referral'])->group(function(){
+
+Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['referral']], function() {
     Route::get('/', \App\Http\Livewire\App\Main\Index::class)->name('home');
 
     Route::middleware(['auth:sanctum', 'verified'])->group(function () {
