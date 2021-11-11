@@ -23,7 +23,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['re
         });
 
 
-        Route::group(['prefix' => config('bap.admin-prefix-url'), 'middleware' => ['auth:sanctum', 'verified']], function () {
+        Route::group(['prefix' => config('bap.admin-prefix-url'), 'middleware' => ['auth:sanctum', 'verified', 'admin']], function () {
             Route::get('/dashboard/index', \App\Http\Livewire\Admin\Dashboard\Index::class)->name('admin.dashboard.index');
         });
     });

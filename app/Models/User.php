@@ -10,6 +10,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use Questocat\Referral\Traits\UserReferral;
+use Spatie\Permission\Traits\HasRoles;
 use Yadahan\AuthenticationLog\AuthenticationLogable;
 
 class User extends Authenticatable implements MustVerifyEmail
@@ -21,6 +22,7 @@ class User extends Authenticatable implements MustVerifyEmail
     use TwoFactorAuthenticatable;
     use AuthenticationLogable;
     use UserReferral;
+    use HasRoles;
 
     /**
      * The attributes that are mass assignable.
