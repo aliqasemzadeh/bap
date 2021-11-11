@@ -51,27 +51,30 @@
     </aside>
     @include('layouts.global.header')
     <!-- Page Content -->
-    <main class="{{ config('bap.container', 'container-fluid') }}">
-        @if(isset($pretitle))
-            <div class="page-pretitle">
-                {{ $pretitle }}
-            </div>
-        @endif
-        @if(isset($title))
-            <div class="page-header d-print-none">
-                <div class="row align-items-center">
-                    <div class="col">
-                        <h2 class="page-title">
-                            {{ $title }}
-                        </h2>
+    <div class="page-wrapper">
+        <main class="{{ config('bap.container', 'container-fluid') }}">
+            @if(isset($pretitle))
+                <div class="page-pretitle">
+                    {{ $pretitle }}
+                </div>
+            @endif
+            @if(isset($title))
+                <div class="page-header d-print-none">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h2 class="page-title">
+                                {{ $title }}
+                            </h2>
+                        </div>
                     </div>
                 </div>
+            @endif
+            <div class="page-body">
+                {{ $slot }}
             </div>
-        @endif
-        <div class="page-body">
-            {{ $slot }}
-        </div>
-    </main>
+        </main>
+        @include('layouts.global.footer')
+    </div>
 </div>
 
 @stack('modals')

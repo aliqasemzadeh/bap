@@ -5,4 +5,5 @@ return [
     'register' => 'Register',
     'profile' => 'Profile',
     'logout' => 'Logout',
+    'dashboard' => 'Dashboard',
 ];

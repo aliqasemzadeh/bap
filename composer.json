@@ -16,6 +16,7 @@
         "livewire/livewire": "^2.5",
         "mcamara/laravel-localization": "^1.6",
         "morilog/jalali": "^3.2",
+        "nesbot/carbon": "^2.54",
         "nwidart/laravel-modules": "^8.2",
         "questocat/laravel-referral": "^1.0",
         "yadahan/laravel-authentication-log": "^1.4"
