@@ -100,8 +100,8 @@
 
 @stack('modals')
 
-<livewire:modals/>
-<livewire:scripts/>
+<livewire:modals />
+<livewire:scripts />
 <script src="{{ asset('js/app.js') }}"></script>
 
 @stack('scripts')
