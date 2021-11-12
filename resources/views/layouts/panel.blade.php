@@ -68,6 +68,9 @@
                                 {{ $title }}
                             </h2>
                         </div>
+                        @if(isset($actions))
+                            {{ $actions }}
+                        @endif
                     </div>
                 </div>
             @endif

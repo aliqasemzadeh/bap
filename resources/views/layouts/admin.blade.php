@@ -80,11 +80,18 @@
                             <h2 class="page-title">
                                 {{ $title }}
                             </h2>
+                            @if(isset($breadcrumb))
+                                {{ $breadcrumb }}
+                            @endif
                         </div>
+                        @if(isset($actions))
+                            {{ $actions }}
+                        @endif
                     </div>
                 </div>
             @endif
             <div class="page-body">
+
                 {{ $slot }}
             </div>
         </main>

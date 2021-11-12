@@ -9,4 +9,5 @@ return [
     'user' => 'User',
     'users' => 'Users',
     'user_management' => 'User Management',
+    'create_user' => 'Create User',
 ];
