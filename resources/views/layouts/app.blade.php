@@ -44,6 +44,7 @@
                                     </span>
                                 </a>
                             </li>
+                            @auth
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('panel.dashboard.index') }}" >
                                     <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
@@ -54,6 +55,7 @@
                                     </span>
                                 </a>
                             </li>
+                            @endauth
                         </ul>
                     </div>
                 </div>

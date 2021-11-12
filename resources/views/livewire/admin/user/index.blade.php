@@ -29,6 +29,10 @@
             <h3 class="card-title">Card title</h3>
         </div>
         <div class="card-body">
+
+            <button type="button" wire:click="$emit('showModal', 'admin.user.create')">
+                {{ __('Update Profile') }}
+            </button>
             <div class="d-flex">
                 <div class="text-muted">
                     Show
