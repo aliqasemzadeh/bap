@@ -80,12 +80,6 @@
     </div>
 </div>
 
-@stack('modals')
-
-<livewire:modals />
-<livewire:scripts />
-<script src="{{ asset('js/app.js') }}"></script>
-
-@stack('scripts')
+@include('layouts.global.foot-js')
 </body>
 </html>

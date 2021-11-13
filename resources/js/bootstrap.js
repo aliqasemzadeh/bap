@@ -41,4 +41,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 window.Chart = require('chart.js');
 
+window.Swal = require('sweetalert2');
+
 require('../../vendor/bastinald/laravel-livewire-modals/resources/js/modals');

@@ -21,5 +21,6 @@
         {{ $slot }}
     </div>
 
+    @include('layouts.global.foot-js')
     </body>
 </html>

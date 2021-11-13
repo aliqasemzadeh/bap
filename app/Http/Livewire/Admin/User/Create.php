@@ -21,6 +21,10 @@ class Create extends Component
             'password' => $this->password,
         ]);
 
+        $this->emitTo(\App\Http\Livewire\Admin\User\Index::getName(), 'updateList');
+        $this->emit('hideModal');
+
+
     }
 
     public function render()

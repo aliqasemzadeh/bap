@@ -9,6 +9,13 @@ use Livewire\WithPagination;
 class Index extends Component
 {
     use WithPagination;
+
+    protected $listeners = [
+        'confirmedDelete',
+        'cancelledDelete',
+        'updateList' => 'render'
+    ];
+
     public function render()
     {
         $users = User::paginate(15);
