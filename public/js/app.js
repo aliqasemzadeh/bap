@@ -8559,6 +8559,7 @@ modalsElement.addEventListener('hidden.bs.modal', function () {
   Livewire.emit('resetModal');
 });
 Livewire.on('showBootstrapModal', function () {
+  alert("sss");
   var modal = bootstrap__WEBPACK_IMPORTED_MODULE_0__.Modal.getInstance(modalsElement);
 
   if (!modal) {
