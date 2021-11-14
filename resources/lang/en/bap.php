@@ -2,6 +2,8 @@
 return [
     'home' => 'Home',
     'login' => 'Login',
+    'email' => 'Email',
+    'password' => 'Password',
     'register' => 'Register',
     'profile' => 'Profile',
     'logout' => 'Logout',
@@ -12,6 +14,7 @@ return [
     'user_management' => 'User Management',
     'create_user' => 'Create User',
     'edit_user' => 'Edit User',
-    'close' => 'close',
+    'close' => 'Close',
     'cancel' => 'Cancel',
+    'are_you_sure' => 'Are you sure?',
 ];

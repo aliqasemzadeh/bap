@@ -2,5 +2,15 @@
     "/js/app.js": "/js/app.js?id=13e6d4b2dd131061ed53",
     "/css/app.css": "/css/app.css?id=ed82cd8ed1f861be53de",
     "/images/logo-dark.svg": "/images/logo-dark.svg?id=586229de71c7013b9ca4",
-    "/images/logo-light.svg": "/images/logo-light.svg?id=a342518a79201f712fc4"
+    "/images/logo-light.svg": "/images/logo-light.svg?id=a342518a79201f712fc4",
+    "/favicon/android-chrome-192x192.png": "/favicon/android-chrome-192x192.png?id=2196ff666a96a1e61487",
+    "/favicon/android-chrome-512x512.png": "/favicon/android-chrome-512x512.png?id=5c553c277bc63a38df30",
+    "/favicon/apple-touch-icon.png": "/favicon/apple-touch-icon.png?id=9695c8e603243704d030",
+    "/favicon/browserconfig.xml": "/favicon/browserconfig.xml?id=a493ba0aa0b8ec8068d7",
+    "/favicon/favicon-16x16.png": "/favicon/favicon-16x16.png?id=8f935206dcac4408b2dc",
+    "/favicon/favicon-32x32.png": "/favicon/favicon-32x32.png?id=86e7e91909c5c9dedf6a",
+    "/favicon/favicon.ico": "/favicon/favicon.ico?id=e16d369a6313840315bb",
+    "/favicon/mstile-150x150.png": "/favicon/mstile-150x150.png?id=7c59bc045d4931767957",
+    "/favicon/safari-pinned-tab.svg": "/favicon/safari-pinned-tab.svg?id=785c379f8cc8c7f2342b",
+    "/favicon/site.webmanifest": "/favicon/site.webmanifest?id=b9aa277fcfc34c31db6c"
 }
