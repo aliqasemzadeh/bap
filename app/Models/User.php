@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use EloquentFilter\Filterable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -23,6 +24,7 @@ class User extends Authenticatable implements MustVerifyEmail
     use AuthenticationLogable;
     use UserReferral;
     use HasRoles;
+    use Filterable;
 
     /**
      * The attributes that are mass assignable.

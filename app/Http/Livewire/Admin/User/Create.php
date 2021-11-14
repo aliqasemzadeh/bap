@@ -27,7 +27,7 @@ class Create extends Component
         $this->emitTo(\App\Http\Livewire\Admin\User\Index::getName(), 'updateList');
         $this->emit('hideModal');
 
-        $this->alert('success', 'Basic Alert');
+        $this->alert('success', __('bap.created'));
     }
 
     public function render()

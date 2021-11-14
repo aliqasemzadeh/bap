@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin\User;
 
 use App\Models\User;
+use EloquentFilter\Filterable;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -13,13 +14,20 @@ class Index extends Component
     use LivewireAlert;
 
     public $user;
+    public $search;
 
+    protected $queryString = ['search'];
 
     protected $listeners = [
         'confirmedDelete',
         'cancelledDelete',
         'updateList' => 'render'
     ];
+
+    public function clear()
+    {
+        $this->search = "";
+    }
 
     public function delete(User $user)
     {
@@ -42,7 +50,7 @@ class Index extends Component
         $this->emit('updateWatcherList');
         $this->alert(
             'success',
-            __('panel.removed')
+            __('bap.removed')
         );
     }
 
@@ -55,9 +63,14 @@ class Index extends Component
         );
     }
 
+    public function mount()
+    {
+        $this->search = request()->query('search', $this->search);
+    }
+
     public function render()
     {
-        $users = User::paginate(15);
+        $users = User::filter(['search' => $this->search])->orderBy('created_at', 'desc')->paginate(20);
         return view('livewire.admin.user.index', compact('users'))->layout('layouts.admin');
     }
 }
