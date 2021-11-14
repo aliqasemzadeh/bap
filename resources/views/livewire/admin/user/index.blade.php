@@ -32,12 +32,11 @@
                 <div class="text-muted">
                     {{ __('bap.per_page') }}:
                     <div class="mx-2 d-inline-block">
-
                         <div class="btn-group btn-group-sm w-100">
-                            <button type="button" wire:click="setPerPage(10)" class="btn @if($per_page == 10) btn-primary @endif">10</button>
-                            <button type="button" wire:click="setPerPage(15)" class="btn @if($per_page == 15) btn-primary @endif">15</button>
-                            <button type="button" wire:click="setPerPage(20)" class="btn @if($per_page == 20) btn-primary @endif">20</button>
-                            <button type="button" wire:click="setPerPage(25)" class="btn @if($per_page == 25) btn-primary @endif">25</button>
+                            <button type="button" wire:click="setPerPage(10)" class="btn @if($perPage == 10) btn-primary @endif">10</button>
+                            <button type="button" wire:click="setPerPage(15)" class="btn @if($perPage == 15) btn-primary @endif">15</button>
+                            <button type="button" wire:click="setPerPage(20)" class="btn @if($perPage == 20) btn-primary @endif">20</button>
+                            <button type="button" wire:click="setPerPage(25)" class="btn @if($perPage == 25) btn-primary @endif">25</button>
                         </div>
                     </div>
                 </div>
@@ -63,16 +62,56 @@
             <table class="table card-table table-vcenter text-nowrap datatable">
                 <thead>
                 <tr>
-                    <th class="w-1"><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select all invoices"></th>
-                    <th>{{ __('bap.email') }}</th>
+                    <th class="w-1"><input name="selectAll" wire:model="selectAll" class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select all invoices"></th>
+                    <th class="w-1" wire:click="sortByColumn('id')">{{ __('bap.number') }}
+
+                    @if ($sortColumn == 'id')
+                        @if($sortDirection == 'asc')
+                            <!-- Download SVG icon from http://tabler-icons.io/i/chevron-up -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-sm text-dark icon-thick" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 15 12 9 18 15" /></svg>
+                        @else
+                            <!-- Download SVG icon from http://tabler-icons.io/i/chevron-down -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-sm text-dark icon-thick" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
+
+                            @endif
+                        @endif
+                    </th>
+                    <th wire:click="sortByColumn('email')">{{ __('bap.email') }}
+
+                        @if ($sortColumn == 'email')
+                            @if($sortDirection == 'asc')
+                            <!-- Download SVG icon from http://tabler-icons.io/i/chevron-up -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-sm text-dark icon-thick" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 15 12 9 18 15" /></svg>
+                             @else
+                            <!-- Download SVG icon from http://tabler-icons.io/i/chevron-down -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-sm text-dark icon-thick" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
+
+                                @endif
+                        @endif
+                    </th>
+                    <th wire:click="sortByColumn('created_at')">{{ __('bap.created_at') }}
+
+                    @if ($sortColumn == 'created_at')
+                        @if($sortDirection == 'asc')
+                            <!-- Download SVG icon from http://tabler-icons.io/i/chevron-up -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-sm text-dark icon-thick" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 15 12 9 18 15" /></svg>
+                        @else
+                            <!-- Download SVG icon from http://tabler-icons.io/i/chevron-down -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-sm text-dark icon-thick" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
+
+                            @endif
+                        @endif
+                    </th>
                     <th></th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($users as $user)
                 <tr>
-                    <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select invoice"></td>
+                    <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select User" value="{{ $user->id }}" name="selectedUsers" wire:model="selectedUsers"></td>
+                    <td>{{ $user->id }}</td>
                     <td>{{ $user->email }}</td>
+                    <td>{{ $user->created_at }}</td>
                     <td class="text-end">
                         <button onclick="Livewire.emit('showModal', 'admin.user.edit', '{{ json_encode($user->id) }}')" class="btn btn-primary btn-icon btn-sm">
                             <!-- Download SVG icon from http://tabler-icons.io/i/edit -->
@@ -89,27 +128,17 @@
                 </tbody>
             </table>
         </div>
-        <div class="card-footer d-flex justify-content-center">
-            {{ $users->links() }}
-        </div>
-    </div>
-    @push('modals')
-        <div class="modal" tabindex="-1" id="exampleModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="card-footer d-flex justify-content-between">
+            <div>
+                <div class="btn-group btn-group-sm w-100">
+                    <button type="button" wire:click="deleteSelected" class="btn">{{ __('bap.delete') }} ({{ count($selectedUsers) }})</button>
                 </div>
-                <div class="modal-body">
-                    <p>Modal body text goes here.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+
+            </div>
+
+            <div>
+                {{ $users->links() }}
             </div>
         </div>
-        </div>
-    @endpush
+    </div>
 </div>

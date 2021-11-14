@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin\User;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 
@@ -21,7 +22,7 @@ class Create extends Component
 
         User::Create([
             'email' => $this->email,
-            'password' => $this->password,
+            'password' => Hash::make($this->password),
         ]);
 
         $this->emitTo(\App\Http\Livewire\Admin\User\Index::getName(), 'updateList');

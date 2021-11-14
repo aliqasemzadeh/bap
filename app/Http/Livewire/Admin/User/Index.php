@@ -3,7 +3,6 @@
 namespace App\Http\Livewire\Admin\User;
 
 use App\Models\User;
-use EloquentFilter\Filterable;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -13,9 +12,15 @@ class Index extends Component
     use WithPagination;
     use LivewireAlert;
 
+    public $selectedUsers = [];
+    public $selectAll = false;
+
     public $user;
     public $search;
-    public $per_page = 15;
+    public $perPage = 15;
+    public $sortColumn = 'created_at';
+    public $sortDirection = 'asc';
+
     protected $paginationTheme = 'bootstrap';
 
     protected $queryString = ['search'];
@@ -23,6 +28,7 @@ class Index extends Component
     protected $listeners = [
         'confirmedDelete',
         'cancelledDelete',
+        'deleteSelectedQuery',
         'updateList' => 'render'
     ];
 
@@ -31,9 +37,19 @@ class Index extends Component
         $this->search = "";
     }
 
-    public function setPerPage($per_page)
+    public function setPerPage($perPage)
     {
-        $this->per_page = $per_page;
+        $this->perPage = $perPage;
+    }
+
+    public function sortByColumn($column)
+    {
+        if ($this->sortColumn == $column) {
+            $this->sortDirection = $this->sortDirection == 'asc' ? 'desc' : 'asc';
+        } else {
+            $this->reset('sortDirection');
+            $this->sortColumn = $column;
+        }
     }
 
 
@@ -76,9 +92,53 @@ class Index extends Component
         $this->search = request()->query('search', $this->search);
     }
 
+    public function updatedSelectAll($value)
+    {
+        if($value) {
+            $this->selectedUsers = User::pluck('id')->toArray();
+        } else {
+            $this->selectedUsers = [];
+        }
+
+    }
+
+    public function updatedSelectedUsers($value)
+    {
+        if($this->selectAll) {
+            $this->selectAll = false;
+        }
+
+    }
+
+    public function deleteSelected()
+    {
+        $this->confirm(__('bap.are_you_sure'), [
+            'toast' => false,
+            'position' => 'center',
+            'showConfirmButton' => true,
+            'cancelButtonText' => __('bap.cancel'),
+            'onConfirmed' => 'deleteSelectedQuery',
+            'onCancelled' => 'cancelledDelete'
+        ]);
+    }
+
+    public function deleteSelectedQuery()
+    {
+        User::query()
+            ->whereIn('id', $this->selectedUsers)
+            ->delete();
+        $this->selectedUsers = [];
+        $this->selectAll = false;
+
+        $this->alert(
+            'success',
+            __('bap.removed')
+        );
+    }
+
     public function render()
     {
-        $users = User::filter(['search' => $this->search])->orderBy('created_at', 'desc')->paginate($this->per_page);
+        $users = User::filter(['search' => $this->search])->orderBy($this->sortColumn, $this->sortDirection)->paginate($this->perPage);
         return view('livewire.admin.user.index', compact('users'))->layout('layouts.admin');
     }
 }

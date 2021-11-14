@@ -24,4 +24,7 @@ return [
     'created' => 'Created.',
     'are_you_sure' => 'Are you sure?',
     'per_page' => 'Per Page',
+    'number' => 'No.',
+    'delete' => 'Delete',
+    'created_at' => 'Created At',
 ];
