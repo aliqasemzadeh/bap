@@ -34,10 +34,10 @@
                     <div class="mx-2 d-inline-block">
 
                         <div class="btn-group btn-group-sm w-100">
-                            <button type="button" class="btn">10</button>
-                            <button type="button" class="btn btn-primary">15</button>
-                            <button type="button" class="btn">20</button>
-                            <button type="button" class="btn">25</button>
+                            <button type="button" wire:click="setPerPage(10)" class="btn @if($per_page == 10) btn-primary @endif">10</button>
+                            <button type="button" wire:click="setPerPage(15)" class="btn @if($per_page == 15) btn-primary @endif">15</button>
+                            <button type="button" wire:click="setPerPage(20)" class="btn @if($per_page == 20) btn-primary @endif">20</button>
+                            <button type="button" wire:click="setPerPage(25)" class="btn @if($per_page == 25) btn-primary @endif">25</button>
                         </div>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="card-footer d-flex align-items-center">
+        <div class="card-footer d-flex justify-content-center">
             {{ $users->links() }}
         </div>
     </div>

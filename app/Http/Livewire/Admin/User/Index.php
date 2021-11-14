@@ -15,6 +15,8 @@ class Index extends Component
 
     public $user;
     public $search;
+    public $per_page = 15;
+    protected $paginationTheme = 'bootstrap';
 
     protected $queryString = ['search'];
 
@@ -28,6 +30,12 @@ class Index extends Component
     {
         $this->search = "";
     }
+
+    public function setPerPage($per_page)
+    {
+        $this->per_page = $per_page;
+    }
+
 
     public function delete(User $user)
     {
@@ -70,7 +78,7 @@ class Index extends Component
 
     public function render()
     {
-        $users = User::filter(['search' => $this->search])->orderBy('created_at', 'desc')->paginate(20);
+        $users = User::filter(['search' => $this->search])->orderBy('created_at', 'desc')->paginate($this->per_page);
         return view('livewire.admin.user.index', compact('users'))->layout('layouts.admin');
     }
 }
