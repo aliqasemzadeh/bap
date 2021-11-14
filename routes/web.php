@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +17,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['referral']], function() {
 
+
+
+
     Route::get('/', \App\Http\Livewire\App\Main\Index::class)->name('home');
     Route::group(['middleware' => ['auth:sanctum', 'verified']], function() {
+
+        Route::any('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+
+
         Route::group(['prefix' => config('bap.panel-prefix-url')], function() {
             Route::get('/dashboard/index', \App\Http\Livewire\Panel\Dashboard\Index::class)->name('panel.dashboard.index');
         });

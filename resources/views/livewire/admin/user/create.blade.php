@@ -1,5 +1,5 @@
 <div class="modal-dialog">
-    <form wire:submit.prevent="submit">
+    <form wire:submit.prevent="create">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">{{ __('bap.create_user') }}</h5>
@@ -23,7 +23,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('bap.close') }}</button>
-                <button type="button" class="btn btn-primary">{{ __('bap.create') }}</button>
+                <button type="submit" class="btn btn-primary">{{ __('bap.create') }}</button>
             </div>
         </div>
     </form>
