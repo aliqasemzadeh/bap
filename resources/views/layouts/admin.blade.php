@@ -58,6 +58,12 @@
                             <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('admin.user.index')) active @endif" href="{{ route('admin.user.index') }}">
                                 {{ __('bap.users') }}
                             </a>
+                            <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('admin.user.role.index')) active @endif" href="{{ route('admin.user.role.index') }}">
+                                {{ __('bap.roles_word') }}
+                            </a>
+                            <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('admin.user.permission.index')) active @endif" href="{{ route('admin.user.permission.index') }}">
+                                {{ __('bap.permissions_word') }}
+                            </a>
                         </div>
                     </li>
                 </ul>

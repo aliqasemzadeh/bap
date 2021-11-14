@@ -3,7 +3,6 @@
        {{ __('bap.users') }}
    </x-slot>
     <x-slot name="actions">
-
         <div class="col-auto ms-auto d-print-none">
             <div class="btn-list">
                 <button onclick="Livewire.emit('showModal', 'admin.user.create')" class="btn btn-primary d-none d-sm-inline-block">

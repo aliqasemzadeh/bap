@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Livewire\Admin\User;
+namespace App\Http\Livewire\Admin\User\Role;
 
-use App\Models\User;
+use Spatie\Permission\Models\Role;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -12,10 +12,10 @@ class Index extends Component
     use WithPagination;
     use LivewireAlert;
 
-    public $selectedUsers = [];
+    public $selectedRoles = [];
     public $selectAll = false;
 
-    public $user;
+    public $role;
     public $search;
     public $perPage = 15;
     public $sortColumn = 'created_at';
@@ -51,9 +51,7 @@ class Index extends Component
             $this->sortColumn = $column;
         }
     }
-
-
-    public function delete(User $user)
+    public function delete(Role $role)
     {
         //$this->authorize('delete', $user);
         $this->confirm(__('bap.are_you_sure'), [
@@ -64,13 +62,13 @@ class Index extends Component
             'onConfirmed' => 'confirmedDelete',
             'onCancelled' => 'cancelledDelete'
         ]);
-        $this->user = $user;
+        $this->role = $role;
     }
 
     public function confirmedDelete()
     {
         //$this->authorize('delete', $this->watcher);
-        $this->user->delete();
+        $this->role->delete();
         $this->emit('updateList');
         $this->alert(
             'success',
@@ -95,14 +93,14 @@ class Index extends Component
     public function updatedSelectAll($value)
     {
         if($value) {
-            $this->selectedUsers = User::pluck('id')->toArray();
+            $this->selectedRoles = Role::pluck('id')->toArray();
         } else {
-            $this->selectedUsers = [];
+            $this->selectedRoles = [];
         }
 
     }
 
-    public function updatedSelectedUsers($value)
+    public function updatedSelectedRoles($value)
     {
         if($this->selectAll) {
             $this->selectAll = false;
@@ -124,10 +122,10 @@ class Index extends Component
 
     public function deleteSelectedQuery()
     {
-        User::query()
-            ->whereIn('id', $this->selectedUsers)
+        Role::query()
+            ->whereIn('id', $this->selectedRoles)
             ->delete();
-        $this->selectedUsers = [];
+        $this->selectedRoles = [];
         $this->selectAll = false;
 
         $this->alert(
@@ -136,9 +134,10 @@ class Index extends Component
         );
     }
 
+
     public function render()
     {
-        $users = User::filter(['search' => $this->search])->orderBy($this->sortColumn, $this->sortDirection)->paginate($this->perPage);
-        return view('livewire.admin.user.index', compact('users'))->layout('layouts.admin');
+        $roles = Role::where('name', 'LIKE', '%' . $this->search . '%')->orderBy($this->sortColumn, $this->sortDirection)->paginate($this->perPage);
+        return view('livewire.admin.user.role.index', compact('roles'))->layout('layouts.admin');
     }
 }

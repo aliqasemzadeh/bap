@@ -18,7 +18,7 @@ class AdminPanelCheck
     public function handle(Request $request, Closure $next)
     {
         if(Auth::check()) {
-            if(Auth::user()->can('admin')) {
+            if(Auth::user()->can('permissions.admin.access')) {
                 return $next($request);
             } else {
                 return redirect()->route('home');

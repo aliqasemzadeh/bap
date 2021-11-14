@@ -1,21 +1,21 @@
 <?php
 
-namespace App\Http\Livewire\Admin\User;
+namespace App\Http\Livewire\Admin\User\Permission;
 
-use App\Models\User;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Spatie\Permission\Models\Permission;
 
 class Index extends Component
 {
     use WithPagination;
     use LivewireAlert;
 
-    public $selectedUsers = [];
+    public $selectedItems = [];
     public $selectAll = false;
 
-    public $user;
+    public $permission;
     public $search;
     public $perPage = 15;
     public $sortColumn = 'created_at';
@@ -51,9 +51,7 @@ class Index extends Component
             $this->sortColumn = $column;
         }
     }
-
-
-    public function delete(User $user)
+    public function delete(Permission $permission)
     {
         //$this->authorize('delete', $user);
         $this->confirm(__('bap.are_you_sure'), [
@@ -64,13 +62,13 @@ class Index extends Component
             'onConfirmed' => 'confirmedDelete',
             'onCancelled' => 'cancelledDelete'
         ]);
-        $this->user = $user;
+        $this->permission = $permission;
     }
 
     public function confirmedDelete()
     {
         //$this->authorize('delete', $this->watcher);
-        $this->user->delete();
+        $this->role->delete();
         $this->emit('updateList');
         $this->alert(
             'success',
@@ -95,14 +93,14 @@ class Index extends Component
     public function updatedSelectAll($value)
     {
         if($value) {
-            $this->selectedUsers = User::pluck('id')->toArray();
+            $this->selectedItems = Permission::pluck('id')->toArray();
         } else {
-            $this->selectedUsers = [];
+            $this->selectedItems = [];
         }
 
     }
 
-    public function updatedSelectedUsers($value)
+    public function updatedSelectedPermissions($value)
     {
         if($this->selectAll) {
             $this->selectAll = false;
@@ -124,10 +122,10 @@ class Index extends Component
 
     public function deleteSelectedQuery()
     {
-        User::query()
-            ->whereIn('id', $this->selectedUsers)
+        Permission::query()
+            ->whereIn('id', $this->selectedItems)
             ->delete();
-        $this->selectedUsers = [];
+        $this->selectedItems = [];
         $this->selectAll = false;
 
         $this->alert(
@@ -135,10 +133,9 @@ class Index extends Component
             __('bap.removed')
         );
     }
-
     public function render()
     {
-        $users = User::filter(['search' => $this->search])->orderBy($this->sortColumn, $this->sortDirection)->paginate($this->perPage);
-        return view('livewire.admin.user.index', compact('users'))->layout('layouts.admin');
+        $permissions = Permission::where('name', 'LIKE', '%' . $this->search . '%')->orderBy($this->sortColumn, $this->sortDirection)->paginate($this->perPage);
+        return view('livewire.admin.user.permission.index', compact('permissions'))->layout('layouts.admin');
     }
 }

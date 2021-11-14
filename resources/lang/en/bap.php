@@ -20,6 +20,7 @@ return [
     'cancelled' => 'Cancelled.',
     'removed' => 'Removed.',
     'search' => 'Search',
+    'name' => 'Name',
     'edited' => 'Edited.',
     'created' => 'Created.',
     'are_you_sure' => 'Are you sure?',
@@ -27,4 +28,18 @@ return [
     'number' => 'No.',
     'delete' => 'Delete',
     'created_at' => 'Created At',
+    'permission' => 'Permission',
+    'Role' => 'Role',
+    'roles_word' => 'Roles',
+    'create_role' => 'Create Role',
+    'permissions_word' => 'Permissions',
+    'create_permission' => 'Create Permission',
+    'roles' => [
+        'admin' => 'Admin',
+        'support' => 'Support',
+    ],
+    'permissions' => [
+        'admin.access' => 'View User Index',
+        'admin.user.index' => 'View User Index'
+    ]
 ];
