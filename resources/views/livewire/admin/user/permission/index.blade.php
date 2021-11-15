@@ -21,7 +21,6 @@
             <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('admin.user.permission.index') }}">{{ __('bap.permissions_word') }}</a></li>
         </ol>
     </x-slot>
-{{ __('bap.permissions.admin.access') }}
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">{{ __('bap.permissions_word') }}</h3>

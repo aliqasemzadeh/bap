@@ -39,7 +39,7 @@ return [
         'support' => 'Support',
     ],
     'permissions' => [
-        'admin.access' => 'View User Index',
-        'admin.user.index' => 'View User Index'
+        'admin_access' => 'Admin Access',
+        'admin_user_index' => 'View User Index'
     ]
 ];
