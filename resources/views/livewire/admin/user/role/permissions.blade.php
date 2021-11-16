@@ -1,5 +1,4 @@
 <div class="modal-dialog">
-    <form wire:submit.prevent="assign">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">{{ __('bap.edit_permission') }}</h5>
@@ -38,11 +37,6 @@
                     @endforeach
                 </ul>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('bap.close') }}</button>
-                <button type="submit" class="btn btn-primary">{{ __('bap.edit') }}</button>
-            </div>
         </div>
-    </form>
 </div>
 

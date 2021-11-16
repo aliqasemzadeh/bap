@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin\User\Role;
 
+use App\Models\User;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Spatie\Permission\Models\Permission;
@@ -16,20 +17,23 @@ class Permissions extends Component
     protected $updatesQueryString = ['search'];
 
     protected $listeners = [
-        'confirmedDelete',
-        'cancelledDelete',
+        'confirmedDeletePermission',
+        'cancelledDeletePermission',
         'deleteSelectedQuery',
         'updatePermissionList' => 'render'
     ];
 
     public function deletePermission(Permission $permission)
     {
-        $this->role->revokePermissionTo($permission->name);
-        $this->emit('updatePermissionList');
-        $this->alert(
-            'success',
-            __('bap.removed')
-        );
+        $this->confirm(__('bap.are_you_sure'), [
+            'toast' => false,
+            'position' => 'center',
+            'showConfirmButton' => true,
+            'cancelButtonText' => __('bap.cancel'),
+            'onConfirmed' => 'confirmedDeletePermission',
+            'onCancelled' => 'cancelledDeletePermission'
+        ]);
+        $this->permission = $permission;
     }
 
     public function mount(Role $role)
@@ -44,6 +48,26 @@ class Permissions extends Component
         $this->alert(
             'success',
             __('bap.added')
+        );
+    }
+
+
+
+    public function confirmedDeletePermission()
+    {
+        $this->role->revokePermissionTo($this->permission->name);
+        $this->emit('updatePermissionList');
+        $this->alert(
+            'success',
+            __('bap.removed')
+        );
+    }
+
+    public function cancelledDeletePermission()
+    {
+        $this->alert(
+            'success',
+            __('bap.cancelled')
         );
     }
 
