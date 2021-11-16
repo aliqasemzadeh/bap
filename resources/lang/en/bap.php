@@ -19,6 +19,7 @@ return [
     'cancel' => 'Cancel',
     'cancelled' => 'Cancelled.',
     'removed' => 'Removed.',
+    'added' => 'Added.',
     'search' => 'Search',
     'name' => 'Name',
     'edited' => 'Edited.',
