@@ -8,23 +8,23 @@
     "packages": [
         {
             "name": "arcanedev/log-viewer",
-            "version": "8.1.0",
+            "version": "8.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ARCANEDEV/LogViewer.git",
-                "reference": "c302c406ea7e0a5def75aac2e7ef1669caca6d63"
+                "reference": "e9af79b89f3d44ed61cdc5a0a29ddaef06e752c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ARCANEDEV/LogViewer/zipball/c302c406ea7e0a5def75aac2e7ef1669caca6d63",
-                "reference": "c302c406ea7e0a5def75aac2e7ef1669caca6d63",
+                "url": "https://api.github.com/repos/ARCANEDEV/LogViewer/zipball/e9af79b89f3d44ed61cdc5a0a29ddaef06e752c3",
+                "reference": "e9af79b89f3d44ed61cdc5a0a29ddaef06e752c3",
                 "shasum": ""
             },
             "require": {
                 "arcanedev/support": "^8.0",
                 "ext-json": "*",
                 "php": "^7.3|^8.0",
-                "psr/log": "^1.1"
+                "psr/log": "^1.1 || ^2.0"
             },
             "require-dev": {
                 "laravel/framework": "^8.19",
@@ -77,9 +77,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ARCANEDEV/LogViewer/issues",
-                "source": "https://github.com/ARCANEDEV/LogViewer/tree/8.1.0"
+                "source": "https://github.com/ARCANEDEV/LogViewer/tree/8.2.0"
             },
-            "time": "2021-02-26T17:24:57+00:00"
+            "time": "2021-10-23T19:24:24+00:00"
         },
         {
             "name": "arcanedev/support",

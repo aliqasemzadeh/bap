@@ -68,7 +68,7 @@ class Index extends Component
     public function confirmedDelete()
     {
         //$this->authorize('delete', $this->watcher);
-        $this->role->delete();
+        $this->permission->delete();
         $this->emit('updateList');
         $this->alert(
             'success',
