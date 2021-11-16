@@ -32,8 +32,10 @@ return [
     'Role' => 'Role',
     'roles_word' => 'Roles',
     'create_role' => 'Create Role',
+    'edit_role' => 'Edit Role',
     'permissions_word' => 'Permissions',
     'create_permission' => 'Create Permission',
+    'edit_permission' => 'Edit Permission',
     'roles' => [
         'admin' => 'Admin',
         'support' => 'Support',
