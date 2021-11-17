@@ -20,6 +20,10 @@
 
             @auth
                 <span class="avatar avatar-sm" style="background-image: url({{ auth()->user()->gravatar }})"></span>
+                <div class="d-none d-xl-block ps-2">
+                    <div>{{ auth()->user()->name }}</div>
+                    <div class="mt-1 small text-muted">{{ auth()->user()->title }}</div>
+                </div>
             @endauth
             @guest
                 <span class="avatar avatar-sm">
