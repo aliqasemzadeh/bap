@@ -1,7 +1,7 @@
 <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">{{ __('bap.edit_permission') }}</h5>
+                <h5 class="modal-title">{{ __('bap.permissions_word') }}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{ __('bap.close') }}"></button>
             </div>
             <div class="modal-body">
