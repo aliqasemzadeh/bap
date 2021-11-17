@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin\User;
 
 use App\Models\User;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Spatie\Permission\Models\Permission;
@@ -10,6 +11,7 @@ use Spatie\Permission\Models\Permission;
 class Permissions extends Component
 {
     use LivewireAlert;
+    use AuthorizesRequests;
     public $user;
     public $permission;
     public $search = "";

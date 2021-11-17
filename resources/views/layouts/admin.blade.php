@@ -45,7 +45,7 @@
                                     </span>
                         </a>
                     </li>
-
+                    @can('admin_user_management')
                     <li class="nav-item dropdown @if(\Illuminate\Support\Facades\Route::is('admin.user.*')) show @endif">
                         <a class="nav-link dropdown-toggle" href="#navbar-user" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="true">
                           <span class="nav-link-icon d-md-none d-lg-inline-block">
@@ -56,18 +56,24 @@
                           </span>
                         </a>
                         <div class="dropdown-menu @if(\Illuminate\Support\Facades\Route::is('admin.user.*')) show @endif " data-bs-popper="none">
+                            @can('admin_user_index')
                             <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('admin.user.index')) active @endif" href="{{ route('admin.user.index') }}">
                                 {{ __('bap.users') }}
                             </a>
+                            @endcan
+                                @can('admin_user_roles')
                             <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('admin.user.role.index')) active @endif" href="{{ route('admin.user.role.index') }}">
                                 {{ __('bap.roles_word') }}
                             </a>
+                                @endcan
+                                    @can('admin_user_permissions')
                             <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('admin.user.permission.index')) active @endif" href="{{ route('admin.user.permission.index') }}">
                                 {{ __('bap.permissions_word') }}
                             </a>
+                                    @endcan
                         </div>
                     </li>
-
+                    @endcan
                 </ul>
             </div>
         </div>

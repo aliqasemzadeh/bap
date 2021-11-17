@@ -55,7 +55,6 @@ class Index extends Component
 
     public function delete(User $user)
     {
-        //$this->authorize('delete', $user);
         $this->confirm(__('bap.are_you_sure'), [
             'toast' => false,
             'position' => 'center',
@@ -69,7 +68,6 @@ class Index extends Component
 
     public function confirmedDelete()
     {
-        //$this->authorize('delete', $this->watcher);
         $this->user->delete();
         $this->emit('updateList');
         $this->alert(
@@ -80,7 +78,6 @@ class Index extends Component
 
     public function cancelledDelete()
     {
-        //$this->authorize('delete', $this->user);
         $this->alert(
             'success',
             __('bap.cancelled')
@@ -138,6 +135,9 @@ class Index extends Component
 
     public function render()
     {
+        if(!auth()->user()->can('admin_user_index')) {
+            return abort(403);
+        }
         $users = User::filter(['search' => $this->search])->orderBy($this->sortColumn, $this->sortDirection)->paginate($this->perPage);
         return view('livewire.admin.user.index', compact('users'))->layout('layouts.admin');
     }

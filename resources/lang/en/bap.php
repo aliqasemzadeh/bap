@@ -50,7 +50,16 @@ return [
         'admin_user_edit' => 'Edit User',
         'admin_user_delete' => 'Delete User',
         'admin_user_create' => 'Create User',
-        'admin_user_roles' => 'View User Roles',
-        'admin_user_permissions' => 'View User Permissions',
+        'admin_user_roles' => 'Access User Roles',
+        'admin_user_permissions' => 'Access User Permissions',
+
+        'admin_roles_index' => 'View Roles',
+        'admin_roles_edit' => 'Edit Roles',
+        'admin_roles_create' => 'Create Roles',
+        'admin_roles_delete' => 'Delete Roles',
+        'admin_permissions_index' => 'View Permissions',
+        'admin_permissions_edit' => 'Edit Permissions',
+        'admin_permissions_create' => 'Create Permissions',
+        'admin_permissions_delete' => 'Delete Permissions',
     ]
 ];

@@ -17,6 +17,10 @@ class Edit extends Component
 
     public function mount(User $user)
     {
+        if(!auth()->user()->can('admin_user_edit')) {
+            return abort(403);
+        }
+
         $this->user = $user;
         $this->email = $user->email;
     }
