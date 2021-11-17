@@ -1,6 +1,6 @@
 ✔️ Base Admin Panel
 ======================
->  Easy way to create Base Admin Panel.
+>  Easy way to create Admin Panel.
 > 
 ## 🔌 Requirements
 
