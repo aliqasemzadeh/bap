@@ -9,6 +9,7 @@
                 <div class="mb-3">
                     <label class="form-label" for="name">{{ __('bap.name') }}</label>
                     <input type="text" wire:model="name" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="{{ __('bap.name') }}">
+                    <small class="form-hint">{{ __('bap.roles.'.$name) }}</small>
                     @error('name')
                     <div class="invalid-feedback">{{ $message }}</div>
                     @enderror

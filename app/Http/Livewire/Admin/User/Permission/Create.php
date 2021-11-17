@@ -19,7 +19,7 @@ class Create extends Component
             'name' => 'required|string'
         ]);
 
-        Permission::create(['name' => $this->name]);
+        Permission::create(['guard_name' => 'web', 'name' => $this->name]);
 
         $this->emitTo(\App\Http\Livewire\Admin\User\Permission\Index::getName(), 'updateList');
         $this->emit('hideModal');

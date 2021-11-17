@@ -45,6 +45,7 @@
                                     </span>
                         </a>
                     </li>
+
                     <li class="nav-item dropdown @if(\Illuminate\Support\Facades\Route::is('admin.user.*')) show @endif">
                         <a class="nav-link dropdown-toggle" href="#navbar-user" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="true">
                           <span class="nav-link-icon d-md-none d-lg-inline-block">
@@ -66,6 +67,7 @@
                             </a>
                         </div>
                     </li>
+
                 </ul>
             </div>
         </div>
