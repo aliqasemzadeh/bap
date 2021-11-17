@@ -17,13 +17,13 @@ class RoleAndPermissionSeeder extends Seeder
     public function run()
     {
 
-        $adminPermission = Permission::create(['name' => 'permissions.admin_access']);
+        Permission::create(['name' => 'admin_access']);
 
-        $admin = Role::create(['name' => 'roles.admin']);
+        $admin = Role::create(['name' => 'admin']);
 
-        $admin->givePermissionTo($adminPermission);
+        $admin->givePermissionTo('admin_access');
 
-        $support = Role::create(['name' => 'roles.support']);
+        $support = Role::create(['name' => 'support']);
 
         $user = User::findOrFail(1);
         $user->assignRole($admin);
