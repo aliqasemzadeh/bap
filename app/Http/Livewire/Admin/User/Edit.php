@@ -27,6 +27,10 @@ class Edit extends Component
 
     public function edit()
     {
+        if(!auth()->user()->can('admin_user_edit')) {
+            return abort(403);
+        }
+
         $this->validate([
             'email' => ['required', 'email', Rule::unique('users')->ignore($this->user->id)],
             'password' => 'nullable'
@@ -46,6 +50,10 @@ class Edit extends Component
 
     public function render()
     {
+        if(!auth()->user()->can('admin_user_edit')) {
+            return abort(403);
+        }
+
         return view('livewire.admin.user.edit');
     }
 }
