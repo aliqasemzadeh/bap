@@ -16,6 +16,7 @@
 - Bootstrap 5
 - Tabler.io
 - SweetAlert2
+- spatie/laravel-permission
 
 
 ## 🧾 Installation
