@@ -28,6 +28,7 @@ return [
     'are_you_sure' => 'Are you sure?',
     'per_page' => 'Per Page',
     'number' => 'No.',
+    'access_list' => 'Access List',
     'delete' => 'Delete',
     'created_at' => 'Created At',
     'permission' => 'Permission',
