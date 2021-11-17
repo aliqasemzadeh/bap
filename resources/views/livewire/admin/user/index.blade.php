@@ -3,6 +3,7 @@
        {{ __('bap.users') }}
    </x-slot>
     <x-slot name="actions">
+        @can('admin_user_create')
         <div class="col-auto ms-auto d-print-none">
             <div class="btn-list">
                 <button onclick="Livewire.emit('showModal', 'admin.user.create')" class="btn btn-primary d-none d-sm-inline-block">
@@ -14,6 +15,7 @@
                 </button>
             </div>
         </div>
+        @endcan
    </x-slot>
     <x-slot name="breadcrumb">
         <ol class="breadcrumb breadcrumb-arrows" aria-label="breadcrumbs">
@@ -111,9 +113,9 @@
                     <td>{{ $user->id }}</td>
                     <td>
                         <div class="d-flex py-1 align-items-center">
-                            <span class="avatar me-2" style="background-image: url({{ \Creativeorange\Gravatar\Facades\Gravatar::get($user->email) }})"></span>
+                            <span class="avatar me-2" style="background-image: url({{ $user->gravatar }})"></span>
                             <div class="flex-fill">
-                                <div class="font-weight-medium">{{ $user->email }}</div>
+                                <div class="font-weight-medium">{{ $user->name }}</div>
                                 <div class="text-muted">{{ $user->email }}</div>
                             </div>
                         </div>
