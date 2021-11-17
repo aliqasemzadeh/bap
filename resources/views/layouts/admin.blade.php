@@ -35,7 +35,7 @@
             </div>
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="navbar-nav pt-lg-3">
-                    @can('admin_dashboard')
+                    @can('admin_dashboard_index')
                     <li class="nav-item @if(\Illuminate\Support\Facades\Route::is('admin.dashboard.index')) active @endif">
                         <a class="nav-link" href="{{ route('admin.dashboard.index') }}" >
                                     <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
