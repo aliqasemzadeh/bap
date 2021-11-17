@@ -25,11 +25,17 @@ class Roles extends Component
 
     public function mount(User $user)
     {
+        if(!auth()->user()->can('admin_user_roles')) {
+            return abort(403);
+        }
         $this->user = $user;
     }
 
     public function deleteRole(Role $role)
     {
+        if(!auth()->user()->can('admin_user_roles')) {
+            return abort(403);
+        }
         $this->confirm(__('bap.are_you_sure'), [
             'toast' => false,
             'position' => 'center',
@@ -43,6 +49,9 @@ class Roles extends Component
 
     public function assign(Role $role)
     {
+        if(!auth()->user()->can('admin_user_roles')) {
+            return abort(403);
+        }
         $this->user->assignRole($role->name);
         $this->emit('updateRoleList');
         $this->alert(
@@ -53,6 +62,9 @@ class Roles extends Component
 
     public function confirmedDeleteRole()
     {
+        if(!auth()->user()->can('admin_user_roles')) {
+            return abort(403);
+        }
         $this->user->removeRole($this->role->name);
         $this->emit('updatePermissionList');
         $this->alert(
@@ -71,6 +83,9 @@ class Roles extends Component
 
     public function render()
     {
+        if(!auth()->user()->can('admin_user_roles')) {
+            return abort(403);
+        }
         if($this->search != "") {
             $roles = Role::where('name', 'like', '%'.$this->search.'%')->get();
         } else {

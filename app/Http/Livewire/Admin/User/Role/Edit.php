@@ -15,12 +15,20 @@ class Edit extends Component
 
     public function mount(Role $role)
     {
+        if(!auth()->user()->can('admin_roles_edit')) {
+            return abort(403);
+        }
+
         $this->role = $role;
         $this->name = $role->name;
     }
 
     public function edit()
     {
+        if(!auth()->user()->can('admin_roles_edit')) {
+            return abort(403);
+        }
+
         $this->validate([
             'name' => 'required|string'
         ]);
@@ -36,6 +44,10 @@ class Edit extends Component
 
     public function render()
     {
+        if(!auth()->user()->can('admin_roles_edit')) {
+            return abort(403);
+        }
+
         return view('livewire.admin.user.role.edit');
     }
 }

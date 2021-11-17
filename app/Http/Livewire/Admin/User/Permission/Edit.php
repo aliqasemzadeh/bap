@@ -14,12 +14,20 @@ class Edit extends Component
 
     public function mount(Permission $permission)
     {
+        if(!auth()->user()->can('admin_permissions_edit')) {
+            return abort(403);
+        }
+
         $this->permission = $permission;
         $this->name = $permission->name;
     }
 
     public function edit()
     {
+        if(!auth()->user()->can('admin_permissions_edit')) {
+            return abort(403);
+        }
+
         $this->validate([
             'name' => 'required|string'
         ]);
@@ -35,6 +43,10 @@ class Edit extends Component
 
     public function render()
     {
+        if(!auth()->user()->can('admin_permissions_edit')) {
+            return abort(403);
+        }
+        
         return view('livewire.admin.user.permission.edit');
     }
 }

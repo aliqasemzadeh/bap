@@ -15,6 +15,9 @@ class Create extends Component
 
     public function create()
     {
+        if(!auth()->user()->can('admin_user_create')) {
+            return abort(403);
+        }
         $this->validate([
            'email' => 'required|email|unique:users',
            'password' => 'required'
@@ -33,6 +36,9 @@ class Create extends Component
 
     public function render()
     {
+        if(!auth()->user()->can('admin_user_create')) {
+            return abort(403);
+        }
         return view('livewire.admin.user.create');
     }
 }

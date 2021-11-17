@@ -25,6 +25,10 @@ class Permissions extends Component
 
     public function deletePermission(Permission $permission)
     {
+        if(!auth()->user()->can('admin_roles_permissions')) {
+            return abort(403);
+        }
+
         $this->confirm(__('bap.are_you_sure'), [
             'toast' => false,
             'position' => 'center',
@@ -33,16 +37,25 @@ class Permissions extends Component
             'onConfirmed' => 'confirmedDeletePermission',
             'onCancelled' => 'cancelledDeletePermission'
         ]);
+
         $this->permission = $permission;
     }
 
     public function mount(Role $role)
     {
+        if(!auth()->user()->can('admin_roles_permissions')) {
+            return abort(403);
+        }
+
         $this->role = $role;
     }
 
     public function assign(Permission $permission)
     {
+        if(!auth()->user()->can('admin_roles_permissions')) {
+            return abort(403);
+        }
+
         $this->role->givePermissionTo($permission->name);
         $this->emit('updatePermissionList');
         $this->alert(
@@ -55,6 +68,10 @@ class Permissions extends Component
 
     public function confirmedDeletePermission()
     {
+        if(!auth()->user()->can('admin_roles_permissions')) {
+            return abort(403);
+        }
+
         $this->role->revokePermissionTo($this->permission->name);
         $this->emit('updatePermissionList');
         $this->alert(
@@ -73,6 +90,10 @@ class Permissions extends Component
 
     public function render()
     {
+        if(!auth()->user()->can('admin_roles_permissions')) {
+            return abort(403);
+        }
+
         if($this->search != "") {
             $permissions = Permission::where('name', 'like', '%'.$this->search.'%')->get();
         } else {

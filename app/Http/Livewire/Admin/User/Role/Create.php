@@ -13,6 +13,10 @@ class Create extends Component
 
     public function create()
     {
+        if(!auth()->user()->can('admin_roles_create')) {
+            return abort(403);
+        }
+
         $this->validate([
             'name' => 'required|string'
         ]);
@@ -28,6 +32,10 @@ class Create extends Component
 
     public function render()
     {
+        if(!auth()->user()->can('admin_roles_create')) {
+            return abort(403);
+        }
+
         return view('livewire.admin.user.role.create');
     }
 }

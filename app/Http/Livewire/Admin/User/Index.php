@@ -55,6 +55,9 @@ class Index extends Component
 
     public function delete(User $user)
     {
+        if(!auth()->user()->can('admin_user_delete')) {
+            return abort(403);
+        }
         $this->confirm(__('bap.are_you_sure'), [
             'toast' => false,
             'position' => 'center',
@@ -68,6 +71,9 @@ class Index extends Component
 
     public function confirmedDelete()
     {
+        if(!auth()->user()->can('admin_user_delete')) {
+            return abort(403);
+        }
         $this->user->delete();
         $this->emit('updateList');
         $this->alert(
@@ -109,6 +115,9 @@ class Index extends Component
 
     public function deleteSelected()
     {
+        if(!auth()->user()->can('admin_user_delete')) {
+            return abort(403);
+        }
         $this->confirm(__('bap.are_you_sure'), [
             'toast' => false,
             'position' => 'center',
@@ -121,6 +130,9 @@ class Index extends Component
 
     public function deleteSelectedQuery()
     {
+        if(!auth()->user()->can('admin_user_delete')) {
+            return abort(403);
+        }
         User::query()
             ->whereIn('id', $this->selectedUsers)
             ->delete();

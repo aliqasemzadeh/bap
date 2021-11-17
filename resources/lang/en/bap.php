@@ -45,6 +45,7 @@ return [
     ],
     'permissions' => [
         'admin_access' => 'Admin Access',
+        'admin_dashboard_index' => 'Admin Dashboard',
         'admin_user_management' => 'View User Management',
         'admin_user_index' => 'View User Index',
         'admin_user_edit' => 'Edit User',
@@ -57,6 +58,7 @@ return [
         'admin_roles_edit' => 'Edit Roles',
         'admin_roles_create' => 'Create Roles',
         'admin_roles_delete' => 'Delete Roles',
+        'admin_roles_permissions' => 'Access Role Permissions',
         'admin_permissions_index' => 'View Permissions',
         'admin_permissions_edit' => 'Edit Permissions',
         'admin_permissions_create' => 'Create Permissions',

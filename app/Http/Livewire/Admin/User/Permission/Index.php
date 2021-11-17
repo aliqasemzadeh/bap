@@ -53,7 +53,10 @@ class Index extends Component
     }
     public function delete(Permission $permission)
     {
-        //$this->authorize('delete', $user);
+        if(!auth()->user()->can('admin_permissions_delete')) {
+            return abort(403);
+        }
+
         $this->confirm(__('bap.are_you_sure'), [
             'toast' => false,
             'position' => 'center',
@@ -67,7 +70,10 @@ class Index extends Component
 
     public function confirmedDelete()
     {
-        //$this->authorize('delete', $this->watcher);
+        if(!auth()->user()->can('admin_permissions_delete')) {
+            return abort(403);
+        }
+
         $this->permission->delete();
         $this->emit('updateList');
         $this->alert(
@@ -78,7 +84,6 @@ class Index extends Component
 
     public function cancelledDelete()
     {
-        //$this->authorize('delete', $this->user);
         $this->alert(
             'success',
             __('bap.cancelled')
@@ -87,6 +92,10 @@ class Index extends Component
 
     public function mount()
     {
+        if(!auth()->user()->can('admin_permissions_index')) {
+            return abort(403);
+        }
+
         $this->search = request()->query('search', $this->search);
     }
 
@@ -110,6 +119,10 @@ class Index extends Component
 
     public function deleteSelected()
     {
+        if(!auth()->user()->can('admin_permissions_delete')) {
+            return abort(403);
+        }
+
         $this->confirm(__('bap.are_you_sure'), [
             'toast' => false,
             'position' => 'center',
@@ -122,6 +135,10 @@ class Index extends Component
 
     public function deleteSelectedQuery()
     {
+        if(!auth()->user()->can('admin_permissions_delete')) {
+            return abort(403);
+        }
+
         Permission::query()
             ->whereIn('id', $this->selectedItems)
             ->delete();
@@ -135,6 +152,10 @@ class Index extends Component
     }
     public function render()
     {
+        if(!auth()->user()->can('admin_permissions_index')) {
+            return abort(403);
+        }
+
         $permissions = Permission::where('name', 'LIKE', '%' . $this->search . '%')->orderBy($this->sortColumn, $this->sortDirection)->paginate($this->perPage);
         return view('livewire.admin.user.permission.index', compact('permissions'))->layout('layouts.admin');
     }
