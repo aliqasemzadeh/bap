@@ -109,7 +109,15 @@
                 <tr>
                     <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select User" value="{{ $user->id }}" name="selectedUsers" wire:model="selectedUsers"></td>
                     <td>{{ $user->id }}</td>
-                    <td>{{ $user->email }}</td>
+                    <td>
+                        <div class="d-flex py-1 align-items-center">
+                            <span class="avatar me-2" style="background-image: url({{ \Creativeorange\Gravatar\Facades\Gravatar::get($user->email) }})"></span>
+                            <div class="flex-fill">
+                                <div class="font-weight-medium">{{ $user->email }}</div>
+                                <div class="text-muted">{{ $user->email }}</div>
+                            </div>
+                        </div>
+                    </td>
                     <td>{{ $user->created_at }}</td>
                     <td class="text-end">
                             @can('admin_user_roles')

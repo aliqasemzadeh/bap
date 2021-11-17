@@ -63,5 +63,9 @@ return [
         'admin_permissions_edit' => 'Edit Permissions',
         'admin_permissions_create' => 'Create Permissions',
         'admin_permissions_delete' => 'Delete Permissions',
+    ],
+    'category_types' => [
+        'article' => 'Article',
+        'article' => 'Article',
     ]
 ];
