@@ -1,5 +1,6 @@
 <?php
 return [
+    'direction' => 'ltr',
     'home' => 'Home',
     'login' => 'Login',
     'email' => 'Email',
@@ -43,6 +44,12 @@ return [
     ],
     'permissions' => [
         'admin_access' => 'Admin Access',
-        'admin_user_index' => 'View User Index'
+        'admin_user_management' => 'View User Management',
+        'admin_user_index' => 'View User Index',
+        'admin_user_edit' => 'Edit User',
+        'admin_user_delete' => 'Delete User',
+        'admin_user_create' => 'Create User',
+        'admin_user_roles' => 'View User Roles',
+        'admin_user_permissions' => 'View User Permissions',
     ]
 ];
