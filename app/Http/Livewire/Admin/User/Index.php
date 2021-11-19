@@ -110,7 +110,6 @@ class Index extends Component
         if($this->selectAll) {
             $this->selectAll = false;
         }
-
     }
 
     public function deleteSelected()
