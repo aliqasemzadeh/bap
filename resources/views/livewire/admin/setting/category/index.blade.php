@@ -124,8 +124,8 @@
                         <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select User" value="{{ $category->id }}" name="selectedItems" wire:model="selectedItems"></td>
                         <td>{{ $category->id }}</td>
                         <td>{{ $category->title }}</td>
-                        <td>{{ $category->type }}</td>
-                        <td>{{ $category->language }}</td>
+                        <td>{{ __('bap.category_types.'.$category->type) }}</td>
+                        <td>{{ config('laravellocalization.supportedLocales.'.$category->language.'.name') }}</td>
                         <td class="text-end">
                             @can('admin_category_edit')
                                 <button onclick="Livewire.emit('showModal', 'admin.setting.category.edit', '{{ json_encode($category->id) }}')" class="btn btn-primary btn-icon btn-sm">

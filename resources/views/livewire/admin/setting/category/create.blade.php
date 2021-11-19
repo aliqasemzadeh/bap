@@ -20,8 +20,22 @@
                 <div class="mb-3">
                     <label class="form-label" for="type">{{ __('bap.type') }}</label>
                     <select wire:model="type" class="form-control @error('type') is-invalid @enderror" name="type">
+                        <option></option>
                         @foreach(__('bap.category_types') as $key => $value)
                         <option value="{{ $key }}">{{ $value }}</option>
+                        @endforeach
+                    </select>
+                    @error('type')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="type">{{ __('bap.language') }}</label>
+                    <select wire:model="language" class="form-control @error('language') is-invalid @enderror" name="language">
+                        <option></option>
+                        @foreach(config('laravellocalization.supportedLocales') as $key => $value)
+                            <option value="{{ $key }}">{{ config('laravellocalization.supportedLocales.'.$key.'.name') }}</option>
                         @endforeach
                     </select>
                     @error('type')

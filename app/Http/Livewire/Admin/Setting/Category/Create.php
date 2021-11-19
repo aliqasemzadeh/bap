@@ -12,6 +12,7 @@ class Create extends Component
     public $description;
     public $type;
     public $title;
+    public $language;
 
     public function create()
     {
@@ -21,12 +22,14 @@ class Create extends Component
         $this->validate([
             'title' => ['string', 'required'],
             'type' => 'required',
+            'language' => 'required',
             'description' => 'nullable',
         ]);
 
         $category = new Category();
         $category->title = $this->title;
         $category->type = $this->type;
+        $category->language = $this->language;
         $category->description = $this->description;
         $category->save();
 
