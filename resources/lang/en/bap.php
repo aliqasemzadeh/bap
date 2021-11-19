@@ -66,9 +66,22 @@ return [
         'admin_permissions_edit' => 'Edit Permissions',
         'admin_permissions_create' => 'Create Permissions',
         'admin_permissions_delete' => 'Delete Permissions',
+
+        'admin_setting_management' => 'View Setting Management',
+        'admin_category_index' => 'View Category Index',
+        'admin_category_edit' => 'Edit Category',
+        'admin_category_delete' => 'Delete Category',
+        'admin_category_create' => 'Create Category',
+
+        'admin_content_management' => 'View Content Management',
+        'admin_article_index' => 'View Article Index',
+        'admin_article_edit' => 'Edit Article',
+        'admin_article_delete' => 'Delete Article',
+        'admin_article_create' => 'Create Article',
+        
     ],
     'category_types' => [
         'article' => 'Article',
-        'article' => 'Article',
+        'ticket' => 'Ticket',
     ]
 ];
