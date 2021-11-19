@@ -15,14 +15,12 @@
                     @enderror
                 </div>
 
-
-
                 <div class="mb-3">
                     <label class="form-label" for="type">{{ __('bap.type') }}</label>
                     <select wire:model="type" class="form-control @error('type') is-invalid @enderror" name="type">
                         <option></option>
                         @foreach(__('bap.category_types') as $key => $value)
-                        <option value="{{ $key }}">{{ $value }}</option>
+                            <option value="{{ $key }}">{{ $value }}</option>
                         @endforeach
                     </select>
                     @error('type')

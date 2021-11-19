@@ -17,7 +17,6 @@ class CreateArticlesTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('pre_title')->nullable();
-            $table->string('image')->nullable();
             $table->foreignId('user_id')->index();
             $table->foreignId('category_id')->index();
             $table->text('description')->nullable();

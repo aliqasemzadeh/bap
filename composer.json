@@ -22,6 +22,7 @@
         "morilog/jalali": "^3.2",
         "nesbot/carbon": "^2.54",
         "questocat/laravel-referral": "^1.0",
+        "spatie/laravel-medialibrary": "^9.9",
         "spatie/laravel-permission": "^5.3",
         "spatie/laravel-tags": "^3.1",
         "tucker-eric/eloquentfilter": "^3.0",
