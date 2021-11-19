@@ -22,7 +22,7 @@
 ## 🧾 Installation
 
 1. `git clone https://github.com/alighasemzadeh/bap BaseAdminPanel`
-2. `cd MyDoList`
+2. `cd BaseAdminPanel`
 3. Install dependencies:
 
    `composer install`
