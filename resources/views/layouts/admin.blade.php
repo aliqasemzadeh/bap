@@ -76,7 +76,25 @@
                         </div>
                     </li>
                     @endcan
-
+                        @can('admin_content_management')
+                            <li class="nav-item dropdown @if(\Illuminate\Support\Facades\Route::is('admin.content.*')) show @endif">
+                                <a class="nav-link dropdown-toggle" href="#navbar-user" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="true">
+                                  <span class="nav-link-icon d-md-none d-lg-inline-block">
+	                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M16 6h3a1 1 0 0 1 1 1v11a2 2 0 0 1 -4 0v-13a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1v12a3 3 0 0 0 3 3h11" /><line x1="8" y1="8" x2="12" y2="8" /><line x1="8" y1="12" x2="12" y2="12" /><line x1="8" y1="16" x2="12" y2="16" /></svg>
+                                  </span>
+                                    <span class="nav-link-title">
+                                    {{ __('bap.content_management') }}
+                                  </span>
+                                </a>
+                                <div class="dropdown-menu @if(\Illuminate\Support\Facades\Route::is('admin.content.*')) show @endif " data-bs-popper="none">
+                                    @can('admin_category_index')
+                                        <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('admin.content.article.index')) active @endif" href="{{ route('admin.content.article.index') }}">
+                                            {{ __('bap.articles') }}
+                                        </a>
+                                    @endcan
+                                </div>
+                            </li>
+                        @endcan
                         @can('admin_setting_management')
                             <li class="nav-item dropdown @if(\Illuminate\Support\Facades\Route::is('admin.setting.*')) show @endif">
                                 <a class="nav-link dropdown-toggle" href="#navbar-user" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="true">

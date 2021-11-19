@@ -20,6 +20,7 @@ class CreateArticlesTable extends Migration
             $table->string('image')->nullable();
             $table->foreignId('user_id')->index();
             $table->foreignId('category_id')->index();
+            $table->text('description')->nullable();
             $table->longText('body')->nullable();
             $table->string('language')->default('en');
             $table->bigInteger('likes')->default(0);
