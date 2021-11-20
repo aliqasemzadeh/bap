@@ -1,8 +1,8 @@
 {
-    "name": "laravel/laravel",
+    "name": "alighasemzadeh/bap",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "description": "Laravel Base Admin Panel.",
+    "keywords": ["admin", "BAP", "framework", "laravel"],
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",

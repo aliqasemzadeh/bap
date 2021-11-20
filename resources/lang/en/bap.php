@@ -47,6 +47,7 @@ return [
     'number' => 'No.',
     'access_list' => 'Access List',
     'delete' => 'Delete',
+    'no_result' => 'No Result',
     'created_at' => 'Created At',
     'permission' => 'Permission',
     'Role' => 'Role',
