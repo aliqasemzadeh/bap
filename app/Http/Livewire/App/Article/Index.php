@@ -9,7 +9,7 @@ class Index extends Component
 {
     public function render()
     {
-        $articles = Article::paginate(15);
+        $articles = Article::with(['user', 'category'])->where('language', app()->getLocale())->paginate(config('bap.per-page'));
         return view('livewire.app.article.index', compact('articles'));
     }
 }

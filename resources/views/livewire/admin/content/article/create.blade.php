@@ -7,7 +7,7 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-md-6">
                         <div class="mb-3">
                             <div class="form-label">{{ __('bap.image') }}</div>
                             <input type="file" wire:model="image" class="form-control @error('image') is-invalid @enderror" name="image">
@@ -25,19 +25,6 @@
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label" for="category_id">{{ __('bap.category') }}</label>
-                            <select wire:model="category_id" class="form-control @error('category_id') is-invalid @enderror" name="category_id">
-                                <option></option>
-                                @foreach($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->title }}</option>
-                                @endforeach
-                            </select>
-                            @error('category_id')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-
-                        <div class="mb-3">
                             <label class="form-label" for="type">{{ __('bap.language') }}</label>
                             <select wire:model="language" class="form-control @error('language') is-invalid @enderror" name="language">
                                 <option></option>
@@ -45,10 +32,32 @@
                                     <option value="{{ $key }}">{{ config('laravellocalization.supportedLocales.'.$key.'.name') }}</option>
                                 @endforeach
                             </select>
-                            @error('type')
+                            @error('language')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="category_id">{{ __('bap.category') }}</label>
+                            <div class="input-group mb-2">
+                                <select wire:model="category_id" class="form-control @error('category_id') is-invalid @enderror" name="category_id">
+                                    <option></option>
+                                    @foreach($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->title }}</option>
+                                    @endforeach
+                                </select>
+                                <button onclick="Livewire.emit('showModal', 'admin.setting.category.create')" class="btn" type="button">
+                                    <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+                                </button>
+                            </div>
+
+                            @error('category_id')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+
 
                         <div class="mb-3">
                             <label class="form-label" for="description">{{ __('bap.description') }}</label>
@@ -58,7 +67,7 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-md-6">
                         <div class="mb-3">
                             <label class="form-label" for="description">{{ __('bap.body') }}</label>
                             <textarea wire:model="body" class="form-control @error('body') is-invalid @enderror" name="body"></textarea>

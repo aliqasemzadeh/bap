@@ -21,9 +21,10 @@ class CreateArticlesTable extends Migration
             $table->foreignId('category_id')->index();
             $table->text('description')->nullable();
             $table->longText('body')->nullable();
-            $table->string('language')->default('en');
+            $table->string('language')->default('en')->index();
             $table->bigInteger('likes')->default(0);
             $table->bigInteger('views')->default(0);
+            $table->timestamp('publish_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

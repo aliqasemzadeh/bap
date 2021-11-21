@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCategoriesTable extends Migration
+class CreateTicketReplaysTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,17 @@ class CreateCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('ticket_replays', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('type')->index();
-            $table->string('icon')->nullable();
-            $table->string('language')->default('en')->index();
-            $table->text('description')->nullable();
+            $table->bigInteger('user_id');
+            $table->bigInteger('ticket_id');
+            $table->longText('body');
+            $table->ipAddress('ip')->nullable();
             $table->timestamps();
             $table->softDeletes();
+
+            $table->index('user_id');
+            $table->index('ticket_id');
         });
     }
 
@@ -32,6 +34,6 @@ class CreateCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('ticket_replays');
     }
 }

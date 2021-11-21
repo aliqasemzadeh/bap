@@ -19,6 +19,10 @@ class Create extends Component
     public $language;
     public $image;
 
+    protected $listeners = [
+        'updateList' => 'render'
+    ];
+
     public function create()
     {
         if(!auth()->user()->can('admin_article_create')) {
