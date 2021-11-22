@@ -23,7 +23,10 @@ return [
     'user_management' => 'User Management',
     'setting_management' => 'Setting Management',
     'content_management' => 'Content Management',
+    'support_management' => 'Support Management',
     'categories' => 'Categories',
+    'tickets' => 'Tickets',
+    'archive' => 'Archive',
     'create_category' => 'Create Category',
     'edit_category' => 'Edit Category',
     'articles' => 'Articles',
@@ -93,6 +96,10 @@ return [
         'admin_article_edit' => 'Edit Article',
         'admin_article_delete' => 'Delete Article',
         'admin_article_create' => 'Create Article',
+
+        'admin_support_management' => 'View Support Management',
+        'admin_ticket_index' => 'View Ticket Index',
+        'admin_ticket_archive' => 'View Ticket Archive',
 
     ],
     'category_types' => [

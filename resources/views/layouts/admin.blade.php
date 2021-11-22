@@ -114,6 +114,31 @@
                                 </div>
                             </li>
                         @endcan
+
+                        @can('admin_support_management')
+                            <li class="nav-item dropdown @if(\Illuminate\Support\Facades\Route::is('admin.support.*')) show @endif">
+                                <a class="nav-link dropdown-toggle" href="#navbar-user" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="true">
+                                  <span class="nav-link-icon d-md-none d-lg-inline-block">
+	                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="12" cy="12" r="9" /><path d="M10 16.5l2 -3l2 3m-2 -3v-2l3 -1m-6 0l3 1" /><circle cx="12" cy="7.5" r=".5" fill="currentColor" /></svg>
+                                  </span>
+                                    <span class="nav-link-title">
+                                    {{ __('bap.support_management') }}
+                                  </span>
+                                </a>
+                                <div class="dropdown-menu @if(\Illuminate\Support\Facades\Route::is('admin.support.*')) show @endif " data-bs-popper="none">
+                                        @can('admin_ticket_index')
+                                            <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('admin.support.ticket.index')) active @endif" href="{{ route('admin.support.ticket.index') }}">
+                                                {{ __('bap.tickets') }}
+                                            </a>
+                                        @endcan
+                                        @can('admin_ticket_archive')
+                                            <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('admin.support.ticket.archive')) active @endif" href="{{ route('admin.support.ticket.archive') }}">
+                                                {{ __('bap.archive') }}
+                                            </a>
+                                        @endcan
+                                </div>
+                            </li>
+                        @endcan
                 </ul>
             </div>
         </div>
