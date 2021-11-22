@@ -35,7 +35,7 @@
             </div>
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="navbar-nav pt-lg-3">
-                    @auth
+
                     <li class="nav-item @if(\Illuminate\Support\Facades\Route::is('panel.dashboard.index')) active @endif">
                         <a class="nav-link" href="{{ route('panel.dashboard.index') }}" >
                                     <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
@@ -46,7 +46,29 @@
                                     </span>
                         </a>
                     </li>
-                    @endauth
+
+                        <li class="nav-item dropdown @if(\Illuminate\Support\Facades\Route::is('admin.support.*')) show @endif">
+                            <a class="nav-link dropdown-toggle" href="#navbar-user" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="true">
+                                  <span class="nav-link-icon d-md-none d-lg-inline-block">
+	                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="12" cy="12" r="9" /><path d="M10 16.5l2 -3l2 3m-2 -3v-2l3 -1m-6 0l3 1" /><circle cx="12" cy="7.5" r=".5" fill="currentColor" /></svg>
+                                  </span>
+                                <span class="nav-link-title">
+                                    {{ __('bap.support') }}
+                                  </span>
+                            </a>
+                            <div class="dropdown-menu @if(\Illuminate\Support\Facades\Route::is('panel.support.*')) show @endif " data-bs-popper="none">
+
+                                    <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('panel.support.ticket.index')) active @endif" href="{{ route('panel.support.ticket.index') }}">
+                                        {{ __('bap.tickets') }}
+                                    </a>
+
+                                    <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('panel.support.ticket.create')) active @endif" href="{{ route('panel.support.ticket.create') }}">
+                                        {{ __('bap.create') }}
+                                    </a>
+
+                            </div>
+                        </li>
+
                 </ul>
             </div>
         </div>
@@ -67,6 +89,9 @@
                             <h2 class="page-title">
                                 {{ $title }}
                             </h2>
+                            @if(isset($breadcrumb))
+                                {{ $breadcrumb }}
+                            @endif
                         </div>
                         @if(isset($actions))
                             {{ $actions }}
