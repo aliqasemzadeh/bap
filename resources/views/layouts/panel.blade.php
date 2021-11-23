@@ -58,12 +58,12 @@
                             </a>
                             <div class="dropdown-menu @if(\Illuminate\Support\Facades\Route::is('panel.support.*')) show @endif " data-bs-popper="none">
 
-                                    <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('panel.support.ticket.index')) active @endif" href="{{ route('panel.support.ticket.index') }}">
+                                    <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('panel.support.ticket.index')) active @endif @if(\Illuminate\Support\Facades\Route::is('panel.support.ticket.view')) active @endif" href="{{ route('panel.support.ticket.index') }}">
                                         {{ __('bap.tickets') }}
                                     </a>
 
                                     <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('panel.support.ticket.create')) active @endif" href="{{ route('panel.support.ticket.create') }}">
-                                        {{ __('bap.create') }}
+                                        {{ __('bap.create_ticket') }}
                                     </a>
 
                             </div>

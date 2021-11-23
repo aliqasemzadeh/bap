@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Admin\Support\Ticket;
+namespace App\Http\Livewire\Panel\Support\Ticket;
 
 use App\Models\Ticket;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
@@ -112,11 +112,7 @@ class Index extends Component
 
     public function render()
     {
-        if(!auth()->user()->can('admin_ticket_index')) {
-            return abort(403);
-        }
-
-        $tickets = Ticket::with(['user', 'category'])->filter(['search' => $this->search])->orderBy($this->sortColumn, $this->sortDirection)->paginate($this->perPage);
-        return view('livewire.admin.support.ticket.index', compact('tickets'))->layout('layouts.admin');
+        $tickets = Ticket::with(['category'])->filter(['search' => $this->search])->where('user_id', auth()->user()->id)->orderBy($this->sortColumn, $this->sortDirection)->paginate($this->perPage);
+        return view('livewire.panel.support.ticket.index', compact('tickets'))->layout('layouts.panel');
     }
 }

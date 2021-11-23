@@ -17,7 +17,7 @@ class CreateTicketsTable extends Migration
             $table->id();
             $table->bigInteger('user_id');
             $table->string('title');
-            $table->string('status')->default('new');
+            $table->string('status')->default('new'); //new, user, done, close, archive
             $table->bigInteger('category_id');
             $table->bigInteger('assign_user_id')->nullable();
             $table->ipAddress('ip')->nullable();

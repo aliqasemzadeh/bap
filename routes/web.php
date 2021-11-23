@@ -31,6 +31,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['re
 
         Route::group(['prefix' => config('bap.panel-prefix-url')], function() {
             Route::get('/dashboard/index', \App\Http\Livewire\Panel\Dashboard\Index::class)->name('panel.dashboard.index');
+
+            Route::get('/support/ticket/index', \App\Http\Livewire\Panel\Support\Ticket\Index::class)->name('panel.support.ticket.index');
+            Route::get('/support/ticket/create', \App\Http\Livewire\Panel\Support\Ticket\Create::class)->name('panel.support.ticket.create');
+            Route::get('/support/ticket/view/{ticket}', \App\Http\Livewire\Panel\Support\Ticket\View::class)->name('panel.support.ticket.view');
+
         });
 
 
