@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\ModelFilters;
 
@@ -13,4 +13,9 @@ class TicketFilter extends ModelFilter
     * @var array
     */
     public $relations = [];
+
+    public function search($query)
+    {
+        return $this->orWhere('title', 'LIKE', '%' . $query . '%');
+    }
 }

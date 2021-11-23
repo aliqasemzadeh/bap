@@ -18,8 +18,8 @@ class Index extends Component
     public $ticket;
     public $search;
     public $perPage = 15;
-    public $sortColumn = 'created_at';
-    public $sortDirection = 'asc';
+    public $sortColumn = 'updated_at';
+    public $sortDirection = 'desc';
 
     protected $paginationTheme = 'bootstrap';
 

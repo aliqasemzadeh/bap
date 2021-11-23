@@ -43,7 +43,9 @@ return [
     'removed' => 'Removed.',
     'added' => 'Added.',
     'search' => 'Search',
+    'replied' => 'Replied.',
     'archive' => 'Archive',
+    'updated_at' => 'Updated At',
     'replay' => 'Replay',
     'submit' => 'Submit',
     'name' => 'Name',
@@ -67,6 +69,7 @@ return [
     'edit_permission' => 'Edit Permission',
     'files' => 'Files',
     'attachments' => 'Attachments',
+    'please_create_new_ticket' => 'Sorry please create new ticket.',
     'roles' => [
         'admin' => 'Admin',
         'support' => 'Support',
@@ -106,6 +109,7 @@ return [
 
         'admin_support_management' => 'View Support Management',
         'admin_ticket_index' => 'View Ticket Index',
+        'admin_ticket_view' => 'View Ticket',
         'admin_ticket_archive' => 'View Ticket Archive',
 
     ],

@@ -15,7 +15,7 @@ class Ticket extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'id', 'user_id');
+        return $this->belongsTo(User::class);
     }
 
     public function category()
@@ -32,5 +32,9 @@ class Ticket extends Model
     public function files()
     {
         return $this->hasMany(TicketFile::class, 'ticket_id', 'id');
+    }
+
+    public function next(){
+        return UserTicket::whereIn('status', ['new','user'])->where('updated_at', '>', $this->updated_at)->orderBy('updated_at', 'ASC')->first();
     }
 }

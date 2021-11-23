@@ -5,10 +5,15 @@ namespace App\Http\Livewire\Panel\Support\Ticket;
 use App\Models\Ticket;
 use App\Models\TicketFile;
 use App\Models\TicketReplay;
+use Carbon\Carbon;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class View extends Component
 {
+    use WithFileUploads;
+    use LivewireAlert;
     public $ticket;
     public $body;
     public $replays;
@@ -49,13 +54,15 @@ class View extends Component
             $fileRecord->save();
         }
 
-        $this->ticket->status = 'customer';
+        $this->ticket->updated_at = Carbon::now()->toString();
+        $this->ticket->status = 'user';
         $this->ticket->save();
 
         $this->story = true;
         $this->body = null;
         $this->files = [];
         $this->replays = TicketReplay::with(['user', 'files'])->where('ticket_id', $this->ticket->id)->latest()->get();
+        $this->alert('success', __('bap.replied'));
     }
 
     public function mount(Ticket $ticket)

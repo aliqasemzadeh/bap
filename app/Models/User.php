@@ -70,7 +70,10 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function getNameAttribute()
     {
-        return "{$this->first_name} {$this->last_name}";
+        if($this->first_name) {
+            return "{$this->first_name} {$this->last_name}";
+        }
+        return __('bap.user') . ":" . $this->id;
     }
 
     public function getGravatarAttribute()

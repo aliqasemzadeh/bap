@@ -100,6 +100,19 @@
                             @endif
                         @endif
                     </th>
+                    <th wire:click="sortByColumn('updated_at')">{{ __('bap.updated_at') }}
+
+                    @if ($sortColumn == 'updated_at')
+                        @if($sortDirection == 'asc')
+                            <!-- Download SVG icon from http://tabler-icons.io/i/chevron-up -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-sm text-dark icon-thick" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 15 12 9 18 15" /></svg>
+                        @else
+                            <!-- Download SVG icon from http://tabler-icons.io/i/chevron-down -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-sm text-dark icon-thick" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
+
+                            @endif
+                        @endif
+                    </th>
                     <th></th>
                 </tr>
                 </thead>
@@ -113,9 +126,10 @@
                         </td>
                         <td>{{ $ticket->category->title }}</td>
                         <td>{{ $ticket->user->name }}</td>
+                        <td>{{ $ticket->updated_at }}</td>
                         <td class="text-end">
                             @can('admin_ticket_view')
-                                <a href="{{ route('admin.support.ticket.view', [$ticket->id]) }}" class="btn btn-danger btn-icon btn-sm">
+                                <a href="{{ route('admin.support.ticket.view', [$ticket->id]) }}" class="btn btn-primary btn-icon btn-sm">
                                     <!-- Download SVG icon from http://tabler-icons.io/i/eye -->
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="12" cy="12" r="2" /><path d="M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7" /></svg>
                                 </a>
@@ -130,7 +144,7 @@
         <div class="card-footer d-flex justify-content-between">
             <div>
                 <div class="btn-group btn-group-sm w-100">
-                    <button type="button" wire:click="archiveSelected" class="btn">{{ __('bap.delete') }} ({{ count($selectedItems) }})</button>
+                    <button type="button" wire:click="archiveSelected" class="btn">{{ __('bap.archive') }} ({{ count($selectedItems) }})</button>
                 </div>
 
             </div>

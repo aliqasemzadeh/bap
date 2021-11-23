@@ -48,14 +48,11 @@
     <div class="row row-cards mt-1">
         <div class="col-12">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header d-flex justify-content-between">
                     <h4 class="card-title">
-                    @if($replay->user->first_name)
                         {{ $replay->user->name }}
-                        @else
-                            {{ __('bap.user') }}:{{ $replay->user->id }}
-                        @endif
                     </h4>
+                    <span>{{ $replay->created_at }}</span>
                 </div>
                 <div class="card-body">
                     {{ $replay->body }}

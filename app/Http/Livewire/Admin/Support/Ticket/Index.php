@@ -18,7 +18,7 @@ class Index extends Component
     public $ticket;
     public $search;
     public $perPage = 15;
-    public $sortColumn = 'created_at';
+    public $sortColumn = 'updated_at';
     public $sortDirection = 'asc';
 
     protected $paginationTheme = 'bootstrap';
@@ -116,7 +116,7 @@ class Index extends Component
             return abort(403);
         }
 
-        $tickets = Ticket::with(['user', 'category'])->filter(['search' => $this->search])->orderBy($this->sortColumn, $this->sortDirection)->paginate($this->perPage);
+        $tickets = Ticket::with(['user', 'category'])->filter(['search' => $this->search])->whereIn('status', ['new', 'customer'])->orderBy($this->sortColumn, $this->sortDirection)->paginate($this->perPage);
         return view('livewire.admin.support.ticket.index', compact('tickets'))->layout('layouts.admin');
     }
 }
