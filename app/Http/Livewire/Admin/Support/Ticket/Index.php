@@ -83,20 +83,20 @@ class Index extends Component
         ]);
     }
 
-    public function deleteSelectedQuery()
+    public function archiveSelectedQuery()
     {
         if(!auth()->user()->can('admin_user_delete')) {
             return abort(403);
         }
         Ticket::query()
             ->whereIn('id', $this->selectedItems)
-            ->delete();
+            ->update(['status', 'done']);
         $this->selectedItems = [];
         $this->selectAll = false;
 
         $this->alert(
             'success',
-            __('bap.removed')
+            __('bap.done')
         );
     }
 

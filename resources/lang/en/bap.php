@@ -68,6 +68,7 @@ return [
     'create_permission' => 'Create Permission',
     'edit_permission' => 'Edit Permission',
     'files' => 'Files',
+    'done' => 'Done',
     'attachments' => 'Attachments',
     'please_create_new_ticket' => 'Sorry please create new ticket.',
     'roles' => [
