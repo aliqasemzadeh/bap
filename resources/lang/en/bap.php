@@ -9,6 +9,7 @@ return [
     'profile' => 'Profile',
     'logout' => 'Logout',
     'dashboard' => 'Dashboard',
+    'admin_dashboard' => 'Admin Dashboard',
     'user' => 'User',
     'title' => 'Title',
     'body' => 'Body',
