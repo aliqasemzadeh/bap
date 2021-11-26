@@ -108,6 +108,11 @@ return [
         'admin_article_delete' => 'Delete Article',
         'admin_article_create' => 'Create Article',
 
+        'admin_faq_index' => 'View FAQ Index',
+        'admin_faq_edit' => 'Edit FAQ',
+        'admin_faq_delete' => 'Delete FAQ',
+        'admin_faq_create' => 'Create FAQ',
+
         'admin_support_management' => 'View Support Management',
         'admin_ticket_index' => 'View Ticket Index',
         'admin_ticket_view' => 'View Ticket',
