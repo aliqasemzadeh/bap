@@ -3,7 +3,6 @@
 namespace App\Http\Livewire\Admin\Content\Article;
 
 use App\Models\Article;
-use App\Models\Category;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -99,7 +98,7 @@ class Index extends Component
     public function updatedSelectAll($value)
     {
         if($value) {
-            $this->selectedItems = Category::pluck('id')->toArray();
+            $this->selectedItems = Article::pluck('id')->toArray();
         } else {
             $this->selectedItems = [];
         }
@@ -151,6 +150,6 @@ class Index extends Component
             return abort(403);
         }
         $articles = Article::with(['user', 'category'])->filter(['search' => $this->search])->orderBy($this->sortColumn, $this->sortDirection)->paginate($this->perPage);
-        return view('livewire.admin.content.article.index', compact('articles'))->layout('layouts.admin');;
+        return view('livewire.admin.content.article.index', compact('articles'))->layout('layouts.admin');
     }
 }

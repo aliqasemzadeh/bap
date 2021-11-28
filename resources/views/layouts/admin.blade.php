@@ -87,11 +87,16 @@
                                   </span>
                                 </a>
                                 <div class="dropdown-menu @if(\Illuminate\Support\Facades\Route::is('admin.content.*')) show @endif " data-bs-popper="none">
-                                    @can('admin_category_index')
+                                    @can('admin_article_index')
                                         <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('admin.content.article.index')) active @endif" href="{{ route('admin.content.article.index') }}">
                                             {{ __('bap.articles') }}
                                         </a>
                                     @endcan
+                                        @can('admin_faq_index')
+                                            <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('admin.content.faq.index')) active @endif" href="{{ route('admin.content.faq.index') }}">
+                                                {{ __('bap.faqs') }}
+                                            </a>
+                                        @endcan
                                 </div>
                             </li>
                         @endcan

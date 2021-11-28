@@ -48,6 +48,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['re
             Route::get('/setting/category/index', \App\Http\Livewire\Admin\Setting\Category\Index::class)->name('admin.setting.category.index');
 
             Route::get('/content/article/index', \App\Http\Livewire\Admin\Content\Article\Index::class)->name('admin.content.article.index');
+            Route::get('/content/faq/index', \App\Http\Livewire\Admin\Content\FAQ\Index::class)->name('admin.content.faq.index');
 
             Route::get('/support/ticket/index', \App\Http\Livewire\Admin\Support\Ticket\Index::class)->name('admin.support.ticket.index');
             Route::get('/support/ticket/archive', \App\Http\Livewire\Admin\Support\Ticket\Archive::class)->name('admin.support.ticket.archive');
