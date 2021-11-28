@@ -17,6 +17,8 @@ return [
     'title' => 'Title',
     'body' => 'Body',
     'image' => 'Image',
+    'question' => 'Question',
+    'answer' => 'Answer',
     'description' => 'Description',
     'first_name' => 'First Name',
     'last_name' => 'Last Name',

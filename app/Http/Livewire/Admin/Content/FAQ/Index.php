@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin\Content\FAQ;
 
+use App\Models\Article;
 use App\Models\FrequentlyAskedQuestion;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
@@ -145,6 +146,11 @@ class Index extends Component
     }
     public function render()
     {
-        return view('livewire.admin.content.f-a-q.index')->layout('layouts.admin');
+        if(!auth()->user()->can('admin_article_index')) {
+            return abort(403);
+        }
+
+        $faqs = FrequentlyAskedQuestion::filter(['search' => $this->search])->orderBy($this->sortColumn, $this->sortDirection)->paginate($this->perPage);
+        return view('livewire.admin.content.f-a-q.index', compact('faqs'))->layout('layouts.admin');
     }
 }
