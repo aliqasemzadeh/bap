@@ -28,6 +28,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['re
 
         Route::any('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
+        Route::any('/notification/view/{notification}', \App\Http\Livewire\App\Notification\View::class)->name('notification.view');
+
 
         Route::group(['prefix' => config('bap.panel-prefix-url')], function() {
             Route::get('/dashboard/index', \App\Http\Livewire\Panel\Dashboard\Index::class)->name('panel.dashboard.index');

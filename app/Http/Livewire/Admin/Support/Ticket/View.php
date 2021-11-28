@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Admin\Support\Ticket;
 use App\Models\Ticket;
 use App\Models\TicketFile;
 use App\Models\TicketReplay;
+use App\Notifications\TicketReplied;
 use Carbon\Carbon;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
@@ -17,6 +18,7 @@ class View extends Component
     public $ticket;
     public $body;
     public $replays;
+    public $next_action;
     public $files = [];
 
     protected $rules = [
@@ -39,6 +41,8 @@ class View extends Component
         $replay->body = $this->body;
         $replay->ip = request()->ip();
         $replay->save();
+
+        $this->ticket->user->notify(new TicketReplied($this->ticket));
 
         foreach ($this->files as $file) {
             $fileRecord = new TicketFile();

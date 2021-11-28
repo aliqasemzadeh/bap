@@ -22,6 +22,7 @@ class CreateArticlesTable extends Migration
             $table->text('description')->nullable();
             $table->longText('body')->nullable();
             $table->string('language')->default('en')->index();
+            $table->boolean('public')->default(true);
             $table->bigInteger('likes')->default(0);
             $table->bigInteger('views')->default(0);
             $table->timestamp('publish_at')->nullable();
