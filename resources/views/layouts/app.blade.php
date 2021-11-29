@@ -20,7 +20,7 @@
     <body class="antialiased">
     <div class="wrapper">
         <header class="navbar navbar-expand-md navbar-dark d-print-none">
-            <div class="{{ config('bap.container', 'container-fluid') }}">
+            <div class="{{ config('bap.container-app', 'container') }}">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -75,7 +75,7 @@
         </header>
         <!-- Page Content -->
         <div class="page-wrapper">
-            <main class="{{ config('bap.container', 'container-fluid') }}">
+            <main class="{{ config('bap.container-app', 'container') }}">
                 @if(isset($pretitle))
                     <div class="page-pretitle">
                         {{ $pretitle }}
@@ -99,7 +99,7 @@
                     {{ $slot }}
                 </div>
             </main>
-            @include('layouts.global.footer')
+            @include('layouts.global.footer', ['container' => config('bap.container-app')])
         </div>
     </div>
 

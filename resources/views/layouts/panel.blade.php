@@ -21,7 +21,7 @@
 <body class="antialiased">
 <div class="wrapper">
     <aside class="navbar navbar-vertical navbar-expand-lg navbar-dark">
-        <div class="{{ config('bap.container', 'container-fluid') }}">
+        <div class="{{ config('bap.container-panel', 'container') }}">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -103,7 +103,7 @@
                 {{ $slot }}
             </div>
         </main>
-        @include('layouts.global.footer')
+        @include('layouts.global.footer', ['container' => config('bap.container-panel')])
     </div>
 </div>
 
