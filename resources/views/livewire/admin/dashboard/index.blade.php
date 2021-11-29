@@ -13,16 +13,17 @@
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="col-auto">
-                            <span class="bg-blue text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/currency-dollar -->
-                              <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M16.7 8a3 3 0 0 0 -2.7 -2h-4a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6h-4a3 3 0 0 1 -2.7 -2"></path><path d="M12 3v3m0 12v3"></path></svg>
+                            <span class="bg-blue text-white avatar">
+
+	                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="15" y1="5" x2="15" y2="7" /><line x1="15" y1="11" x2="15" y2="13" /><line x1="15" y1="17" x2="15" y2="19" /><path d="M5 5h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-3a2 2 0 0 0 0 -4v-3a2 2 0 0 1 2 -2" /></svg>
                             </span>
                         </div>
                         <div class="col">
                             <div class="font-weight-medium">
-                                132 Sales
+                                {{ \App\Models\Ticket::count() }} {{ __('bap.tickets') }}
                             </div>
                             <div class="text-muted">
-                                12 waiting payments
+                                {{ \App\Models\Ticket::whereIn('status', ['new', 'customer'])->count() }} {{ __('bap.unanswered_ticket') }}
                             </div>
                         </div>
                     </div>
@@ -61,10 +62,10 @@
                         </div>
                         <div class="col">
                             <div class="font-weight-medium">
-                                1352 Members
+                                {{ \App\Models\User::count() }} {{ __('bap.users') }}
                             </div>
                             <div class="text-muted">
-                                163 registered today
+                                {{ \App\Models\User::whereDate('created_at', \Carbon\Carbon::today())->count() }} {{ __('bap.today_users') }}
                             </div>
                         </div>
                     </div>

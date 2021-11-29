@@ -67,6 +67,8 @@ return [
     'new_ticket_replied' => 'New Replied Submitted:',
     'next_submit' => 'Submit & Next',
     'created_at' => 'Created At',
+    'unanswered_ticket' => 'Unanswered Tickets',
+    'today_users' => 'Registered Today',
     'permission' => 'Permission',
     'Role' => 'Role',
     'roles_word' => 'Roles',
