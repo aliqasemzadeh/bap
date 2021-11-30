@@ -2,6 +2,7 @@
     <x-slot name="title">
         {{ __('bap.home') }}
     </x-slot>
+
     <div class="row row-cards">
         <div class="col-md-12">
         <div class="card mb-3">
