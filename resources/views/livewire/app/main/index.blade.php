@@ -3,6 +3,22 @@
         {{ __('bap.home') }}
     </x-slot>
 
+    <div class="row row-deck row-cards">
+        <div class="col-lg-6">
+            <div class="row row-cards">
+                <div class="col-12 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Traffic summary</h3>
+                            <livewire:app.main.test-chart />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div class="row row-cards">
         <div class="col-md-12">
         <div class="card mb-3">
