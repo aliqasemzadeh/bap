@@ -16,7 +16,7 @@ class TestChart extends Component
             (new ColumnChartModel())
                 ->setTitle('Expenses by Type')
                 ->addColumn('Food', 75, '#f6ad55')
-                ->addSeriesColumn( 'series-1',  'ggg', 150)
+                ->addColumn('Test', 75, '#f6fd55')
         ;
 
         return view('livewire.app.main.test-chart', ['columnChartModel' => $columnChartModel]);
