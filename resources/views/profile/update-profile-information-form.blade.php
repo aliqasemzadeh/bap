@@ -60,16 +60,6 @@
         @endif
 
         <div class="w-md-75">
-            <div class="mb-3">
-                <x-jet-label for="first_name" value="{{ __('bap.first_name') }}" />
-                <x-jet-input id="first_name" type="text" class="{{ $errors->has('first_name') ? 'is-invalid' : '' }}" wire:model.defer="state.first_name" />
-                <x-jet-input-error for="first_name" />
-            </div>
-            <div class="mb-3">
-                <x-jet-label for="last_name" value="{{ __('bap.last_name') }}" />
-                <x-jet-input id="last_name" type="text" class="{{ $errors->has('last_name') ? 'is-invalid' : '' }}" wire:model.defer="state.last_name" />
-                <x-jet-input-error for="last_name" />
-            </div>
             <!-- Email -->
             <div class="mb-3">
                 <x-jet-label for="email" value="{{ __('Email') }}" />
