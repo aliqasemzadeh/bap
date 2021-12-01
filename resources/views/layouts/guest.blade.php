@@ -18,7 +18,7 @@
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body class="antialiased border-top-wide border-primary d-flex flex-column">
+    <body class="antialiased border-top-wide border-primary d-flex flex-column" x-data="{ darkTheme: $persist(false) }" :class="darkTheme ? '' : 'theme-dark'">
     <div class="page page-center">
         {{ $slot }}
     </div>

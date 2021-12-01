@@ -35,7 +35,7 @@
                             </a>
                         </div>
                         <div class="col text-truncate">
-                            <a href="{{ route('article.view', [$article->id]) }}" class="text-body d-block">{{ $article->title }}</a>
+                            <a href="{{ route('article.view', [$article->id]) }}" class="d-block">{{ $article->title }}</a>
                             <small class="d-block text-muted text-truncate mt-n1">{{ $article->description }}</small>
                         </div>
                     </div>

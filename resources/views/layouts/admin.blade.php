@@ -18,7 +18,7 @@
 
 
 </head>
-<body class="antialiased">
+<body class="antialiased" x-data="{ darkTheme: $persist(false) }" :class="darkTheme ? '' : 'theme-dark'">
 <div class="wrapper">
     <aside class="navbar navbar-vertical navbar-expand-lg navbar-dark">
         <div class="{{ config('bap.container-admin', 'container') }}">

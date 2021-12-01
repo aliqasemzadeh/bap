@@ -21,6 +21,7 @@
         "sass-loader": "^12.1.0"
     },
     "dependencies": {
+        "@alpinejs/persist": "^3.6.1",
         "@tabler/core": "^1.0.0-beta4",
         "chart.js": "^3.6.0",
         "sweetalert2": "^11.1.10"
