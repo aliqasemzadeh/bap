@@ -157,6 +157,7 @@
             <div>
                 <div class="btn-group btn-group-sm w-100">
                     <button type="button" wire:click="deleteSelected" class="btn">{{ __('bap.delete') }} ({{ count($selectedUsers) }})</button>
+                    <button type="button" wire:click="exportSelectedQuery" class="btn">{{ __('bap.export') }} ({{ count($selectedUsers) }})</button>
                 </div>
 
             </div>

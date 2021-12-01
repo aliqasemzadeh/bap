@@ -80,6 +80,7 @@ return [
     'edit_permission' => 'Edit Permission',
     'files' => 'Files',
     'done' => 'Done',
+    'export' => 'Export',
     'attachments' => 'Attachments',
     'please_create_new_ticket' => 'Sorry please create new ticket.',
     'roles' => [

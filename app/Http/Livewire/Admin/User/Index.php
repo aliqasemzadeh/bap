@@ -2,10 +2,12 @@
 
 namespace App\Http\Livewire\Admin\User;
 
+use App\Exports\UsersExport;
 use App\Models\User;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Maatwebsite\Excel\Facades\Excel;
 
 class Index extends Component
 {
@@ -142,6 +144,11 @@ class Index extends Component
             'success',
             __('bap.removed')
         );
+    }
+
+    public function exportSelectedQuery()
+    {
+        return Excel::download(new UsersExport($this->selectedUsers), 'users-'.date('Y-m-d').'.xlsx');
     }
 
     public function render()
