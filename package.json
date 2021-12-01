@@ -22,8 +22,9 @@
     },
     "dependencies": {
         "@alpinejs/persist": "^3.6.1",
+        "@sweetalert2/themes": "^5.0.8",
         "@tabler/core": "^1.0.0-beta4",
         "chart.js": "^3.6.0",
-        "sweetalert2": "^11.1.10"
+        "sweetalert2": "^11.2.1"
     }
 }
