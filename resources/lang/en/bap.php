@@ -34,6 +34,7 @@ return [
     'tickets' => 'Tickets',
     'archive' => 'Archive',
     'support' => 'Support',
+    'account_verify' => 'Account Verify',
     'create_category' => 'Create Category',
     'edit_category' => 'Edit Category',
     'articles' => 'Articles',

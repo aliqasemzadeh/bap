@@ -21,12 +21,14 @@ class CreateUsersTable extends Migration
             $table->string('mobile')->nullable()->unique()->index();
             $table->string('username')->nullable()->unique()->index();
             $table->string('email')->unique();
+            $table->string('national_code')->nullable()->unique()->index();
             $table->timestamp('email_verified_at')->nullable();
             $table->timestamp('mobile_verified_at')->nullable();
             $table->timestamp('verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
+            $table->foreignId('user_verify_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
             $table->longText('note')->nullable();
             $table->timestamps();
