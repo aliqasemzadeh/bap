@@ -48,6 +48,8 @@
 
         <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
             @auth
+                <a href="{{ route('user.verify') }}" class="dropdown-item">{{ __('bap.account_verify') }}</a>
+                <a href="{{ route('user.mobile') }}" class="dropdown-item">{{ __('bap.mobile') }}</a>
                 <a href="{{ route('profile.show') }}" class="dropdown-item">{{ __('bap.profile') }}</a>
                 <div class="dropdown-divider"></div>
                 <a href="{{ route('logout') }}" class="dropdown-item">{{ __('bap.logout') }}</a>

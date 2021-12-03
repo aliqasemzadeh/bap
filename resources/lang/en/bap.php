@@ -35,6 +35,7 @@ return [
     'archive' => 'Archive',
     'support' => 'Support',
     'account_verify' => 'Account Verify',
+    'mobile' => 'Mobile',
     'create_category' => 'Create Category',
     'edit_category' => 'Edit Category',
     'articles' => 'Articles',
