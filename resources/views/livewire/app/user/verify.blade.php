@@ -3,7 +3,7 @@
         {{ __('bap.account_verify') }}
     </x-slot>
     <div class="row row-cards">
-        <div class="col-md-6 col-xl-4">
+        <div class="col-md-6 col-xl-6">
             <form action="https://httpbin.org/post" method="post" class="card">
                 <div class="card-header">
                     <h4 class="card-title">{{ __('bap.id_card') }}</h4>
@@ -32,7 +32,7 @@
                 </div>
             </form>
         </div>
-        <div class="col-md-6 col-xl-4">
+        <div class="col-md-6 col-xl-6">
             <form action="https://httpbin.org/post" method="post" class="card">
                 <div class="card-header">
                     <h4 class="card-title">{{ __('bap.verify_file') }}</h4>
@@ -50,7 +50,7 @@
                                                         <span class="input-group-text">
                                 {{ __('bap.verify_code') }}
                               </span>
-                            <input type="text" value="{{ $verify->random_string }}" class="form-control" placeholder="subdomain" autocomplete="off">
+                            <input type="text" value="{{ $random_string }}" readonly class="form-control" placeholder="subdomain" autocomplete="off">
 
                         </div>
                     </div>
@@ -64,33 +64,51 @@
                 </div>
             </form>
         </div>
-        <div class="col-md-6 col-xl-4">
+        <div class="col-md-6 col-xl-12">
             <form action="https://httpbin.org/post" method="post" class="card">
                 <div class="card-header">
                     <h4 class="card-title">{{ __('bap.personal_information') }}</h4>
                 </div>
                 <div class="card-body">
 
-                        <div class="mb-3">
-                            <label class="form-label">{{ __('bap.first_name') }}</label>
-                            <input type="text" class="form-control" name="example-text-input">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">{{ __('bap.first_name') }}</label>
+                                <input type="text" class="form-control" name="example-text-input">
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label">{{ __('bap.last_name') }}</label>
-                            <input type="text" class="form-control" name="example-text-input">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">{{ __('bap.last_name') }}</label>
+                                <input type="text" class="form-control" name="example-text-input">
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label">{{ __('bap.national_code') }}</label>
-                            <input type="text" class="form-control" name="example-text-input">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">{{ __('bap.national_code') }}</label>
+                                <input type="text" class="form-control" name="example-text-input">
+                            </div>
                         </div>
-                    <div class="mb-3">
-                        <label class="form-label">{{ __('bap.birth_at') }}</label>
-                        <input type="text" class="form-control" name="example-text-input">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">{{ __('bap.birth_at') }}</label>
+                                <input type="text" class="form-control" name="example-text-input">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label">{{ __('bap.phone') }}</label>
+                                <input type="text" class="form-control" name="example-text-input">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6"> </div>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label">{{ __('bap.phone') }}</label>
-                        <input type="text" class="form-control" name="example-text-input">
-                    </div>
+
+
+
+
                 </div>
                 <div class="card-footer">
                         <a href="#" class="btn btn-primary me-auto">{{ _('bap.save') }}</a>

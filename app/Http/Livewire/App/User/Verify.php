@@ -30,10 +30,12 @@ class Verify extends Component
         $this->verify = UserVerify::firstOrCreate([
             'user_id' => Auth::user()->id
         ]);
+
         if($this->verify->status == 'new') {
             $this->verify->random_string = rand(100000, 989898);
             $this->verify->save();
         }
+        $this->random_string = $this->verify->random_string;
     }
 
     public function render()
