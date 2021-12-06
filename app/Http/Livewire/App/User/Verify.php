@@ -10,6 +10,7 @@ use Livewire\WithFileUploads;
 class Verify extends Component
 {
     use WithFileUploads;
+
     public $random_string;
     public $id_card_file;
     public $verify_file;
@@ -27,19 +28,20 @@ class Verify extends Component
 
     public function mount()
     {
-        $this->verify = UserVerify::firstOrCreate([
-            'user_id' => Auth::user()->id
-        ]);
 
-        if($this->verify->status == 'new') {
-            $this->verify->random_string = rand(100000, 989898);
-            $this->verify->save();
-        }
-        $this->random_string = $this->verify->random_string;
     }
 
     public function render()
     {
-        return view('livewire.app.user.verify');
+        $verify = UserVerify::firstOrCreate([
+            'user_id' => Auth::user()->id
+        ]);
+
+        if($verify->status == 'new') {
+            $verify->random_string = rand(100000, 989898);
+            $verify->save();
+        }
+
+        return view('livewire.app.user.verify', ['random_string'=> $verify->random_string, 'verify' => $verify]);
     }
 }

@@ -2,6 +2,8 @@
     <x-slot name="title">
         {{ __('bap.account_verify') }}
     </x-slot>
+
+    {{ $random_string }}
     <div class="row row-cards">
         <div class="col-md-6 col-xl-6">
             <form action="https://httpbin.org/post" method="post" class="card">
@@ -50,7 +52,7 @@
                                                         <span class="input-group-text">
                                 {{ __('bap.verify_code') }}
                               </span>
-                            <input type="text" value="{{ $random_string }}" readonly class="form-control" placeholder="subdomain" autocomplete="off">
+                            <input type="text" wire:model="random_string" value="{{ $random_string }}"  readonly class="form-control" autocomplete="off">
 
                         </div>
                     </div>
@@ -105,9 +107,6 @@
 
                         <div class="col-md-6"> </div>
                     </div>
-
-
-
 
                 </div>
                 <div class="card-footer">
