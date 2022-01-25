@@ -7,6 +7,7 @@
 @import "~@tabler/core/src/scss/layout/navbar";
 @import "~@tabler/core/src/scss/layout/page";
 @import "~@tabler/core/src/scss/layout/footer";
+@import "~@tabler/core/src/scss/layout/dark";
 
 @import "~@tabler/core/src/scss/ui/accordion";
 @import "~@tabler/core/src/scss/ui/alerts";
@@ -42,7 +43,6 @@
 @import "~@tabler/core/src/scss/ui/progress";
 @import "~@tabler/core/src/scss/ui/ribbons";
 @import "~@tabler/core/src/scss/ui/markdown";
-@import "~@tabler/core/src/scss/ui/skeleton";
 @import "~@tabler/core/src/scss/ui/steps";
 @import "~@tabler/core/src/scss/ui/switch-icon";
 @import "~@tabler/core/src/scss/ui/tables";
@@ -50,6 +50,7 @@
 @import "~@tabler/core/src/scss/ui/toolbar";
 @import "~@tabler/core/src/scss/ui/type";
 @import "~@tabler/core/src/scss/ui/charts";
+@import "~@tabler/core/src/scss/ui/offcanvas";
 
 @import "~@tabler/core/src/scss/utils/background";
 @import "~@tabler/core/src/scss/utils/colors";
@@ -59,5 +60,4 @@
 @import "~@tabler/core/src/scss/utils/shadow";
 @import "~@tabler/core/src/scss/utils/text";
 
-@import "~@tabler/core/src/scss/dark";
 @import "~@tabler/core/src/scss/debug";
