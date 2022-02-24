@@ -11,20 +11,19 @@
     },
     "devDependencies": {
         "@popperjs/core": "^2.11.2",
-        "alpinejs": "^3.8.1",
-        "axios": "^0.25.0",
+        "alpinejs": "^3.9.0",
+        "axios": "^0.26.0",
         "bootstrap": "^5.1.3",
-        "laravel-mix": "^6.0.41",
+        "laravel-mix": "^6.0.43",
         "lodash": "^4.17.21",
         "resolve-url-loader": "^5.0.0",
-        "sass": "^1.49.0",
-        "sass-loader": "^12.4.0"
+        "sass": "^1.49.8",
+        "sass-loader": "^12.6.0"
     },
     "dependencies": {
-        "@alpinejs/persist": "^3.8.1",
-        "@sweetalert2/themes": "^5.0.8",
-        "@tabler/core": "^1.0.0-beta6",
-        "chart.js": "^3.7.0",
-        "sweetalert2": "^11.3.6"
+        "@alpinejs/persist": "^3.9.0",
+        "@tabler/core": "^1.0.0-beta8",
+        "chart.js": "^3.7.1",
+        "sweetalert2": "^11.4.4"
     }
 }
