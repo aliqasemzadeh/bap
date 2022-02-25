@@ -100,13 +100,13 @@ html[dir="rtl"] .input-group-flat .form-control:not(:last-child) {
 }
 
 @media (min-width: 992px) {
-    html[dir="rtl"] .navbar-expand-lg.navbar-vertical~.navbar, .navbar-expand-lg.navbar-vertical~.page-wrapper {
+    html[dir="rtl"] .page-wrapper {
         margin-left: 0;
         margin-right: 15rem;
     }
 }
 @media (min-width: 992px) {
-    html[dir="rtl"] .navbar-expand-lg.navbar-vertical~.navbar, .navbar-expand-lg.navbar-vertical~.page-wrapper {
+    html[dir="rtl"] .page-wrapper {
         margin-left: 0;
         margin-right: 15rem;
     }
