@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.0|^8.1",
+        "alighasemzadeh/livewire-bootstrap-modal": "dev-master",
         "arcanedev/log-viewer": "^9.0",
         "asantibanez/livewire-charts": "^2.3",
         "creativeorange/gravatar": "^1.0",
@@ -13,8 +14,8 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "jantinnerezo/livewire-alert": "^2.2",
         "laravel/framework": "^9.0",
-        "laravel/jetstream": "^2.4",
-        "laravel/sanctum": "^2.11",
+        "laravel/jetstream": "^2.6",
+        "laravel/sanctum": "^2.14",
         "laravel/tinker": "^2.5",
         "league/commonmark": "^2.0",
         "livewire/livewire": "^2.5",
