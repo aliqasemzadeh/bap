@@ -1,6 +1,6 @@
 <?php
 return [
-    'direction' => 'rtl',
+    'direction' => 'ltr',
     'home' => 'Home',
     'login' => 'Login',
     'email' => 'Email',
