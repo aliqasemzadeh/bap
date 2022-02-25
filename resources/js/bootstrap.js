@@ -43,4 +43,4 @@ window.Chart = require('chart.js');
 
 window.Swal = require('sweetalert2');
 
-require('../../vendor/bastinald/laravel-livewire-modals/resources/js/modals');
+require('../../vendor/alighasemzadeh/livewire-bootstrap-modal/resources/js/modals');

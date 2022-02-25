@@ -8,7 +8,6 @@
         "php": "^8.0|^8.1",
         "arcanedev/log-viewer": "^9.0",
         "asantibanez/livewire-charts": "^2.3",
-        "bastinald/laravel-livewire-modals": "^3.0",
         "creativeorange/gravatar": "^1.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
