@@ -4,14 +4,14 @@
 > 
 ## 🔌 Requirements
 
-- PHP version: >= 7.4
+- PHP version: >= 8.0
 - Composer
 - Node.js
 
 
 ## 🧰 Built with
 
-- Laravel 8
+- Laravel 9
 - Livewire
 - Bootstrap 5
 - Tabler.io
