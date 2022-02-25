@@ -17,9 +17,12 @@ class View extends Component
     use LivewireAlert;
     public $ticket;
     public $body;
-    public $replays;
     public $next_action;
     public $files = [];
+
+    protected $listeners = [
+        'updateList' => 'render'
+    ];
 
     protected $rules = [
         'body' => 'required|string',
@@ -61,10 +64,10 @@ class View extends Component
         $this->story = true;
         $this->body = null;
         $this->files = [];
-        $this->replays = TicketReplay::with(['user', 'files'])->where('ticket_id', $this->ticket->id)->latest()->get();
+
+        $this->emitTo(\App\Http\Livewire\Admin\Support\Ticket\Index::getName(), 'updateList');
 
         if($this->next_action == 'next') {
-            flash(__('hash.replied'))->info();
             if($next = $this->ticket->next()) {
                 return redirect()->route('admin.support.ticket.view', ['ticket' => $next]);
             } else {
@@ -78,11 +81,11 @@ class View extends Component
     public function mount(Ticket $ticket)
     {
         $this->ticket = $ticket;
-        $this->replays = TicketReplay::with(['user', 'files'])->where('ticket_id', $this->ticket->id)->latest()->get();
     }
 
     public function render()
     {
-        return view('livewire.admin.support.ticket.view')->layout('layouts.admin');
+        $replays = TicketReplay::with(['user', 'files'])->where('ticket_id', $this->ticket->id)->latest()->get();
+        return view('livewire.admin.support.ticket.view', compact('replays'))->layout('layouts.admin');
     }
 }
