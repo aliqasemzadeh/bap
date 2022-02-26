@@ -76,6 +76,7 @@ return [
     'delete' => 'Delete',
     'no_result' => 'No Result',
     'no_notifications' => 'No Notifications.',
+    'unread_notifications' => 'Unread Notifications',
     'new_ticket_replied' => 'New Replied Submitted:',
     'next_submit' => 'Submit & Next',
     'created_at' => 'Created At',

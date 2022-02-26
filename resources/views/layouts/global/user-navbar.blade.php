@@ -20,10 +20,22 @@
                     </div>
                 </div>
             @else
-                <div class="list-group">
-                    @foreach(auth()->user()->unreadNotifications as $notification)
-                    <a href="{{ route('notification.view', [$notification->id]) }}" class="list-group-item list-group-item-action">{{ $notification->data['title'] }}</a>
-                    @endforeach
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">{{ __('bap.unread_notifications') }}</h3>
+                    </div>
+                    <div class="list-group list-group-flush list-group-hoverable">
+                        @foreach(auth()->user()->unreadNotifications as $notification)
+                        <div class="list-group-item">
+                            <div class="row align-items-center">
+                                <div class="col-auto"><span class="status-dot d-block"></span></div>
+                                <div class="col text-truncate">
+                                    <a href="{{ route('notification.view', [$notification->id]) }}" class="text-body d-block">{{ $notification->data['title'] }}</a>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
                 </div>
             @endif
         </div>

@@ -58,7 +58,7 @@ class TicketReplied extends Notification
     public function toArray($notifiable)
     {
         return [
-            'title' => __('bap.new_ticket_replied') . $this->ticket->id,
+            'title' => __('bap.new_ticket_replied') . $this->ticket->title,
             'url' => route('panel.support.ticket.view', [$this->ticket->id]),
         ];
     }
