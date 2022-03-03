@@ -97,6 +97,12 @@
                                                 {{ __('bap.faqs') }}
                                             </a>
                                         @endcan
+
+                                        @can('admin_carousel_index')
+                                            <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('admin.content.carousel.index')) active @endif" href="{{ route('admin.content.carousel.index') }}">
+                                                {{ __('bap.carousels') }}
+                                            </a>
+                                        @endcan
                                 </div>
                             </li>
                         @endcan
