@@ -56,6 +56,7 @@ class Edit extends Component
         $carousel->description = $this->description;
         $carousel->save();
 
+
         $this->emitTo(\App\Http\Livewire\Admin\Content\Carousel\Index::getName(), 'updateList');
         $this->emit('hideModal');
 
