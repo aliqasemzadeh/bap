@@ -8,7 +8,7 @@
         </ol>
     </x-slot>
     <div class="row row-cards">
-        <div class="col-4">
+        <div class="col-md-4">
             <div class="card card-sm">
                 <div class="card-body">
                     <div class="row align-items-center">
@@ -30,7 +30,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-4">
+        <div class="col-md-4">
             <div class="card card-sm">
                 <div class="card-body">
                     <div class="row align-items-center">
@@ -51,7 +51,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-4">
+        <div class="col-md-4">
             <div class="card card-sm">
                 <div class="card-body">
                     <div class="row align-items-center">
