@@ -35,6 +35,6 @@ class Ticket extends Model
     }
 
     public function next(){
-        return UserTicket::whereIn('status', ['new','user'])->where('updated_at', '>', $this->updated_at)->orderBy('updated_at', 'ASC')->first();
+        return UserTicket::whereIn('status', ['new','user'])->orderBy('updated_at', 'ASC')->first();
     }
 }

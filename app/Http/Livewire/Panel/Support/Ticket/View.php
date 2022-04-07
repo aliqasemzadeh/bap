@@ -20,7 +20,7 @@ class View extends Component
     public $files = [];
 
     protected $rules = [
-        'body' => 'required|string|min:20',
+        'body' => 'required|string',
         'files.*' => 'file|max:2048|nullable',
     ];
 

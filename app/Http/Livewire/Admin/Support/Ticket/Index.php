@@ -116,7 +116,7 @@ class Index extends Component
             return abort(403);
         }
 
-        $tickets = Ticket::with(['user', 'category'])->filter(['search' => $this->search])->whereIn('status', ['new', 'customer'])->orderBy($this->sortColumn, $this->sortDirection)->paginate($this->perPage);
+        $tickets = Ticket::with(['user', 'category'])->filter(['search' => $this->search])->whereIn('status', ['new', 'user'])->orderBy($this->sortColumn, $this->sortDirection)->paginate($this->perPage);
         return view('livewire.admin.support.ticket.index', compact('tickets'))->layout('layouts.admin');
     }
 }
