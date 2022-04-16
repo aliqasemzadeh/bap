@@ -65,8 +65,6 @@ class View extends Component
         $this->body = null;
         $this->files = [];
 
-        $this->emitTo(\App\Http\Livewire\Admin\Support\Ticket\Index::getName(), 'updateList');
-
         if($this->next_action == 'next') {
             if($next = $this->ticket->next()) {
                 return redirect()->route('admin.support.ticket.view', ['ticket' => $next]);
@@ -74,6 +72,8 @@ class View extends Component
                 return redirect()->route('admin.support.ticket.index');
             }
         }
+
+        $this->emitTo(\App\Http\Livewire\Admin\Support\Ticket\Index::getName(), 'updateList');
 
         $this->alert('success', __('bap.replied'));
     }

@@ -50,8 +50,8 @@
                 </div>
                 <div class="card-footer text-end">
                     <div class="d-flex">
-                        <button type="submit" class="btn btn-secondary">{{ __('bap.submit') }}</button>
-                        <button type="submit" name="next_action" class="btn btn-primary ms-auto">{{ __('bap.next_submit') }}</button>
+                        <button type="submit" wire:model="next_action" value="index" class="btn btn-secondary">{{ __('bap.submit') }}</button>
+                        <button type="submit" name="next_action" wire:model="next_action" value="next" class="btn btn-primary ms-auto">{{ __('bap.next_submit') }}</button>
                     </div>
                 </div>
             </form>
