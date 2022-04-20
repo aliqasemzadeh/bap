@@ -44,6 +44,15 @@
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
+
+
+                        <div class="mb-3">
+                            <label class="form-label" for="title">{{ __('bap.link') }}</label>
+                            <input type="text" wire:model="link" class="form-control @error('link') is-invalid @enderror" name="link" placeholder="{{ __('bap.link') }}">
+                            @error('link')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
                     </div>
                 </div>
 

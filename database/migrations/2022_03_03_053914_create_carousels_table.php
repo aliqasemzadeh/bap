@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('carousels', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('link')->nullable();
             $table->foreignId('user_id')->index();
             $table->boolean('public')->default(true);
             $table->text('description')->nullable();

@@ -15,6 +15,7 @@ class Edit extends Component
     public $description;
     public $language;
     public $image;
+    public $link;
 
     protected $listeners = [
         'updateList' => 'render'
@@ -27,6 +28,7 @@ class Edit extends Component
         $this->description = $carousel->description;
         $this->title = $carousel->title;
         $this->language = $carousel->language;
+        $this->link = $carousel->link;
     }
 
     public function edit()
@@ -39,6 +41,7 @@ class Edit extends Component
             'title' => ['string', 'required'],
             'language' => 'required',
             'description' => 'nullable',
+            'link' => 'nullable',
             'image' => 'required|image',
         ]);
 
@@ -54,6 +57,7 @@ class Edit extends Component
         $carousel->user_id = auth()->user()->id;
         $carousel->language = $this->language;
         $carousel->description = $this->description;
+        $carousel->link = $this->link;
         $carousel->save();
 
 

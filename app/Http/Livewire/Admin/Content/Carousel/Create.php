@@ -12,6 +12,7 @@ class Create extends Component
     use LivewireAlert;
     use WithFileUploads;
     public $title;
+    public $link;
     public $description;
     public $language;
     public $image;
@@ -30,6 +31,7 @@ class Create extends Component
             'title' => ['string', 'required'],
             'language' => 'required',
             'description' => 'nullable',
+            'link' => 'nullable',
             'image' => 'required|image',
         ]);
 
@@ -37,6 +39,7 @@ class Create extends Component
         $carousel->title = $this->title;
         $carousel->user_id = auth()->user()->id;
         $carousel->language = $this->language;
+        $carousel->link = $this->link;
         $carousel->description = $this->description;
         $carousel->save();
 
