@@ -69,7 +69,7 @@ class Index extends Component
     }
 
 
-    public function confirmedDeleteArticle()
+    public function confirmedDeleteCarousel()
     {
         if(!auth()->user()->can('admin_carousel_delete')) {
             return abort(403);
@@ -82,7 +82,7 @@ class Index extends Component
         );
     }
 
-    public function cancelledDeleteArticle()
+    public function cancelledDeleteCarousel()
     {
         $this->alert(
             'success',
@@ -149,6 +149,7 @@ class Index extends Component
         if(!auth()->user()->can('admin_carousel_index')) {
             return abort(403);
         }
+
         $carousels = Carousel::with(['user'])->filter(['search' => $this->search])->orderBy($this->sortColumn, $this->sortDirection)->paginate($this->perPage);
         return view('livewire.admin.content.carousel.index', compact('carousels'))->layout('layouts.admin');
     }
