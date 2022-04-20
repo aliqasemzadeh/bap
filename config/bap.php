@@ -7,4 +7,10 @@ return [
     'admin-prefix-url' => 'admin',
     'panel-prefix-url' => 'panel',
     'per-page' => 15,
+    'home' => [
+        'display-carousels' => 1,
+        'count-carousels' => 5,
+        'display-articles' => 1,
+        'count-articles' => 5,
+    ]
 ];
