@@ -44,7 +44,6 @@ return [
     'categories' => 'Categories',
     'tickets' => 'Tickets',
     'carousels' => 'Carousels',
-    'archive' => 'Archive',
     'support' => 'Support',
     'account_verify' => 'Account Verify',
     'mobile' => 'Mobile',
@@ -100,6 +99,7 @@ return [
     'export' => 'Export',
     'attachments' => 'Attachments',
     'please_create_new_ticket' => 'Sorry please create new ticket.',
+    'link' => 'Link',
     'roles' => [
         'admin' => 'Admin',
         'support' => 'Support',

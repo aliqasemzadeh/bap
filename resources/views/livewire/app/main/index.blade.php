@@ -14,16 +14,8 @@
                 <div class="card-body">
                     <div id="carousel-captions" class="carousel slide pointer-event" data-bs-ride="carousel">
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" alt="" src="./static/photos/1366fdc9b9b277e4.jpg">
-                                <div class="carousel-caption-background d-none d-md-block"></div>
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h3>Slide label</h3>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                </div>
-                            </div>
                             @foreach($carousels as $carousel)
-                            <div class="carousel-item">
+                            <div class="carousel-item @if($loop->first) active @endif">
                                 <img class="d-block w-100" alt="{{ $carousel->title }}" src="{{ $carousel->getMedia()[0]->getFullUrl() }}">
                                 <div class="carousel-caption-background d-none d-md-block"></div>
                                 <div class="carousel-caption d-none d-md-block">
