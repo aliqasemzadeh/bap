@@ -12,7 +12,7 @@
                     <h3 class="card-title">{{ __('bap.carousels') }}</h3>
                 </div>
                 <div class="card-body">
-                    <div id="carousel-captions" class="carousel slide pointer-event" data-bs-ride="carousel">
+                    <div id="home-carousel" class="carousel slide pointer-event" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             @foreach($carousels as $carousel)
                             <div class="carousel-item @if($loop->first) active @endif">

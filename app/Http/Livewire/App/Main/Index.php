@@ -13,12 +13,12 @@ class Index extends Component
         $displayItems = [];
 
         if(config('bap.home.display-carousels')) {
-            $carousels = Carousel::where('language', app()->getLocale())->orderBy('created_at', 'DESC')->take(config('bap.home.display-carousels'))->get();
+            $carousels = Carousel::where('language', app()->getLocale())->orderBy('created_at', 'DESC')->take(config('bap.home.count-carousels'))->get();
             $displayItems = ['carousels' => $carousels];
         }
 
         if(config('bap.home.display-articles')) {
-            $articles = Article::where('language', app()->getLocale())->orderBy('created_at', 'DESC')->take(config('bap.home.display-articles'))->get();
+            $articles = Article::where('language', app()->getLocale())->orderBy('created_at', 'DESC')->take(config('bap.home.count-articles'))->get();
             $displayItems['articles'] = $articles;
         }
 
