@@ -82,7 +82,7 @@
                 @foreach($roles as $role)
                     <tr>
                         <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select User" value="{{ $role->id }}" name="selectedUsers" wire:model="selectedRoles"></td>
-                        <td>{{ __('bap.roles.'.$role->name) }}</td>
+                        <td>{{ __('roles.'.$role->name) }}</td>
                         <td class="text-end">
                             <button onclick="Livewire.emit('showModal', 'admin.user.role.permissions', '{{ json_encode($role->id) }}')" class="btn btn-warning btn-icon btn-sm">
                                 <!-- Download SVG icon from http://tabler-icons.io/i/lock-access -->
