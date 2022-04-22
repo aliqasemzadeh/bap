@@ -63,6 +63,11 @@
                                 {{ __('bap.users') }}
                             </a>
                             @endcan
+                                @can('admin_user_teams')
+                                    <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('admin.user.team.index')) active @endif" href="{{ route('admin.user.team.index') }}">
+                                        {{ __('bap.teams_word') }}
+                                    </a>
+                                @endcan
                                 @can('admin_user_roles')
                             <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('admin.user.role.index')) active @endif" href="{{ route('admin.user.role.index') }}">
                                 {{ __('bap.roles_word') }}

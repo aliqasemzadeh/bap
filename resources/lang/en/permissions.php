@@ -47,4 +47,9 @@ return [
     'admin_carousel_delete' => 'Delete Carousel',
     'admin_carousel_create' => 'Create Carousel',
 
+    'admin_user_teams' => 'View Team Index',
+    'admin_team_edit' => 'Edit Team',
+    'admin_team_delete' => 'Delete Team',
+    'admin_team_create' => 'Create Team',
+
 ];

@@ -100,6 +100,7 @@ return [
     'attachments' => 'Attachments',
     'please_create_new_ticket' => 'Sorry please create new ticket.',
     'link' => 'Link',
+    'teams_word' => 'Teams',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',
