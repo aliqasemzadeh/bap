@@ -81,7 +81,7 @@
                 @foreach($permissions as $permission)
                     <tr>
                         <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select User" value="{{ $permission->id }}" name="selectedItems" wire:model="selectedItems"></td>
-                        <td>{{ __('bap.permissions.'.$permission->name) }}</td>
+                        <td>{{ __('permissions.'.$permission->name) }}</td>
                         <td class="text-end">
                             <button onclick="Livewire.emit('showModal', 'admin.user.permission.edit', '{{ json_encode($permission->id) }}')" class="btn btn-primary btn-icon btn-sm">
                                 <!-- Download SVG icon from http://tabler-icons.io/i/edit -->
