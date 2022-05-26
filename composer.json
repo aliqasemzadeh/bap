@@ -9,6 +9,7 @@
         "alighasemzadeh/livewire-bootstrap-modal": "dev-master",
         "arcanedev/log-viewer": "^9.0",
         "creativeorange/gravatar": "^1.0",
+        "cybercog/laravel-ban": "^4.7",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.2",
         "jantinnerezo/livewire-alert": "^2.2",
