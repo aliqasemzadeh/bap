@@ -6,6 +6,7 @@ return [
     'admin_user_index' => 'View User Index',
     'admin_user_edit' => 'Edit User',
     'admin_user_delete' => 'Delete User',
+    'admin_user_ban' => 'Ban User',
     'admin_user_create' => 'Create User',
     'admin_user_roles' => 'Access User Roles',
     'admin_user_permissions' => 'Access User Permissions',

@@ -101,6 +101,12 @@ return [
     'please_create_new_ticket' => 'Sorry please create new ticket.',
     'link' => 'Link',
     'teams_word' => 'Teams',
+    'ban' => 'Ban',
+    'unban' => 'Unban',
+    'comment' => 'Comment',
+    'permanent' => 'Permanent',
+    'banned' => 'Banned.',
+    'unbanned' => 'Unbanned.',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',
