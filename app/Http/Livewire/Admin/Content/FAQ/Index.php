@@ -133,7 +133,7 @@ class Index extends Component
         if(!auth()->user()->can('admin_user_delete')) {
             return abort(403);
         }
-        Article::query()
+        FrequentlyAskedQuestion::query()
             ->whereIn('id', $this->selectedItems)
             ->delete();
         $this->selectedItems = [];
