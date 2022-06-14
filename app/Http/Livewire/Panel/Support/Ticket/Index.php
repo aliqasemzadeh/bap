@@ -34,10 +34,6 @@ class Index extends Component
 
     public function mount()
     {
-        if(!auth()->user()->can('admin_ticket_index')) {
-            return abort(403);
-        }
-
         $this->search = request()->query('search', $this->search);
     }
 
@@ -54,7 +50,7 @@ class Index extends Component
     public function updatedSelectAll($value)
     {
         if($value) {
-            $this->selectedItems = Ticket::pluck('id')->toArray();
+            $this->selectedItems = Ticket::pluck('id')->where('user_id', auth()->user()->id)->toArray();
         } else {
             $this->selectedItems = [];
         }
@@ -70,9 +66,6 @@ class Index extends Component
 
     public function archiveSelected()
     {
-        if(!auth()->user()->can('admin_user_delete')) {
-            return abort(403);
-        }
         $this->confirm(__('bap.are_you_sure'), [
             'toast' => false,
             'position' => 'center',
@@ -85,10 +78,8 @@ class Index extends Component
 
     public function deleteSelectedQuery()
     {
-        if(!auth()->user()->can('admin_user_delete')) {
-            return abort(403);
-        }
         Ticket::query()
+            ->where('user_id', auth()->user()->id)
             ->whereIn('id', $this->selectedItems)
             ->delete();
         $this->selectedItems = [];
