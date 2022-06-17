@@ -65,7 +65,7 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
                         <h4 class="card-title">
-                            {{ $replay->user->name }}
+                            {{ $replay->user->name }} -  {{ $replay->user->email }}
                         </h4>
                         <span>{{ $replay->created_at }}</span>
                     </div>
