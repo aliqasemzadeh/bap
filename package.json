@@ -13,7 +13,7 @@
         "@popperjs/core": "^2.11.6",
         "alpinejs": "^3.10.2",
         "axios": "^0.27.2",
-        "bootstrap": "^5.2.0",
+        "bootstrap": "^5.2.1",
         "laravel-mix": "^6.0.43",
         "lodash": "^4.17.21",
         "resolve-url-loader": "^5.0.0",
@@ -22,7 +22,7 @@
     },
     "dependencies": {
         "@alpinejs/persist": "^3.10.2",
-        "@tabler/core": "^1.0.0-beta11",
+        "@tabler/core": "^1.0.0-beta12",
         "chart.js": "^3.7.1",
         "sweetalert2": "^11.4.29"
     }
