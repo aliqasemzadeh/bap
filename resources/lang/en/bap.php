@@ -112,6 +112,7 @@ return [
     'public_team' => 'Public Team',
     'personal_team' => 'Personal Team',
     'personal' => 'Personal Team',
+    'edit_team' => 'Edit Team',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',
