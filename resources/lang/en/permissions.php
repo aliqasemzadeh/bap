@@ -52,5 +52,6 @@ return [
     'admin_team_edit' => 'Edit Team',
     'admin_team_delete' => 'Delete Team',
     'admin_team_create' => 'Create Team',
+    'admin_team_users' => 'Manage Team Users',
 
 ];

@@ -2,7 +2,9 @@
 
 namespace App\Http\Livewire\Admin\User\Team;
 
+use App\Models\Article;
 use App\Models\Team;
+use App\Models\User;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -52,14 +54,46 @@ class Index extends Component
         }
     }
 
-    public function exportSelectedQuery()
-    {
-
-    }
-
     public function deleteSelected()
     {
+        if(!auth()->user()->can('admin_team_delete')) {
+            return abort(403);
+        }
+        $this->confirm(__('bap.are_you_sure'), [
+            'toast' => false,
+            'position' => 'center',
+            'showConfirmButton' => true,
+            'cancelButtonText' => __('bap.cancel'),
+            'onConfirmed' => 'deleteSelectedQuery',
+            'onCancelled' => 'cancelledDelete'
+        ]);
+    }
 
+    public function deleteSelectedQuery()
+    {
+        if(!auth()->user()->can('admin_team_delete')) {
+            return abort(403);
+        }
+
+        Team::query()
+            ->whereIn('id', $this->selectedItems)
+            ->delete();
+        $this->selectedItems = [];
+        $this->selectAll = false;
+
+        $this->alert(
+            'success',
+            __('bap.removed')
+        );
+    }
+
+    public function updatedSelectAll($value)
+    {
+        if($value) {
+            $this->selectedItems = Team::pluck('id')->toArray();
+        } else {
+            $this->selectedItems = [];
+        }
     }
 
     public function delete(Team $team)
@@ -100,15 +134,6 @@ class Index extends Component
             'success',
             __('bap.cancelled')
         );
-    }
-
-    public function updatedSelectAll($value)
-    {
-        if($value) {
-            $this->selectedRoles = Team::pluck('id')->toArray();
-        } else {
-            $this->selectedRoles = [];
-        }
     }
 
     public function render()

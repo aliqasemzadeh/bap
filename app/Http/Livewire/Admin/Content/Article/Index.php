@@ -102,7 +102,6 @@ class Index extends Component
         } else {
             $this->selectedItems = [];
         }
-
     }
 
     public function updatedSelectedItems($value)
