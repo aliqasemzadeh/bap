@@ -13,4 +13,9 @@ class Team extends \Laravel\Jetstream\Team
     {
         return $this->belongsTo(User::class);
     }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'team_user', 'user_id');
+    }
 }
