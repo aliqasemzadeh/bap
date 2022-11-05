@@ -110,7 +110,7 @@
 
                 </div>
                 <div class="card-footer">
-                        <a href="#" class="btn btn-primary me-auto">{{ _('bap.save') }}</a>
+                        <a href="#" class="btn btn-primary me-auto">{{ __('bap.save') }}</a>
                 </div>
             </form>
         </div>
