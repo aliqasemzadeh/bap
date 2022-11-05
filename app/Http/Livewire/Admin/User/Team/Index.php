@@ -103,8 +103,8 @@ class Index extends Component
             return abort(403);
         }
 
-        $teams = \Laravel\Jetstream\Team::where('name', 'LIKE', '%' . $this->search . '%')->orderBy($this->sortColumn, $this->sortDirection)->paginate($this->perPage);
+        $teams = \App\Models\Team::where('name', 'LIKE', '%' . $this->search . '%')->orderBy($this->sortColumn, $this->sortDirection)->paginate($this->perPage);
 
-        return view('livewire.admin.user.team.index', compact('teams'));
+        return view('livewire.admin.user.team.index', compact('teams'))->layout('layouts.admin');
     }
 }
