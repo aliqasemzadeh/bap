@@ -8,6 +8,6 @@ class Mobile extends Component
 {
     public function render()
     {
-        return view('livewire.panel.user.mobile');
+        return view('livewire.panel.user.mobile')->layout('layouts.panel');
     }
 }

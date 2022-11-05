@@ -28,7 +28,15 @@ class Verify extends Component
 
     public function mount()
     {
-
+        if($verify = UserVerify::where('user_id', auth()->user()->id)->first()) {
+            $this->verify = $verify;
+        } else {
+            $verify = new UserVerify();
+            $verify->random_string = rand(101010, 909090);
+            $verify->user_id = auth()->user()->id;
+            $verify->status = 'start';
+            $verify->save();
+        }
     }
 
     public function render()
@@ -42,6 +50,6 @@ class Verify extends Component
             $verify->save();
         }
 
-        return view('livewire.panel.user.verify', ['random_string'=> $verify->random_string, 'verify' => $verify]);
+        return view('livewire.panel.user.verify', ['random_string'=> $verify->random_string, 'verify' => $verify])->layout('layouts.panel');
     }
 }
