@@ -22,7 +22,7 @@
     },
     "dependencies": {
         "@alpinejs/persist": "^3.10.2",
-        "@tabler/core": "^1.0.0-beta12",
+        "@tabler/core": "^1.0.0-beta15",
         "chart.js": "^3.7.1",
         "sweetalert2": "^11.4.29"
     }
