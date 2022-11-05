@@ -108,6 +108,10 @@ return [
     'banned' => 'Banned.',
     'unbanned' => 'Unbanned.',
     'create_team' => 'Create Team',
+    'user_selected' => 'User Selected.',
+    'public_team' => 'Public Team',
+    'personal_team' => 'Personal Team',
+    'personal' => 'Personal Team',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',

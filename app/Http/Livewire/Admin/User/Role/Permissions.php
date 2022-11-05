@@ -98,7 +98,6 @@ class Permissions extends Component
             $permissions = Permission::where('name', 'like', '%'.$this->search.'%')->get();
         } else {
             $permissions = Permission::all();
-
         }
 
         return view('livewire.admin.user.role.permissions', compact('permissions'));
