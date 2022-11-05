@@ -107,6 +107,7 @@ return [
     'permanent' => 'Permanent',
     'banned' => 'Banned.',
     'unbanned' => 'Unbanned.',
+    'create_team' => 'Create Team',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',
