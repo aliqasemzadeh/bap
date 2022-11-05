@@ -28,8 +28,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['re
 
         Route::any('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
-        Route::get('/user/verify', \App\Http\Livewire\App\User\Verify::class)->name('user.verify');
-        Route::get('/user/mobile', \App\Http\Livewire\App\User\Mobile::class)->name('user.mobile');
+        Route::get('/user/verify', \App\Http\Livewire\Panel\User\Verify::class)->name('user.verify');
+        Route::get('/user/mobile', \App\Http\Livewire\Panel\User\Mobile::class)->name('user.mobile');
 
         Route::any('/notification/view/{notification}', \App\Http\Livewire\App\Notification\View::class)->name('notification.view');
         Route::any('/faqs/index', \App\Http\Livewire\App\FAQ\Index::class)->name('faqs.index');

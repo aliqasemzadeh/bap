@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\App\User;
+namespace App\Http\Livewire\Panel\User;
 
 use App\Models\UserVerify;
 use Illuminate\Support\Facades\Auth;
@@ -42,6 +42,6 @@ class Verify extends Component
             $verify->save();
         }
 
-        return view('livewire.app.user.verify', ['random_string'=> $verify->random_string, 'verify' => $verify]);
+        return view('livewire.panel.user.verify', ['random_string'=> $verify->random_string, 'verify' => $verify]);
     }
 }

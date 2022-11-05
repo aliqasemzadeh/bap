@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\App\User;
+namespace App\Http\Livewire\Panel\User;
 
 use Livewire\Component;
 
@@ -8,6 +8,6 @@ class Mobile extends Component
 {
     public function render()
     {
-        return view('livewire.app.user.mobile');
+        return view('livewire.panel.user.mobile');
     }
 }
