@@ -2,15 +2,18 @@
 
 namespace App\Http\Livewire\Admin\User\Team;
 
+use App\Models\Team;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithPagination;
-use Spatie\Permission\Models\Role;
 
 class Index extends Component
 {
     use WithPagination;
     use LivewireAlert;
+
+    public $selectedItems = [];
+    public $selectAll = false;
 
     public $search;
     public $team;
@@ -49,7 +52,17 @@ class Index extends Component
         }
     }
 
-    public function delete(Role $role)
+    public function exportSelectedQuery()
+    {
+
+    }
+
+    public function deleteSelected()
+    {
+
+    }
+
+    public function delete(Team $team)
     {
         if(!auth()->user()->can('admin_team_delete')) {
             return abort(403);
@@ -63,7 +76,8 @@ class Index extends Component
             'onConfirmed' => 'confirmedDelete',
             'onCancelled' => 'cancelledDelete'
         ]);
-        $this->role = $role;
+
+        $this->team = $team;
     }
 
     public function confirmedDelete()
@@ -72,7 +86,7 @@ class Index extends Component
             return abort(403);
         }
 
-        $this->role->delete();
+        $this->team->delete();
         $this->emit('updateList');
         $this->alert(
             'success',
