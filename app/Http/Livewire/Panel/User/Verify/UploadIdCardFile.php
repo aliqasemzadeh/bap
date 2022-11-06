@@ -3,9 +3,11 @@
 namespace App\Http\Livewire\Panel\User\Verify;
 
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class UploadIdCardFile extends Component
 {
+    use WithFileUploads;
     public $random_string;
     public function mount($random_string)
     {
