@@ -11,6 +11,7 @@ class UploadVerifyFile extends Component
     {
         $this->random_string = $random_string;
     }
+
     public function render()
     {
         return view('livewire.panel.user.verify.upload-verify-file');

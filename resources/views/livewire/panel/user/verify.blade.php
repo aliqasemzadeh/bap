@@ -5,8 +5,8 @@
 
     {{ $random_string }}
     <div class="row row-cards">
-        <livewire:panel.user.verify.upload-id-card-file  />
-        <livewire:panel.user.verify.upload-verify-file />
+        <livewire:panel.user.verify.upload-id-card-file :random_string="$random_string"  />
+        <livewire:panel.user.verify.upload-verify-file :random_string="$random_string" />
         <div class="col-md-6 col-xl-12">
             <form action="https://httpbin.org/post" method="post" class="card">
                 <div class="card-header">
