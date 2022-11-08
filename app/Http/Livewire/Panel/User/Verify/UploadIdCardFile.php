@@ -9,6 +9,7 @@ class UploadIdCardFile extends Component
 {
     use WithFileUploads;
     public $random_string;
+    public $id_card_file;
     public function mount($random_string)
     {
         $this->random_string = $random_string;
