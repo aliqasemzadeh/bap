@@ -17,7 +17,7 @@ class UploadIdCardFile extends Component
 
     public function upload()
     {
-
+        $this->validate(['id_card_file' => 'required|image']);
     }
 
     public function render()
