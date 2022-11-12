@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Panel\User\Verify;
 
+use App\Models\UserVerify;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -10,16 +11,20 @@ class UploadVerifyFile extends Component
 {
     use WithFileUploads;
     use LivewireAlert;
+    public $verify;
     public $random_string;
     public $verify_file;
-    public function mount($random_string)
+    public function mount(UserVerify $verify)
     {
-        $this->random_string = $random_string;
+        $this->verify = $verify;
+        $this->random_string = $verify->random_string;
     }
 
     public function upload()
     {
         $this->validate(['id_card_file' => 'required|image']);
+
+        $this->alert('success', __('bap.uploaded'));
     }
 
     public function render()
