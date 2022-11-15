@@ -24,6 +24,7 @@ class UploadIdCardFile extends Component
     {
         $this->validate(['id_card_file' => 'required|image']);
 
+        $this->id_card_file->store('id_card_files');
 
         $this->alert('success', __('bap.uploaded'));
     }

@@ -22,7 +22,9 @@ class UploadVerifyFile extends Component
 
     public function upload()
     {
-        $this->validate(['id_card_file' => 'required|image']);
+        $this->validate(['verify_file' => 'required|image']);
+
+        $this->verify->store('verify_files');
 
         $this->alert('success', __('bap.uploaded'));
     }
