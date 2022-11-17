@@ -24,7 +24,7 @@ class UploadVerifyFile extends Component
     {
         $this->validate(['verify_file' => 'required|image']);
 
-        $this->verify->store('verify_files');
+        $this->verify_file->store('verify_files');
 
         $this->alert('success', __('bap.uploaded'));
     }
