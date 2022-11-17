@@ -1,5 +1,5 @@
 <div class="col-md-6 col-xl-6">
-    <form action="https://httpbin.org/post" method="post" class="card">
+    <form wire:submit.prevent="upload" class="card">
         <div class="card-header">
             <h4 class="card-title">{{ __('bap.verify_file') }}</h4>
         </div>
@@ -23,10 +23,7 @@
         </div>
         <div class="card-img-bottom img-responsive img-responsive-16by9" style="background-image: url('{{ asset('images/selfie.png') }}')"></div>
         <div class="card-footer">
-
-            <a href="#" class="btn btn-primary">{{ __('bap.save') }}</a>
-
-
+            <button type="submit" class="btn btn-primary">{{ __('bap.upload') }}<button>
         </div>
     </form>
 </div>
