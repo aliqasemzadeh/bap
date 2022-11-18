@@ -8,7 +8,7 @@
         <livewire:panel.user.verify.upload-id-card-file :random_string="$random_string"  />
         <livewire:panel.user.verify.upload-verify-file :random_string="$random_string" />
         <div class="col-md-6 col-xl-12">
-            <form action="https://httpbin.org/post" method="post" class="card">
+            <form  wire:submit.prevent="verify_request" class="card">
                 <div class="card-header">
                     <h4 class="card-title">{{ __('bap.personal_information') }}</h4>
                 </div>

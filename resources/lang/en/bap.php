@@ -114,6 +114,7 @@ return [
     'personal' => 'Personal Team',
     'edit_team' => 'Edit Team',
     'uploaded' => 'Uploaded',
+    'request_sent' => 'Request sent.',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',

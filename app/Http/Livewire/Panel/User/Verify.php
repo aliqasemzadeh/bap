@@ -4,12 +4,14 @@ namespace App\Http\Livewire\Panel\User;
 
 use App\Models\UserVerify;
 use Illuminate\Support\Facades\Auth;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
 class Verify extends Component
 {
     use WithFileUploads;
+    use LivewireAlert;
 
     public $random_string;
     public $id_card_file;
@@ -25,6 +27,13 @@ class Verify extends Component
     public $address;
 
     public $verify;
+
+    public function verify_request()
+    {
+        $this->validate(['verify_file' => 'required|image']);
+
+        $this->alert('success', __('bap.request_sent'));
+    }
 
     public function mount()
     {
