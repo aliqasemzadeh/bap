@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Cog\Laravel\Ban\Traits\Bannable;
 use EloquentFilter\Filterable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -17,6 +18,7 @@ use Yadahan\AuthenticationLog\AuthenticationLogable;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
+    use Bannable;
     use HasApiTokens;
     use HasFactory;
     use HasProfilePhoto;
