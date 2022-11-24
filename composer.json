@@ -6,7 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.0|^8.1",
-        "alighasemzadeh/livewire-bootstrap-modal": "dev-master",
+        "aliqasemzadeh/livewire-bootstrap-modal": "dev-master",
         "arcanedev/log-viewer": "^9.0",
         "creativeorange/gravatar": "^1.0",
         "cybercog/laravel-ban": "^4.7",
