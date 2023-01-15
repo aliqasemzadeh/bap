@@ -21,7 +21,7 @@
 
 ## 🧾 Installation
 
-1. `git clone https://github.com/alighasemzadeh/bap BaseAdminPanel`
+1. `git clone https://github.com/aliqasemzadeh/bap BaseAdminPanel`
 2. `cd BaseAdminPanel`
 3. Install dependencies:
 
