@@ -11,7 +11,7 @@
 
 ## 🧰 Built with
 
-- Laravel 9
+- Laravel 10
 - Livewire
 - Bootstrap 5
 - Tabler.io
