@@ -1,4 +1,4 @@
-✔️ Base Admin Panel
+✔️ Bootstrap Admin Panel
 ======================
 >  Easy way to create Admin Panel.
 > 
@@ -36,3 +36,8 @@
 8. Build frontend with `npm run production` for production.
 9. Run your server `php artisan serve`.
 10. Username:info@bap.local/Password:P@ssw0rd321
+
+
+
+Note:
+I decide to change BAP to Bootstrap Admin Panel because is much better.
