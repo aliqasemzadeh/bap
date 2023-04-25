@@ -1,32 +1,10 @@
-window._ = require('lodash');
+import '@popperjs/core';
+import * as bootstrap from 'bootstrap';
 
-/**
- * We'll load jQuery and the Bootstrap jQuery plugin which provides support
- * for JavaScript based Bootstrap features such as modals and tabs. This
- * code may be modified to fit the specific needs of your application.
- */
-
-import '@popperjs/core'
-
-const bootstrap = require('bootstrap')
-
-window.bootstrap = bootstrap;
-
-/**
- * We'll load the axios HTTP library which allows us to easily issue requests
- * to our Laravel back-end. This library automatically handles sending the
- * CSRF token as a header based on the value of the "XSRF" token cookie.
- */
-
-window.axios = require('axios');
+import axios from 'axios';
+window.axios = axios;
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-
-/**
- * Echo exposes an expressive API for subscribing to channels and listening
- * for events that are broadcast by Laravel. Echo and event broadcasting
- * allows your team to easily build robust real-time web applications.
- */
 
 // import Echo from 'laravel-echo';
 
@@ -39,9 +17,11 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     forceTLS: true
 // });
 
-window.Chart = require('chart.js');
+import Chart from 'chart.js/auto';
 
-window.Swal = require('sweetalert2');
+import Swal from 'sweetalert2';
+
+import '../../vendor/aliqasemzadeh/livewire-bootstrap-modal/resources/js/modals';
 
 
-require('../../vendor/aliqasemzadeh/livewire-bootstrap-modal/resources/js/modals');
+import '../scss/app.scss';

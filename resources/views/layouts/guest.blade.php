@@ -12,11 +12,12 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
         <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}" defer></script>
+        @vite(['resources/scss/app.scss', 'resources/js/app.js'])
+
+        <!-- Styles -->
+        @livewireStyles
+
     </head>
     <body class="border-top-wide border-primary d-flex flex-column" x-data="{ darkTheme: $persist(false) }" :class="darkTheme ? '' : 'theme-dark'">
     <div class="page page-center">

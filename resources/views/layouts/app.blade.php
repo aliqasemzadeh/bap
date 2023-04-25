@@ -8,12 +8,14 @@
         <title>@if(isset($title)){{ $title }} - @endif{{ config('bap.name', 'BAP') }}</title>
 
         @include('layouts.global.favicon')
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <!-- Scripts -->
+        @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 
+        <!-- Styles -->
         @livewireStyles
 
     </head>

@@ -1,29 +1,24 @@
 {
     "private": true,
     "scripts": {
-        "dev": "npm run development",
-        "development": "mix",
-        "watch": "mix watch",
-        "watch-poll": "mix watch -- --watch-options-poll=1000",
-        "hot": "mix watch --hot",
-        "prod": "npm run production",
-        "production": "mix --production"
+        "start": "vite",
+        "dev": "vite",
+        "build": "vite build"
     },
     "devDependencies": {
-        "@popperjs/core": "^2.11.6",
+        "@popperjs/core": "^2.11.7",
         "alpinejs": "^3.10.2",
         "axios": "^0.27.2",
-        "bootstrap": "^5.2.1",
+        "bootstrap": "^5.2.3",
         "laravel-mix": "^6.0.43",
-        "lodash": "^4.17.21",
-        "resolve-url-loader": "^5.0.0",
-        "sass": "^1.54.5",
-        "sass-loader": "^13.0.2"
+        "vite": "^4.3.1"
     },
     "dependencies": {
         "@alpinejs/persist": "^3.10.2",
         "@tabler/core": "^1.0.0-beta17",
         "chart.js": "^3.7.1",
-        "sweetalert2": "^11.4.29"
+        "laravel-vite-plugin": "^0.7.4",
+        "sweetalert2": "^11.4.29",
+        "vite-plugin-static-copy": "^0.14.0"
     }
 }

@@ -17,12 +17,13 @@
 - Tabler.io
 - SweetAlert2
 - spatie/laravel-permission
+- Vite Build Tools
 
 
 ## 🧾 Installation
 
-1. `git clone https://github.com/aliqasemzadeh/bap BaseAdminPanel`
-2. `cd BaseAdminPanel`
+1. `git clone https://github.com/aliqasemzadeh/bap BoostrapAdminPanel`
+2. `cd BoostrapAdminPanel`
 3. Install dependencies:
 
    `composer install`
@@ -40,4 +41,4 @@
 
 
 Note:
-I decide to change BAP to Bootstrap Admin Panel because is much better.
+I decide to change Base Admin Panel to Bootstrap Admin Panel because is much better.
