@@ -1,6 +1,4 @@
 import '@popperjs/core';
-import * as bootstrap from 'bootstrap';
-
 import axios from 'axios';
 window.axios = axios;
 
@@ -20,6 +18,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 import Chart from 'chart.js/auto';
 
 import Swal from 'sweetalert2';
+
+import '@tabler/core';
 
 import '../../vendor/aliqasemzadeh/livewire-bootstrap-modal/resources/js/modals';
 
