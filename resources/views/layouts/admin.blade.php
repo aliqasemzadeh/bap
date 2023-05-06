@@ -129,6 +129,11 @@
                                             {{ __('bap.categories') }}
                                         </a>
                                     @endcan
+                                        @can('admin_manage_index')
+                                            <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('admin.setting.manage.index')) active @endif" href="{{ route('admin.setting.manage.index') }}">
+                                                {{ __('bap.manage') }}
+                                            </a>
+                                        @endcan
                                 </div>
                             </li>
                         @endcan

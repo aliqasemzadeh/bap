@@ -115,6 +115,8 @@ return [
     'edit_team' => 'Edit Team',
     'uploaded' => 'Uploaded',
     'request_sent' => 'Request sent.',
+    'system_turned_on' => 'System turned on.',
+    'system_turned_off' => 'System turned off.',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',

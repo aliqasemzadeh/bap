@@ -27,6 +27,8 @@ return [
     'admin_category_delete' => 'Delete Category',
     'admin_category_create' => 'Create Category',
 
+    'admin_manage_index' => 'View Manage Index',
+
     'admin_content_management' => 'View Content Management',
     'admin_article_index' => 'View Article Index',
     'admin_article_edit' => 'Edit Article',
