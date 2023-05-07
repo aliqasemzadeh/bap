@@ -138,6 +138,8 @@
                             </li>
                         @endcan
 
+                        @includeIf('layouts.custom.admin')
+
                         @can('admin_support_management')
                             <li class="nav-item dropdown @if(\Illuminate\Support\Facades\Route::is('admin.support.*')) show @endif">
                                 <a class="nav-link dropdown-toggle" href="#navbar-user" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="true">
