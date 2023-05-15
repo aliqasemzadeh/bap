@@ -15,7 +15,7 @@
     },
     "dependencies": {
         "@alpinejs/persist": "^3.10.2",
-        "@tabler/core": "^1.0.0-beta18",
+        "@tabler/core": "^1.0.0-beta19",
         "chart.js": "^3.7.1",
         "laravel-vite-plugin": "^0.7.4",
         "sweetalert2": "^11.4.29",
