@@ -15,6 +15,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     forceTLS: true
 // });
 
+import 'bootstrap/dist/js/bootstrap';
+
 import Chart from 'chart.js/auto';
 
 import Swal from 'sweetalert2';

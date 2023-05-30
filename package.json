@@ -10,6 +10,7 @@
         "alpinejs": "^3.12.1",
         "axios": "^1.4.0",
         "bootstrap": "^5.3.0-alpha3",
+        "sass": "^1.62.1",
         "vite": "^4.3.9"
     },
     "dependencies": {
