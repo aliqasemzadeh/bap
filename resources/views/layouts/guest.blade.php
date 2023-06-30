@@ -9,8 +9,8 @@
 
         @include('layouts.global.favicon')
 
-        <!-- Vite Styles -->
-        @vite(['resources/scss/app.scss'])
+        <!-- Styles -->
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
         <!-- Styles -->
         @livewireStyles
