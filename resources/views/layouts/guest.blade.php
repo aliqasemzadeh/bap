@@ -16,7 +16,7 @@
         @livewireStyles
 
     </head>
-    <body class="border-top-wide border-primary d-flex flex-column" x-data="{ darkTheme: $persist(false) }" :class="darkTheme ? '' : 'theme-dark'">
+    <body class="border-top-wide border-primary d-flex flex-column" x-data="{ darkTheme: $persist(false) }" :data-bs-theme="darkTheme ? '' : 'dark'">
     <div class="page page-center">
         {{ $slot }}
     </div>
