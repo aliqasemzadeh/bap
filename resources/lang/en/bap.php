@@ -113,10 +113,11 @@ return [
     'personal_team' => 'Personal Team',
     'personal' => 'Personal Team',
     'edit_team' => 'Edit Team',
-    'uploaded' => 'Uploaded',
+    'uploaded' => 'Uploaded.',
     'request_sent' => 'Request sent.',
     'system_turned_on' => 'System turned on.',
     'system_turned_off' => 'System turned off.',
+    'upload' => 'Upload',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',

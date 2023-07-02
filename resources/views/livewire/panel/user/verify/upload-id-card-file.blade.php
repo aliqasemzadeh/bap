@@ -21,8 +21,8 @@
             </div>
             <div class="card-img-bottom img-responsive img-responsive-16by9" style="background-image: url('{{ asset('images/id-card.png') }}')"></div>
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary">{{ __('bap.upload') }}<button>
+                <button type="submit" class="btn btn-primary">{{ __('bap.upload') }}</button>
             </div>
         </form>
-    </div>
+</div>
 
