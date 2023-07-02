@@ -3,10 +3,9 @@
         {{ __('bap.account_verify') }}
     </x-slot>
 
-    {{ $random_string }}
     <div class="row row-cards">
-        <livewire:panel.user.verify.upload-id-card-file :random_string="$random_string"  />
-        <livewire:panel.user.verify.upload-verify-file :random_string="$random_string" />
+        <livewire:panel.user.verify.upload-id-card-file :verify="$verify"  />
+        <livewire:panel.user.verify.upload-verify-file :verify="$verify" />
         <div class="col-md-6 col-xl-12">
             <form  wire:submit.prevent="verify_request" class="card">
                 <div class="card-header">
@@ -39,14 +38,6 @@
                                 <input type="text" class="form-control" name="example-text-input">
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label class="form-label">{{ __('bap.phone') }}</label>
-                                <input type="text" class="form-control" name="example-text-input">
-                            </div>
-                        </div>
-
-                        <div class="col-md-6"> </div>
                     </div>
 
                 </div>

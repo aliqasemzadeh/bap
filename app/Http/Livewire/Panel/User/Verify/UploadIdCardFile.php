@@ -3,6 +3,8 @@
 namespace App\Http\Livewire\Panel\User\Verify;
 
 use App\Models\UserVerify;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -24,9 +26,18 @@ class UploadIdCardFile extends Component
     {
         $this->validate(['id_card_file' => 'required|image']);
 
-        $this->id_card_file->store('id_card_files');
+        $this->verify->id_card_file = $this->id_card_file->store('id_card_files');
+        $this->verify->save();
 
         $this->alert('success', __('bap.uploaded'));
+    }
+
+    public function displayIdCardFile(UserVerify $verify)
+    {
+        if(Auth::user()->id == $verify->user_id) {
+            return Storage::download($verify->id_card_file);
+        }
+        abort('404');
     }
 
     public function render()

@@ -19,8 +19,13 @@
                     </div>
                 </div>
             </div>
-            <div class="card-img-bottom img-responsive img-responsive-16by9" style="background-image: url('{{ asset('images/id-card.png') }}')"></div>
-            <div class="card-footer">
+            @if($verify->id_card_file)
+                <div class="card-img-bottom img-responsive img-responsive-16by9" style="background-image: url('{{ route('user.verify.id_card_file', [$verify->id]) }}')"></div>
+            @else
+                <div class="card-img-bottom img-responsive img-responsive-16by9" style="background-image: url('{{ asset('images/id-card.png') }}')"></div>
+            @endif
+
+                <div class="card-footer">
                 <button type="submit" class="btn btn-primary">{{ __('bap.upload') }}</button>
             </div>
         </form>

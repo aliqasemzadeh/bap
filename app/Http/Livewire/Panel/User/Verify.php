@@ -40,12 +40,13 @@ class Verify extends Component
     {
         if($verify = UserVerify::where('user_id', auth()->user()->id)->first()) {
             $this->verify = $verify;
+            $this->verify->save();
         } else {
-            $verify = new UserVerify();
-            $verify->random_string= rand(config('bap.verify_code_start'), config('bap.verify_code_finish'));
-            $verify->user_id = auth()->user()->id;
-            $verify->status = 'start';
-            $verify->save();
+            $this->verify = new UserVerify();
+            $this->verify->random_string= rand(config('bap.verify_code_start'), config('bap.verify_code_finish'));
+            $this->verify->user_id = auth()->user()->id;
+            $this->verify->status = 'start';
+            $this->verify->save();
         }
     }
 
