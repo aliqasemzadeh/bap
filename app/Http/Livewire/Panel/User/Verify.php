@@ -30,7 +30,17 @@ class Verify extends Component
 
     public function verify_request()
     {
-        $this->validate(['verify_file' => 'required|image']);
+        if($this->verify->id_card_file) {
+            $this->alert('danger', __('bap.please_upload_id_card_file'));
+            return;
+        }
+
+        if($this->verify->verify_file) {
+            $this->alert('danger', __('bap.please_upload_verify_file'));
+            return;
+        }
+
+        //$this->validate(['verify_file' => 'required|image']);
 
         //TODO: Upload File
         $this->alert('success', __('bap.request_sent'));

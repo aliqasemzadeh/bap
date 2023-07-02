@@ -3,6 +3,6 @@
 <livewire:modals />
 @livewireScripts
 <x-livewire-alert::scripts />
-@vite(['resources/js/app.js'])
+<script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 
 @stack('scripts')

@@ -42,7 +42,7 @@
 
                 </div>
                 <div class="card-footer">
-                        <a href="#" class="btn btn-primary me-auto">{{ __('bap.save') }}</a>
+                    <button type="submit" class="btn btn-primary me-auto">{{ __('bap.save') }}</button>
                 </div>
             </form>
         </div>

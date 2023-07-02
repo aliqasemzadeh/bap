@@ -117,6 +117,8 @@ return [
     'request_sent' => 'Request sent.',
     'system_turned_on' => 'System turned on.',
     'system_turned_off' => 'System turned off.',
+    'please_upload_id_card_file' => 'Please upload ID Card file first.',
+    'please_upload_verify_file' => 'Please upload verification file first.',
     'upload' => 'Upload',
     'category_types' => [
         'article' => 'Article',
