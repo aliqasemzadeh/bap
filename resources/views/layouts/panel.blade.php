@@ -26,7 +26,8 @@
             </button>
             <h1 class="navbar-brand navbar-brand-autodark">
                 <a href="{{ route('home') }}">
-                    <img src="{{ asset('images/logo-dark.svg') }}" width="110" height="32" alt="Tabler" class="navbar-brand-image">
+                    <img x-show="darkTheme == 'dark'" src="{{ asset('images/logo-dark.svg') }}" width="110" height="32" alt="{{ config('app.name', 'Laravel') }}" class="navbar-brand-image">
+                    <img x-show="darkTheme != 'dark'" src="{{ asset('images/logo-light.svg') }}" width="110" height="32" alt="{{ config('app.name', 'Laravel') }}" class="navbar-brand-image">
                 </a>
             </h1>
             <div class="navbar-nav flex-row d-lg-none">
