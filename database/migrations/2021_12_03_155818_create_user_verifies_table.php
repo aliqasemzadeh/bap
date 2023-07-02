@@ -22,7 +22,7 @@ class CreateUserVerifiesTable extends Migration
             $table->string('verify_file')->nullable();
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
-            $table->string('id_number')->nullable();
+            $table->string('national_code')->nullable();
             $table->string('birth_at')->nullable();
             $table->string('zipcode')->nullable();
             $table->string('phone')->nullable();

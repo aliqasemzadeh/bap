@@ -13,13 +13,10 @@ class Verify extends Component
     use WithFileUploads;
     use LivewireAlert;
 
-    public $random_string;
-    public $id_card_file;
-    public $verify_file;
     public $first_name;
     public $last_name;
     public $national_code;
-    public $zipcode;
+    public $birth_at;
     public $phone;
     public $country;
     public $region;
@@ -30,20 +27,29 @@ class Verify extends Component
 
     public function verify_request()
     {
-        if($this->verify->id_card_file) {
-            $this->alert('danger', __('bap.please_upload_id_card_file'));
-            return;
+        if(!$this->verify->id_card_file) {
+            $this->alert('warning', __('bap.please_upload_id_card_file'));
+        } else if(!$this->verify->verify_file) {
+            $this->alert('warning', __('bap.please_upload_verify_file'));
+        } else {
+            $this->validate([
+                'first_name' => 'required|string',
+                'last_name' => 'required|string',
+                'national_code' => 'required|string',
+                'birth_at' => 'required|string',
+            ]);
+
+            $this->verify->first_name = $this->first_name;
+            $this->verify->last_name = $this->last_name;
+            $this->verify->national_code = $this->national_code;
+            $this->verify->birth_at = $this->birth_at;
+            $this->verify->status = 'wait';
+            $this->verify->save();
+
+            $this->alert('success', __('bap.request_sent'));
         }
 
-        if($this->verify->verify_file) {
-            $this->alert('danger', __('bap.please_upload_verify_file'));
-            return;
-        }
-
-        //$this->validate(['verify_file' => 'required|image']);
-
-        //TODO: Upload File
-        $this->alert('success', __('bap.request_sent'));
+        $this->alert('warning', __('bap.please_check_data'));
     }
 
     public function mount()
@@ -53,7 +59,7 @@ class Verify extends Component
             $this->verify->save();
         } else {
             $this->verify = new UserVerify();
-            $this->verify->random_string= rand(config('bap.verify_code_start'), config('bap.verify_code_finish'));
+            $this->verify->random_string = rand(config('bap.verify_code_start'), config('bap.verify_code_finish'));
             $this->verify->user_id = auth()->user()->id;
             $this->verify->status = 'start';
             $this->verify->save();

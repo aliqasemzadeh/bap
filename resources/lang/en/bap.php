@@ -119,6 +119,11 @@ return [
     'system_turned_off' => 'System turned off.',
     'please_upload_id_card_file' => 'Please upload ID Card file first.',
     'please_upload_verify_file' => 'Please upload verification file first.',
+    'please_check_data' => 'Please check data.',
+    'request_submitted' => 'Request submitted.',
+    'request_status' => 'Request Status',
+    'your_account_verify_accepted' => 'Your account verification accepted.',
+    'please_wait_our_agent_will_check_your_request' => 'Please wait our agents will check your request.',
     'upload' => 'Upload',
     'category_types' => [
         'article' => 'Article',
