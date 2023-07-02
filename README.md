@@ -17,7 +17,7 @@
 - Tabler.io
 - SweetAlert2
 - spatie/laravel-permission
-- laravel mix build tools
+- Laravel Mix Build Tools
 
 
 ## 🧾 Installation
