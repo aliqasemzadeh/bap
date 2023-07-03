@@ -63,9 +63,9 @@
                             @endif
                         @endif
                     </th>
-                    <th wire:click="sortByColumn('email')">{{ __('bap.email') }}
+                    <th wire:click="sortByColumn('last_name')">{{ __('bap.name') }}
 
-                        @if ($sortColumn == 'email')
+                        @if ($sortColumn == 'last_name')
                             @if($sortDirection == 'asc')
                                 <!-- Download SVG icon from http://tabler-icons.io/i/chevron-up -->
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-sm text-dark icon-thick" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 15 12 9 18 15" /></svg>
@@ -76,9 +76,22 @@
                             @endif
                         @endif
                     </th>
-                    <th wire:click="sortByColumn('created_at')">{{ __('bap.created_at') }}
+                    <th wire:click="sortByColumn('national_code')">{{ __('bap.national_code') }}
 
-                        @if ($sortColumn == 'created_at')
+                        @if ($sortColumn == 'national_code')
+                            @if($sortDirection == 'asc')
+                                <!-- Download SVG icon from http://tabler-icons.io/i/chevron-up -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-sm text-dark icon-thick" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 15 12 9 18 15" /></svg>
+                            @else
+                                <!-- Download SVG icon from http://tabler-icons.io/i/chevron-down -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-sm text-dark icon-thick" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 9 12 15 18 9" /></svg>
+
+                            @endif
+                        @endif
+                    </th>
+                    <th wire:click="sortByColumn('updated_at')">{{ __('bap.updated_at') }}
+
+                        @if ($sortColumn == 'updated_at')
                             @if($sortDirection == 'asc')
                                 <!-- Download SVG icon from http://tabler-icons.io/i/chevron-up -->
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-sm text-dark icon-thick" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 15 12 9 18 15" /></svg>
@@ -95,12 +108,15 @@
                 <tbody>
                 @foreach($verifies as $verify)
                     <tr>
-                        <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select User" value="{{ $verify->id }}" name="selectedUsers" wire:model="selectedVerifies"></td>
+                        <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select User" value="{{ $verify->id }}" name="selectedVerifies" wire:model="selectedVerifies"></td>
                         <td>{{ $verify->id }}</td>
                         <td>
                             {{ $verify->first_name }} {{ $verify->last_name }}
                         </td>
-                        <td>{{ $user->updated_at }}</td>
+                        <td>
+                            {{ $verify->national_code }}
+                        </td>
+                        <td>{{ $verify->updated_at }}</td>
                         <td class="text-end">
                             @can('admin_user_verify')
                                 <button onclick="Livewire.emit('showModal', 'admin.user.verify.check', '{{ json_encode($verify->id) }}')" class="btn btn-secondary btn-icon btn-sm">
@@ -117,10 +133,6 @@
         </div>
         <div class="card-footer d-flex justify-content-between">
             <div>
-                <div class="btn-group btn-group-sm w-100">
-                    <button type="button" wire:click="deleteSelected" class="btn">{{ __('bap.delete') }} ({{ count($selectedUsers) }})</button>
-                    <button type="button" wire:click="exportSelectedQuery" class="btn">{{ __('bap.export') }} ({{ count($selectedUsers) }})</button>
-                </div>
             </div>
 
             <div>
