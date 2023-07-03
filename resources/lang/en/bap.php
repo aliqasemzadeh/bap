@@ -130,6 +130,7 @@ return [
     'reject' => 'Reject',
     'verify' => 'Verify',
     'user_verifies' => 'User Verifies',
+    'one_time_password' => 'Send One Time Password',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',
