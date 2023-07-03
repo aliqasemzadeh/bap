@@ -47,6 +47,13 @@
                     <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
+
+                <div class="mb-3">
+                    <div class="card-img-bottom img-responsive img-responsive-16by9" style="background-image: url('{{ route('user.verify.id_card_file', [$verify->id]) }}')"></div>
+                </div>
+                <div class="mb-3">
+                    <div class="card-img-bottom img-responsive img-responsive-16by9" style="background-image: url('{{ route('user.verify.verify_file', [$verify->id]) }}')"></div>
+                </div>
             </div>
 
             <div class="modal-footer">

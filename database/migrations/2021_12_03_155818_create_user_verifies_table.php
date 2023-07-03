@@ -29,6 +29,7 @@ class CreateUserVerifiesTable extends Migration
             $table->string('country')->nullable();
             $table->string('region')->nullable();
             $table->string('city')->nullable();
+            $table->string('ip')->nullable();
             $table->text('address')->nullable();
             $table->text('note')->nullable();
             $table->timestamps();

@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "alajusticia/laravel-expirable": "^2.0",
         "aliqasemzadeh/livewire-bootstrap-modal": "dev-master",
         "arcanedev/log-viewer": "^10.0",
         "creativeorange/gravatar": "^1.0",
