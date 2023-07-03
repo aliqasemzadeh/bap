@@ -53,6 +53,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['re
             Route::get('/user/role/index', \App\Http\Livewire\Admin\User\Role\Index::class)->name('admin.user.role.index');
             Route::get('/user/team/index', \App\Http\Livewire\Admin\User\Team\Index::class)->name('admin.user.team.index');
             Route::get('/user/permission/index', \App\Http\Livewire\Admin\User\Permission\Index::class)->name('admin.user.permission.index');
+            Route::get('/user/verify/index', \App\Http\Livewire\Admin\User\Verify\Index::class)->name('admin.user.verify.index');
 
             Route::get('/setting/category/index', \App\Http\Livewire\Admin\Setting\Category\Index::class)->name('admin.setting.category.index');
             Route::get('/setting/manage/index', \App\Http\Livewire\Admin\Setting\Manage\Index::class)->name('admin.setting.manage.index');
