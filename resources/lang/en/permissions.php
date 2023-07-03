@@ -21,6 +21,8 @@ return [
     'admin_permissions_create' => 'Create Permissions',
     'admin_permissions_delete' => 'Delete Permissions',
 
+    'admin_user_verify' => 'User Verify',
+
     'admin_setting_management' => 'View Setting Management',
     'admin_category_index' => 'View Category Index',
     'admin_category_edit' => 'Edit Category',

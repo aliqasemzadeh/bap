@@ -125,6 +125,7 @@ return [
     'your_account_verify_accepted' => 'Your account verification accepted.',
     'please_wait_our_agent_will_check_your_request' => 'Please wait our agents will check your request.',
     'upload' => 'Upload',
+    'user_verifies' => 'User Verifies',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',

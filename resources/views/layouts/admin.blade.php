@@ -79,6 +79,11 @@
                                 {{ __('bap.permissions_word') }}
                             </a>
                                     @endcan
+                                @can('admin_user_verify')
+                                    <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('admin.user.verify.index')) active @endif" href="{{ route('admin.user.verify.index') }}">
+                                        {{ __('bap.user_verifies') }}
+                                    </a>
+                                @endcan
                         </div>
                     </li>
                     @endcan
