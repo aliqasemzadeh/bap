@@ -8,7 +8,7 @@
             <div class="modal-body">
                 <div class="mb-3">
                     <label class="form-label" for="comment">{{ __('bap.comment') }}</label>
-                    <input type="comment" wire:model="comment" class="form-control @error('comment') is-invalid @enderror" name="comment" placeholder="{{ __('bap.comment') }}">
+                    <input type="text" wire:model="comment" class="form-control @error('comment') is-invalid @enderror" name="comment" placeholder="{{ __('bap.comment') }}">
                     @error('comment')
                     <div class="invalid-feedback">{{ $message }}</div>
                     @enderror

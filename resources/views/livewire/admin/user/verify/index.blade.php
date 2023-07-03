@@ -119,9 +119,11 @@
                         <td>{{ $verify->updated_at }}</td>
                         <td class="text-end">
                             @can('admin_user_verify')
-                                <button onclick="Livewire.emit('showModal', 'admin.user.verify.check', '{{ json_encode($verify->id) }}')" class="btn btn-secondary btn-icon btn-sm">
-                                    <!-- Download SVG icon from http://tabler-icons.io/i/users -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="9" cy="7" r="4" /><path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /><path d="M21 21v-2a4 4 0 0 0 -3 -3.85" /></svg>
+                                <button onclick="Livewire.emit('showModal', 'admin.user.verify.check', '{{ json_encode($verify->id) }}')" class="btn btn-primary btn-icon btn-sm">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M5 12l5 5l10 -10"></path>
+                                    </svg>
                                 </button>
                             @endcan
                         </td>

@@ -126,6 +126,9 @@ return [
     'please_wait_our_agent_will_check_your_request' => 'Please wait our agents will check your request.',
     'upload' => 'Upload',
     'manage' => 'Manage',
+    'accept' => 'Accept',
+    'reject' => 'Reject',
+    'verify' => 'Verify',
     'user_verifies' => 'User Verifies',
     'category_types' => [
         'article' => 'Article',
