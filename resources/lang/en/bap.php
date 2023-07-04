@@ -129,6 +129,8 @@ return [
     'accept' => 'Accept',
     'reject' => 'Reject',
     'verify' => 'Verify',
+    'inquiry' => 'Inquiry',
+    'note' => 'Note',
     'user_verifies' => 'User Verifies',
     'one_time_password' => 'Send One Time Password',
     'category_types' => [
