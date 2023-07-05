@@ -29,12 +29,14 @@ class Check extends Component
     }
     public function accept()
     {
-
+        $this->verify->status = 'accept';
+        $this->verify->save();
     }
 
     public function reject()
     {
-
+        $this->verify->status = 'reject';
+        $this->verify->save();
     }
 
     public function inquiry()
