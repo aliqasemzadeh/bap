@@ -136,6 +136,7 @@ return [
     'accepted' => 'Accepted.',
     'rejected' => 'Rejected.',
     'status' => 'Status',
+    'wait' => 'Wait',
     'random_string' => 'Random String',
     'category_types' => [
         'article' => 'Article',
