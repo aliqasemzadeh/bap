@@ -34,6 +34,9 @@ class Check extends Component
     {
         $user = User::findOrFail($this->verify->user_id);
         $user->verified_at = Carbon::now();
+        $user->first_name = $this->first_name;
+        $user->last_name = $this->last_name;
+        $user->national_code = $this->national_code;
         $user->save();
 
         $this->verify->status = 'accept';

@@ -3,9 +3,10 @@
         {{ __('bap.mobile') }}
     </x-slot>
 
+    @if(auth()->user()->mobile_verified_at == NULL)
     <div class="row row-cards">
         <div class="col-md-6 col-xl-12">
-            <form  wire:submit.prevent="verify_request" class="card">
+            <form  wire:submit.prevent="send_message" class="card">
                 <div class="card-header">
                     <h4 class="card-title">{{ __('bap.mobile') }}</h4>
                 </div>
@@ -30,4 +31,7 @@
             </form>
         </div>
     </div>
+    @elseif()
+
+    @endif
 </div>

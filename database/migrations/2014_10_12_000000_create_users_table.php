@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('mobile')->nullable()->unique()->index();
             $table->string('username')->nullable()->unique()->index();
             $table->string('email')->unique();
-            $table->string('id_number')->nullable()->unique()->index();
+            $table->string('national_code')->nullable()->unique()->index();
             $table->timestamp('email_verified_at')->nullable();
             $table->timestamp('mobile_verified_at')->nullable();
             $table->timestamp('verified_at')->nullable();
