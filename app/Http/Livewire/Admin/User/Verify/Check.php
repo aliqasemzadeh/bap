@@ -25,6 +25,7 @@ class Check extends Component
         $this->national_code = $this->verify->national_code;
         $this->birth_at = $this->verify->birth_at;
         $this->note = $this->verify->note;
+        $this->random_string = $this->verify->random_string;
 
     }
     public function accept()

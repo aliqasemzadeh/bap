@@ -135,6 +135,8 @@ return [
     'one_time_password' => 'Send One Time Password',
     'accepted' => 'Accepted.',
     'rejected' => 'Rejected.',
+    'status' => 'Status',
+    'random_string' => 'Random String',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',

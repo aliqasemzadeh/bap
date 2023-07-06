@@ -89,7 +89,7 @@
                             @endif
                         @endif
                     </th>
-                    <th wire:click="sortByColumn('national_code')">{{ __('bap.national_code') }}
+                    <th wire:click="sortByColumn('national_code')">{{ __('bap.status') }}
 
                         @if ($sortColumn == 'national_code')
                             @if($sortDirection == 'asc')
@@ -102,9 +102,9 @@
                             @endif
                         @endif
                     </th>
-                    <th wire:click="sortByColumn('status')">{{ __('bap.status') }}
+                    <th wire:click="sortByColumn('updated_at')">{{ __('bap.updated_at') }}
 
-                        @if ($sortColumn == 'status')
+                        @if ($sortColumn == 'updated_at')
                             @if($sortDirection == 'asc')
                                 <!-- Download SVG icon from http://tabler-icons.io/i/chevron-up -->
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-sm text-dark icon-thick" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="6 15 12 9 18 15" /></svg>
