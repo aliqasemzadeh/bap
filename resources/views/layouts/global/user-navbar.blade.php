@@ -60,7 +60,7 @@
 
         <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
             @auth
-                @if(!auth()->user()->verified_at)
+                @if(auth()->user()->verified_at != NULL)
                     <a href="{{ route('user.verify') }}" class="dropdown-item">{{ __('bap.account_verify') }}</a>
                 @endif
                 <a href="{{ route('user.mobile') }}" class="dropdown-item">{{ __('bap.mobile') }}</a>
