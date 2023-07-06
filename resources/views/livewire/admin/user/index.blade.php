@@ -147,7 +147,7 @@
                             </button>
                             @endcan
                                 @can('admin_user_ban')
-                                    <button onclick="Livewire.emit('showModal', 'admin.user.ban', '{{ json_encode($user->id) }}')" class="btn btn-danger btn-icon btn-sm">
+                                    <button onclick="Livewire.emit('showModal', 'admin.user.ban', '{{ json_encode($user->id) }}')" class="btn btn-pink btn-icon btn-sm">
                                         <!-- Download SVG icon from http://tabler-icons.io/i/edit -->
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-ban" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                             <desc>Download more icon variants from https://tabler-icons.io/i/ban</desc>
