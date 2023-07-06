@@ -2,7 +2,9 @@
 
 namespace App\Http\Livewire\Admin\User\Verify;
 
+use App\Models\User;
 use App\Models\UserVerify;
+use Carbon\Carbon;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 
@@ -30,6 +32,10 @@ class Check extends Component
     }
     public function accept()
     {
+        $user = User::findOrFail($this->verify->user_id);
+        $user->verified_at = Carbon::now();
+        $user->save();
+
         $this->verify->status = 'accept';
         $this->verify->save();
 
