@@ -31,12 +31,22 @@ class Check extends Component
     {
         $this->verify->status = 'accept';
         $this->verify->save();
+
+        $this->emitTo(\App\Http\Livewire\Admin\User\Verify\Index::getName(), 'updateList');
+        $this->emit('hideModal');
+
+        $this->alert('success', __('bap.accepted'));
     }
 
     public function reject()
     {
         $this->verify->status = 'reject';
         $this->verify->save();
+
+        $this->emitTo(\App\Http\Livewire\Admin\User\Verify\Index::getName(), 'updateList');
+        $this->emit('hideModal');
+
+        $this->alert('success', __('bap.rejected'));
     }
 
     public function inquiry()

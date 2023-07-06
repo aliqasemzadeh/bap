@@ -133,6 +133,8 @@ return [
     'note' => 'Note',
     'user_verifies' => 'User Verifies',
     'one_time_password' => 'Send One Time Password',
+    'accepted' => 'Accepted.',
+    'rejected' => 'Rejected.',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',

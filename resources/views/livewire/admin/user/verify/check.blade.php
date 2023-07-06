@@ -72,9 +72,9 @@
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('bap.close') }}</button>
-                <button type="button" class="btn btn-warning">{{ __('bap.inquiry') }}</button>
-                <button type="button" class="btn btn-success">{{ __('bap.accept') }}</button>
-                <button type="button" class="btn btn-danger">{{ __('bap.reject') }}</button>
+                <button type="button" class="btn btn-warning" wire:click="inquiry">{{ __('bap.inquiry') }}</button>
+                <button type="button" class="btn btn-success" wire:click="accept">{{ __('bap.accept') }}</button>
+                <button type="button" class="btn btn-danger" wire:click="reject">{{ __('bap.reject') }}</button>
             </div>
         </div>
 </div>
