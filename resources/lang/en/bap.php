@@ -141,6 +141,9 @@ return [
     'verify_code_is_wrong' => 'Verify code is wrong.',
     'mobile_verified_successfully' => 'Mobile verified successfully.',
     'verify_code_is' => 'Verify code is: :code',
+    'wallet' => 'Wallet',
+    'deposit' => 'Deposit',
+    'withdraw' => 'Withdraw',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',
