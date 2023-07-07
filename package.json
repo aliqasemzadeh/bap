@@ -25,6 +25,7 @@
         "@ryangjchandler/alpine-clipboard": "^2.2.0",
         "@tabler/core": "^1.0.0-beta19",
         "chart.js": "^4.3.0",
+        "cryptocurrency-icons": "^0.18.1",
         "sweetalert2": "^11.7.12"
     }
 }
