@@ -17,8 +17,9 @@ return new class extends Migration
             $table->bigInteger('user_id');
             $table->string('type')->default('password')->index(); //password, withdraw, change
             $table->string('method')->default('email')->index(); //email, sms
-            $table->string('ip')->nullable(); //password, withdraw, change
-            $table->bigInteger('code'); //password, withdraw, change
+            $table->string('ip')->nullable();
+            $table->string('value')->nullable();
+            $table->bigInteger('code')->nullable();
             $table->expirable();
             $table->timestamps();
             $table->softDeletes();

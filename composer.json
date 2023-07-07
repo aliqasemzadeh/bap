@@ -21,7 +21,7 @@
         "livewire/livewire": "^2.5",
         "maatwebsite/excel": "^3.1",
         "mcamara/laravel-localization": "^1.7",
-        "morilog/jalali": "^3.2",
+        "morilog/jalali": "^3.4",
         "nesbot/carbon": "^2.54",
         "questocat/laravel-referral": "^1.0",
         "spatie/laravel-activitylog": "^4.5",
