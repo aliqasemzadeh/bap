@@ -18,7 +18,7 @@ class UserVerifyCheck
     public function handle(Request $request, Closure $next)
     {
         if(Auth::check()) {
-            if(Auth::user()->verified_at != NULL) {
+            if(Auth::user()->verified_at) {
                 return $next($request);
             } else {
                 return redirect()->route('user.verify');

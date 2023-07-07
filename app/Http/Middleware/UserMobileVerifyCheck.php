@@ -18,7 +18,7 @@ class UserMobileVerifyCheck
     public function handle(Request $request, Closure $next)
     {
         if(Auth::check()) {
-            if(Auth::user()->mobile_verified_at != NULL) {
+            if(Auth::user()->mobile_verified_at) {
                 return $next($request);
             } else {
                 return redirect()->route('user.mobile');

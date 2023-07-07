@@ -29,11 +29,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['re
         Route::get('/user/verify', \App\Http\Livewire\Panel\User\Verify::class)->name('user.verify');
         Route::get('/user/verify/id_card_file/{verify}', [\App\Http\Livewire\Panel\User\Verify\UploadIdCardFile::class, 'displayIdCardFile'])->name('user.verify.id_card_file');
         Route::get('/user/verify/verify_file/{verify}',  [\App\Http\Livewire\Panel\User\Verify\UploadVerifyFile::class, 'displayVerifyFile'])->name('user.verify.verify_file');
-        Route::get('/user/mobile', \App\Http\Livewire\Panel\User\Mobile::class)->name('user.mobile');
+        Route::get('/user/mobile', \App\Http\Livewire\Panel\User\Mobile::class)->name('user.mobile')->middleware(['password.confirm', 'user.verify']);
 
         Route::any('/notification/view/{notification}', \App\Http\Livewire\App\Notification\View::class)->name('notification.view');
         Route::any('/faqs/index', \App\Http\Livewire\App\FAQ\Index::class)->name('faqs.index');
-
 
         Route::group(['prefix' => config('bap.panel-prefix-url')], function() {
             Route::get('/dashboard/index', \App\Http\Livewire\Panel\Dashboard\Index::class)->name('panel.dashboard.index');
