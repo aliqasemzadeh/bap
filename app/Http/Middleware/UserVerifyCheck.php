@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserVerifyCheck
 {
@@ -16,6 +17,13 @@ class UserVerifyCheck
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        if(Auth::check()) {
+            if(Auth::user()->verified_at != NULL) {
+                return $next($request);
+            } else {
+                return redirect()->route('user.verify');
+            }
+        }
+        return route('login');
     }
 }
