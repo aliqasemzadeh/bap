@@ -30,7 +30,7 @@
         </div>
     </div>
     @if($wait)
-        <div class="row row-cards">
+        <div class="row row-cards mt-3">
             <div class="col-md-6 col-xl-12">
                 <form  wire:submit.prevent="verify" class="card">
                     <div class="card-header">

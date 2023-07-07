@@ -138,6 +138,9 @@ return [
     'status' => 'Status',
     'wait' => 'Wait',
     'random_string' => 'Random String',
+    'verify_code_is_wrong' => 'Verify code is wrong.',
+    'mobile_verified_successfully' => 'Mobile verified successfully.',
+    'verify_code_is' => 'Verify code is: :code',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',
