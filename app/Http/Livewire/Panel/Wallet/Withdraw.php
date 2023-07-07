@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Panel\User\Wallet;
+namespace App\Http\Livewire\Panel\Wallet;
 
 use Livewire\Component;
 
