@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Panel\User;
 
 use App\Models\UserVerify;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Request;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -44,6 +45,7 @@ class Verify extends Component
             $this->verify->national_code = $this->national_code;
             $this->verify->birth_at = $this->birth_at;
             $this->verify->status = 'wait';
+            $this->verify->ip = Request::ip();
             $this->verify->save();
 
             $this->alert('success', __('bap.request_sent'));
