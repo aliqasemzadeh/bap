@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('user_verify_codes', function (Blueprint $table) {
             $table->id();
             $table->string('status')->index()->default('unused');
-            $table->bigInteger('user_id');
+            $table->bigInteger('user_id')->index();
             $table->string('type')->default('password')->index(); //password, withdraw, change
             $table->string('method')->default('email')->index(); //email, sms
             $table->string('ip')->nullable();

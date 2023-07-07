@@ -13,7 +13,13 @@ return new class extends Migration
     {
         Schema::create('wallets', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id')->index();
+            $table->string('symbol')->index();
+            $table->double('balance')->default(0);
+            $table->double('locked')->default(0);
+            $table->text('note')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
