@@ -147,6 +147,7 @@ return [
     'balance' => 'Balance',
     'symbol' => 'Symbol',
     'stack' => 'Stack',
+    'trade' => 'Trade',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',
