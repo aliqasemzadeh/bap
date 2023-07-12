@@ -3,10 +3,50 @@
 namespace App\Http\Livewire\Panel\Wallet;
 
 use App\Models\Wallet;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Index extends Component
 {
+    use WithPagination;
+    use LivewireAlert;
+
+    public $selectedItems = [];
+    public $selectAll = false;
+
+    public $faq;
+    public $search;
+    public $perPage = 15;
+    public $sortColumn = 'created_at';
+    public $sortDirection = 'asc';
+
+    protected $paginationTheme = 'bootstrap';
+
+    protected $queryString = ['search'];
+
+
+    public function clear()
+    {
+        $this->search = "";
+    }
+
+    public function setPerPage($perPage)
+    {
+        $this->perPage = $perPage;
+    }
+
+    public function sortByColumn($column)
+    {
+        if ($this->sortColumn == $column) {
+            $this->sortDirection = $this->sortDirection == 'asc' ? 'desc' : 'asc';
+        } else {
+            $this->reset('sortDirection');
+            $this->sortColumn = $column;
+        }
+    }
+
+
     public function render()
     {
         $wallets = [];

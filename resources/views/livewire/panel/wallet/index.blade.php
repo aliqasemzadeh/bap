@@ -116,9 +116,9 @@
                         <td>{{ $wallet->id }}</td>
                         <td>
                             <div class="d-flex py-1 align-items-center">
-                                <span class="avatar me-2" style="background-image: url({{ $wallet->gravatar }})"></span>
+                                <span class="avatar me-2" style="background-image: url(https://s3-symbol-logo.tradingview.com/crypto/XTVC{{ strtoupper($symbol->symbol) }}--big.svg)"></span>
                                 <div class="flex-fill">
-                                    <div class="font-weight-medium">{{ $wallet->name }}</div>
+                                    <div class="font-weight-medium">{{ __('wallet.'.$wallet->symbol .'.title') }}</div>
                                 </div>
                             </div>
                         </td>
