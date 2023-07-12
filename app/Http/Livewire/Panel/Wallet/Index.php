@@ -31,11 +31,6 @@ class Index extends Component
         $this->search = "";
     }
 
-    public function setPerPage($perPage)
-    {
-        $this->perPage = $perPage;
-    }
-
     public function sortByColumn($column)
     {
         if ($this->sortColumn == $column) {
