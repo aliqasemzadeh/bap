@@ -8,8 +8,8 @@ return [
         'title' => 'wallet.USDT.title',
         'stack' => false,
     ],
-    'PLQ' => [
-        'title' => 'wallet.PLQ.title',
+    'ATOM' => [
+        'title' => 'wallet.ATOM.title',
         'stack' => true,
     ],
 ];

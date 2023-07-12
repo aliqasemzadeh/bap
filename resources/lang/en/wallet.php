@@ -6,7 +6,7 @@ return [
     'USDT' => [
         'title' => 'Tether',
     ],
-    'PLQ' => [
-        'title' => 'Planq',
+    'ATOM' => [
+        'title' => 'Cosmos Hub(ATOM)',
     ],
 ];
