@@ -144,6 +144,8 @@ return [
     'wallet' => 'Wallet',
     'deposit' => 'Deposit',
     'withdraw' => 'Withdraw',
+    'balance' => 'Balance',
+    'symbol' => 'Symbol',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',
