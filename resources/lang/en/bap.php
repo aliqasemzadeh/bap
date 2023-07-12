@@ -146,6 +146,7 @@ return [
     'withdraw' => 'Withdraw',
     'balance' => 'Balance',
     'symbol' => 'Symbol',
+    'stack' => 'Stack',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',

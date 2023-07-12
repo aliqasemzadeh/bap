@@ -6,18 +6,38 @@
             <div class="col-auto ms-auto d-print-none">
                 <div class="btn-list">
                     <button onclick="Livewire.emit('showModal', 'panel.wallet.deposit')" class="btn btn-success d-none d-sm-inline-block">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-download" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
+                            <path d="M7 11l5 5l5 -5"></path>
+                            <path d="M12 4l0 12"></path>
+                        </svg>
                         {{ __('bap.deposit') }}
                     </button>
                     <button onclick="Livewire.emit('showModal', 'panel.wallet.deposit')" class="btn btn-success d-sm-none btn-icon" aria-label="{{ __('bap.deposit') }}">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-download" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
+                            <path d="M7 11l5 5l5 -5"></path>
+                            <path d="M12 4l0 12"></path>
+                        </svg>
                     </button>
                     <button onclick="Livewire.emit('showModal', 'panel.wallet.withdraw')" class="btn btn-danger d-none d-sm-inline-block">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-upload" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
+                            <path d="M7 9l5 -5l5 5"></path>
+                            <path d="M12 4l0 12"></path>
+                        </svg>
                         {{ __('bap.withdraw') }}
                     </button>
                     <button onclick="Livewire.emit('showModal', 'panel.wallet.withdraw')" class="btn btn-danger d-sm-none btn-icon" aria-label="{{ __('bap.withdraw') }}">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-upload" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
+                            <path d="M7 9l5 -5l5 5"></path>
+                            <path d="M12 4l0 12"></path>
+                        </svg>
                     </button>
                 </div>
             </div>
@@ -113,7 +133,63 @@
                         </td>
                         <td>{{ $wallet->balance }}</td>
                         <td class="text-end">
-
+                                <button onclick="Livewire.emit('showModal', 'panel.wallet.deposit')" class="btn btn-sm btn-success d-none d-sm-inline-block">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-download" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
+                                        <path d="M7 11l5 5l5 -5"></path>
+                                        <path d="M12 4l0 12"></path>
+                                    </svg>
+                                    {{ __('bap.deposit') }}
+                                </button>
+                                <button onclick="Livewire.emit('showModal', 'panel.wallet.deposit')" class="btn btn-sm btn-success d-sm-none btn-icon" aria-label="{{ __('bap.deposit') }}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-download" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
+                                        <path d="M7 11l5 5l5 -5"></path>
+                                        <path d="M12 4l0 12"></path>
+                                    </svg>
+                                </button>
+                                <button onclick="Livewire.emit('showModal', 'panel.wallet.withdraw')" class="btn btn-sm btn-danger d-none d-sm-inline-block">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-upload" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
+                                        <path d="M7 9l5 -5l5 5"></path>
+                                        <path d="M12 4l0 12"></path>
+                                    </svg>
+                                    {{ __('bap.withdraw') }}
+                                </button>
+                                <button onclick="Livewire.emit('showModal', 'panel.wallet.withdraw')" class="btn btn-sm btn-danger d-sm-none btn-icon" aria-label="{{ __('bap.withdraw') }}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-upload" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
+                                        <path d="M7 9l5 -5l5 5"></path>
+                                        <path d="M12 4l0 12"></path>
+                                    </svg>
+                                </button>
+                                @if(__('wallet.'.$wallet->symbol.'.stack'))
+                                <button onclick="Livewire.emit('showModal', 'panel.wallet.stack')" class="btn btn-sm btn-primary d-none d-sm-inline-block">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-stackoverflow" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M4 17v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-1"></path>
+                                        <path d="M8 16h8"></path>
+                                        <path d="M8.322 12.582l7.956 .836"></path>
+                                        <path d="M8.787 9.168l7.826 1.664"></path>
+                                        <path d="M10.096 5.764l7.608 2.472"></path>
+                                    </svg>
+                                    {{ __('bap.stack') }}
+                                </button>
+                                <button onclick="Livewire.emit('showModal', 'panel.wallet.stack')" class="btn btn-sm btn-primary d-sm-none btn-icon" aria-label="{{ __('bap.stack') }}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-stackoverflow" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M4 17v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-1"></path>
+                                        <path d="M8 16h8"></path>
+                                        <path d="M8.322 12.582l7.956 .836"></path>
+                                        <path d="M8.787 9.168l7.826 1.664"></path>
+                                        <path d="M10.096 5.764l7.608 2.472"></path>
+                                    </svg>
+                                </button>
+                                @endif
                         </td>
                     </tr>
                 @endforeach
