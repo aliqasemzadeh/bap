@@ -10,6 +10,7 @@ return [
     'admin_user_create' => 'Create User',
     'admin_user_roles' => 'Access User Roles',
     'admin_user_permissions' => 'Access User Permissions',
+    'admin_user_wallet' => 'Access User Wallets',
 
     'admin_roles_index' => 'View Roles',
     'admin_roles_edit' => 'Edit Roles',
