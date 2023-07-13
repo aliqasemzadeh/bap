@@ -6,8 +6,23 @@ use Livewire\Component;
 
 class Index extends Component
 {
+    public $user_id;
+
+    public function mount($user_id)
+    {
+        $this->user_id = $user_id;
+    }
+
     public function render()
     {
+        $wallets = [];
+        foreach (config('wallet') as $symbol => $walletItem) {
+            $wallet = Wallet::firstOrCreate(['user_id' => auth()->user()->id, 'symbol' => $symbol]);
+            $wallets[] = $wallet;
+        }
+
+        $wallets = collect($wallets);
+
         return view('livewire.admin.user.wallet.index');
     }
 }
