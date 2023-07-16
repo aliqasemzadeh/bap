@@ -157,5 +157,7 @@ return [
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',
+        'product' => 'Product',
+        'brand' => 'Brand',
     ]
 ];
