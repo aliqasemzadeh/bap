@@ -15,14 +15,15 @@ class Index extends Component
 
     public function render()
     {
+        $user = User::findOrFail($this->user_id);
         $wallets = [];
         foreach (config('wallet') as $symbol => $walletItem) {
-            $wallet = Wallet::firstOrCreate(['user_id' => auth()->user()->id, 'symbol' => $symbol]);
+            $wallet = Wallet::firstOrCreate(['user_id' => $user->id, 'symbol' => $symbol]);
             $wallets[] = $wallet;
         }
 
         $wallets = collect($wallets);
 
-        return view('livewire.admin.user.wallet.index');
+        return view('livewire.admin.user.wallet.index', compact('wallets'));
     }
 }
