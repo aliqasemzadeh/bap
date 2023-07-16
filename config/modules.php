@@ -7,6 +7,8 @@
 return [
     'user_verify' => true,
     'user_mobile_verify' => true,
+    'content' => true,
+    'support' => true,
     'wallet' => true,
     'shop' => true,
 ];
