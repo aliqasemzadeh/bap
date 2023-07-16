@@ -117,6 +117,41 @@
                                 </div>
                             </li>
                         @endcan
+
+
+                        @can('admin_shop_management')
+                            <li class="nav-item dropdown @if(\Illuminate\Support\Facades\Route::is('admin.shop.*')) show  active @endif">
+                                <a class="nav-link dropdown-toggle" href="#navbar-user" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="true">
+                                  <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-building-store" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                       <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                       <path d="M3 21l18 0"></path>
+                                       <path d="M3 7v1a3 3 0 0 0 6 0v-1m0 1a3 3 0 0 0 6 0v-1m0 1a3 3 0 0 0 6 0v-1h-18l2 -4h14l2 4"></path>
+                                       <path d="M5 21l0 -10.15"></path>
+                                       <path d="M19 21l0 -10.15"></path>
+                                       <path d="M9 21v-4a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v4"></path>
+                                    </svg>
+                                  </span>
+                                    <span class="nav-link-title">
+                                    {{ __('bap.shop_management') }}
+                                  </span>
+                                </a>
+                                <div class="dropdown-menu @if(\Illuminate\Support\Facades\Route::is('admin.shop.*')) show @endif " data-bs-popper="none">
+                                    @can('admin_product_index')
+                                        <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('admin.shop.product.index')) active @endif" href="{{ route('admin.shop.product.index') }}">
+                                            {{ __('bap.products') }}
+                                        </a>
+                                    @endcan
+                                    @can('admin_order_index')
+                                        <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('admin.shop.order.index')) active @endif" href="{{ route('admin.shop.product.index') }}">
+                                            {{ __('bap.orders') }}
+                                        </a>
+                                    @endcan
+
+                                </div>
+                            </li>
+                        @endcan
+
                         @can('admin_setting_management')
                             <li class="nav-item dropdown @if(\Illuminate\Support\Facades\Route::is('admin.setting.*')) show  active  @endif">
                                 <a class="nav-link dropdown-toggle" href="#navbar-user" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="true">

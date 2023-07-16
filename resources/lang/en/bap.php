@@ -151,6 +151,9 @@ return [
     'update_wallet_balance' => 'Update Wallet Balance',
     'transaction_list' => 'Transaction List',
     'create_transaction' => 'Create Transaction',
+    'shop_management' => 'Shop Management',
+    'products' => 'Products',
+    'orders' => 'Orders',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',
