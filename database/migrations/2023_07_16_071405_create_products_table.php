@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('title');
             $table->string('image');
             $table->bigInteger('user_id')->index();
+            $table->bigInteger('category_brand_id')->index();
+            $table->bigInteger('category_product_id')->index();
             $table->longText('description')->nullable();
             $table->longText('options');
             $table->timestamps();
