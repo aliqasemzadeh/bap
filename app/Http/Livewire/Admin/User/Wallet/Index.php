@@ -24,6 +24,6 @@ class Index extends Component
 
         $wallets = collect($wallets);
 
-        return view('livewire.admin.user.wallet.index', compact('wallets'));
+        return view('livewire.admin.user.wallet.index', compact('wallets', 'user'));
     }
 }
