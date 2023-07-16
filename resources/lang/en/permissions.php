@@ -59,4 +59,15 @@ return [
     'admin_team_create' => 'Create Team',
     'admin_team_users' => 'Manage Team Users',
 
+    'admin_shop_management' => 'View Manage Show',
+    'admin_product_index' => 'View Product Index',
+    'admin_product_edit' => 'Edit Product',
+    'admin_product_delete' => 'Delete Product',
+    'admin_product_create' => 'Create Product',
+
+    'admin_order_index' => 'View Order Index',
+    'admin_order_edit' => 'Edit Order',
+    'admin_order_delete' => 'Delete Order',
+    'admin_order_create' => 'Create Order',
+
 ];
