@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('product_media', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('product_id')->index();
+            $table->string('type')->index();
+            $table->string('file')->index();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

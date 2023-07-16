@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('product_prices', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('product_id')->index();
+            $table->double('price');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
