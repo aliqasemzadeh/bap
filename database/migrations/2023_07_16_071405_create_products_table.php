@@ -15,11 +15,16 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('image');
+            $table->double('current_price');
             $table->bigInteger('user_id')->index();
             $table->bigInteger('category_brand_id')->index();
             $table->bigInteger('category_product_id')->index();
             $table->longText('description')->nullable();
             $table->longText('options');
+            $table->bigInteger('likes')->default(0);
+            $table->bigInteger('views')->default(0);
+            $table->boolean('public')->default(true);
+            $table->boolean('on_sale')->default(true);
             $table->timestamps();
             $table->softDeletes();
         });
