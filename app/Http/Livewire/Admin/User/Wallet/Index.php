@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin\User\Wallet;
 
+use App\Models\User;
 use Livewire\Component;
 
 class Index extends Component
