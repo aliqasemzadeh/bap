@@ -148,6 +148,9 @@ return [
     'symbol' => 'Symbol',
     'stack' => 'Stack',
     'trade' => 'Trade',
+    'update_wallet_balance' => 'Update Wallet Balance',
+    'transaction_list' => 'Transaction List',
+    'create_transaction' => 'Create Transaction',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',

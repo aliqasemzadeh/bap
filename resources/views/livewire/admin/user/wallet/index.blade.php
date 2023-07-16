@@ -32,7 +32,7 @@
 
                                     <div class="col text-end">
 
-                                        <button  wire:click="exportTransactions()" class="btn btn-info btn-sm">
+                                        <button  wire:click="exportTransactions({{ $wallet->id }})" class="btn btn-info btn-sm">
                                             <!-- Download SVG icon from http://tabler-icons.io/i/rotate -->
                                             <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -59,12 +59,6 @@
                                             <!-- Download SVG icon from http://tabler-icons.io/i/square-plus -->
                                             <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="4" y="4" width="16" height="16" rx="2" /><line x1="9" y1="12" x2="15" y2="12" /><line x1="12" y1="9" x2="12" y2="15" /></svg>
                                             <span class="d-none d-sm-inline-block">{{ __('bap.create_transaction') }}</span>
-                                        </button>
-
-                                        <button  onclick="Livewire.emit('showModal', 'admin.user.wallet.manual-transaction', '{{ $wallet->id }}')" class="btn btn-dark btn-sm">
-                                            <!-- Download SVG icon from http://tabler-icons.io/i/square-plus -->
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="4" y="4" width="16" height="16" rx="2" /><line x1="9" y1="12" x2="15" y2="12" /><line x1="12" y1="9" x2="12" y2="15" /></svg>
-                                            <span class="d-none d-sm-inline-block">{{ __('bap.manual') }}</span>
                                         </button>
 
                                     </div>

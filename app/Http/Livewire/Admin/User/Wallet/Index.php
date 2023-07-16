@@ -28,4 +28,14 @@ class Index extends Component
 
         return view('livewire.admin.user.wallet.index', compact('wallets', 'user'));
     }
+
+    public function exportTransactions($wallet_id)
+    {
+
+    }
+
+    public function updateBalance($wallet_id)
+    {
+
+    }
 }
