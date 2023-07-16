@@ -5,6 +5,7 @@
  * Note: You can disable by set it false.
  */
 return [
+    'user' => true,
     'user_verify' => true,
     'user_mobile_verify' => true,
     'content' => true,
