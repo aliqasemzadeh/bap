@@ -26,7 +26,7 @@
 
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">{{ __('bap.users') }}</h3>
+            <h3 class="card-title">{{ __('bap.products') }}</h3>
         </div>
         <div class="card-body">
             <div class="d-flex">
@@ -113,7 +113,7 @@
                         <td>{{ $product->id }}</td>
                         <td>
                             <div class="d-flex py-1 align-items-center">
-                                <span class="avatar me-2" style="background-image: url({{ url('/storage/public/products/' . $product->image) }})"></span>
+                                <span class="avatar me-2" style="background-image: url({{ $product->getMedia()[0]->getFullUrl() }})"></span>
                                 <div class="flex-fill">
                                     <div class="font-weight-medium">{{ $product->title }}</div>
                                     <div class="text-muted">{{ $product->current_price }}</div>

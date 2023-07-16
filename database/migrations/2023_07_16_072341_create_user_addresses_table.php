@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('user_addresses', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('title')->nullable();
             $table->bigInteger('user_id')->index();
             $table->longText('country_id')->index();
             $table->longText('province_id')->index();

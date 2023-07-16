@@ -156,6 +156,10 @@ return [
     'create_product' => 'Create Product',
     'orders' => 'Orders',
     'create_order' => 'Create Order',
+    'current_price' => 'Current Price',
+    'off_price' => 'Off Price',
+    'brand' => 'Brand',
+    'slug' => 'Slug',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',

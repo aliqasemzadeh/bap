@@ -15,13 +15,15 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug');
-            $table->string('image');
+            $table->string('image')->nullable();
+            $table->string('language')->default('en')->index();
             $table->double('current_price');
+            $table->double('off_price')->default(0);
             $table->bigInteger('user_id')->index();
             $table->bigInteger('category_brand_id')->index();
             $table->bigInteger('category_product_id')->index();
             $table->longText('description')->nullable();
-            $table->longText('options');
+            $table->longText('options')->nullable();
             $table->bigInteger('likes')->default(0);
             $table->bigInteger('views')->default(0);
             $table->boolean('public')->default(true);

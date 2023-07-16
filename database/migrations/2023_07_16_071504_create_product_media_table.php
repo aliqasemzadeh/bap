@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('product_id')->index();
             $table->string('type')->index();
-            $table->string('file')->index();
+            $table->string('file')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

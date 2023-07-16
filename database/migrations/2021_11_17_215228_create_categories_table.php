@@ -18,6 +18,7 @@ class CreateCategoriesTable extends Migration
             $table->string('title');
             $table->string('type')->index();
             $table->string('icon')->nullable();
+            $table->string('image')->nullable();
             $table->string('language')->default('en')->index();
             $table->text('description')->nullable();
             $table->bigInteger('sort_order')->default(1);
