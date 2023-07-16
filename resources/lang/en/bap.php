@@ -153,7 +153,9 @@ return [
     'create_transaction' => 'Create Transaction',
     'shop_management' => 'Shop Management',
     'products' => 'Products',
+    'create_product' => 'Create Product',
     'orders' => 'Orders',
+    'create_order' => 'Create Order',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',
