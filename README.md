@@ -40,5 +40,8 @@
 
 
 
-Note:
+Note 1:
 I decide to change Base Admin Panel to Bootstrap Admin Panel because is much better.
+
+Note 2:
+Any misuse of this software to launch illegal sites is not allowed and the responsibility for its use lies with the user's site.
