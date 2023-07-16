@@ -30,9 +30,6 @@
 
                     <label class="form-label">
                         {{ __('Password') }}
-                        <span class="form-label-description">
-                            <a href="./forgot-password.html">{{ __('bap.one_time_password') }}</a>
-                          </span>
                     </label>
                     <x-jet-input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" type="password"
                                  name="password" required autocomplete="current-password" />
