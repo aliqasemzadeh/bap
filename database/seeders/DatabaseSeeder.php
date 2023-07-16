@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             RoleAndPermissionSeeder::class,
             CountrySeeder::class,
+            ProvinceSeeder::class,
+            CitySeeder::class,
         ]);
     }
 }

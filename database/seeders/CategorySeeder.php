@@ -15,7 +15,7 @@ class CategorySeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
         $category = new Category();
         $category->title = 'Main Support';
