@@ -8,7 +8,6 @@
         @foreach($products as $product)
             <div class="col-md-6 col-lg-3">
                 <div class="card">
-                    <!-- Photo -->
                     <div class="img-responsive img-responsive-21x9 card-img-top"
                          style="background-image: url({{ $product->getMedia()[0]->getFullUrl() }})"></div>
                     <div class="card-body">
