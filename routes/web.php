@@ -22,6 +22,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['re
     Route::get('/article/index', \App\Http\Livewire\App\Article\Index::class)->name('article.index');
     Route::get('/article/view/{article}', \App\Http\Livewire\App\Article\View::class)->name('article.view');
 
+    Route::get('/shop/product/index', \App\Http\Livewire\App\Shop\Product\Index::class)->name('shop.product.index');
+    Route::get('/shop/product/view/{product}', \App\Http\Livewire\App\Shop\Product\View::class)->name('shop.product.view');
+
     Route::group(['middleware' => ['auth:sanctum', 'verified']], function() {
 
         Route::any('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
