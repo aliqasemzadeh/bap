@@ -1,3 +1,6 @@
 <div>
-    {{-- Because she competes with no one, no one can compete with her. --}}
+    <x-slot name="title">
+        {{ $product->title }}
+    </x-slot>
+
 </div>

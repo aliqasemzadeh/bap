@@ -14,7 +14,7 @@
                     <div class="card-body">
                         <h3 class="card-title">{{ $product->title }}</h3>
                         <p class="text-muted">{{ $product->current_price }}</p>
-                        <a href="{{ route('shop.product.view', [$product->id]) }}" class="btn btn-primary stretched-link">{{ __('bap.detail') }}</a>
+                        <a href="{{ route('shop.product.view', [$product->id]) }}" class="btn btn-primary w-100 stretched-link">{{ __('bap.detail') }}</a>
                     </div>
                 </div>
             </div>
