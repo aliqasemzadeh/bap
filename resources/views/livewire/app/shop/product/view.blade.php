@@ -10,7 +10,7 @@
                      style="background-image: url({{ $product->getMedia()[0]->getFullUrl() }})"></div>
                 <div class="card-body">
                     <p class="text-muted">{{ $product->current_price }}</p>
-                    <a href="{{ route('shop.product.view', [$product->id]) }}" class="btn btn-primary w-100 stretched-link">{{ __('bap.add_cart') }}</a>
+                    <a href="{{ route('shop.product.view', [$product->id]) }}" class="btn btn-success w-100 stretched-link">{{ __('bap.add_cart') }}</a>
                 </div>
             </div>
         </div>
