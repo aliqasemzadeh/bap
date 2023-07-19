@@ -162,6 +162,7 @@ return [
     'slug' => 'Slug',
     'shop' => 'Shop',
     'edit_product' => 'Edit Product',
+    'detail' => 'Detail',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',
