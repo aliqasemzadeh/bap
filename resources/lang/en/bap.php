@@ -160,6 +160,7 @@ return [
     'off_price' => 'Off Price',
     'brand' => 'Brand',
     'slug' => 'Slug',
+    'edit_product' => 'Edit Product',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',
