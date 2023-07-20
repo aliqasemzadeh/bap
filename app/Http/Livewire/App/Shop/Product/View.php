@@ -14,16 +14,12 @@ class View extends Component
 
     public function addCart(Product $product) : void
     {
-        \Cart::add(array(
-            'id' => $product->id,
-            'name' => $product->title,
-            'price' => $product->current_price,
-            'quantity' => 1,
-            'attributes' => array(),
-            'associatedModel' => $product
-        ));
 
         dd(\Cart::getContent());
+
+
+        \Cart::add($product->id, $product->title, $product->current_price, 1, array());
+
 
         $this->emit('updateCart');
         $this->alert(
