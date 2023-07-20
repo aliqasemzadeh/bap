@@ -15,6 +15,8 @@ class View extends Component
     public function addCart(Product $product) : void
     {
 
+        dd(\Cart::getContent());
+
         \Cart::add(array(
             'id' => $product->id,
             'name' => $product->title,
@@ -23,6 +25,8 @@ class View extends Component
             'attributes' => array(),
             'associatedModel' => $product
         ));
+
+
 
         $this->emit('updateCart');
         $this->alert(
