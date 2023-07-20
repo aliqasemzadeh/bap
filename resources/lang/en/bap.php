@@ -164,6 +164,7 @@ return [
     'edit_product' => 'Edit Product',
     'add_cart' => 'Add Cart',
     'detail' => 'Detail',
+    'cart_detail' => 'Cart detail',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',
