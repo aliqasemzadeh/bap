@@ -11,6 +11,9 @@ class AppLayout extends Component
      *
      * @return \Illuminate\View\View
      */
+
+    protected $listeners = ['updateCart' => 'render'];
+
     public function render()
     {
         return view('layouts.app');

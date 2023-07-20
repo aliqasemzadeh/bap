@@ -6,6 +6,9 @@ use Illuminate\View\Component;
 
 class PanelLayout extends Component
 {
+
+    protected $listeners = ['updateCart' => 'render'];
+
     /**
      * Create a new component instance.
      *
