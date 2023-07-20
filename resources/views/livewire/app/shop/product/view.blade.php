@@ -14,24 +14,24 @@
                     <div class="mb-3">
                         <div class="row g-3">
                             <div class="col-auto">
-                                <a href="#" class="btn btn-icon" aria-label="Button">
+                                <button href="#" class="btn btn-danger btn-icon" aria-label="Button">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-minus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                         <path d="M5 12l14 0"></path>
                                     </svg>
-                                </a>
+                                </button>
                             </div>
                             <div class="col">
                                 <input type="text" value="0" class="form-control" placeholder="Search for…">
                             </div>
                             <div class="col-auto">
-                                <a href="#" class="btn btn-icon" aria-label="Button">
+                                <button class="btn btn-success btn-icon" aria-label="Button">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                         <path d="M12 5l0 14"></path>
                                         <path d="M5 12l14 0"></path>
                                     </svg>
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </div>
