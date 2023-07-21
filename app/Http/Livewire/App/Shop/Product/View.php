@@ -26,7 +26,7 @@ class View extends Component
             'associatedModel' => $product
         ));
 
-       dd(\Cart::getContent());
+       //dd(\Cart::getContent());
 
         $this->emit('updateCart');
         $this->alert(
