@@ -165,7 +165,9 @@ return [
     'add_cart' => 'Add Cart',
     'detail' => 'Detail',
     'cart_detail' => 'Cart detail',
+    'checkout' => 'Checkout',
     'please_add_first' => 'Please add to cart first.',
+    'cart' => 'Cart',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',
