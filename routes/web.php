@@ -22,10 +22,12 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['re
     Route::get('/article/index', \App\Http\Livewire\App\Article\Index::class)->name('article.index');
     Route::get('/article/view/{article}', \App\Http\Livewire\App\Article\View::class)->name('article.view');
 
-    Route::get('/shop/product/index', \App\Http\Livewire\App\Shop\Product\Index::class)->name('shop.product.index');
-    Route::get('/shop/cart/index', \App\Http\Livewire\App\Shop\Cart\Index::class)->name('shop.cart.index');
-    Route::get('/shop/cart/checkout', \App\Http\Livewire\App\Shop\Cart\Checkout::class)->name('shop.cart.checkout');
-    Route::get('/shop/product/view/{product}', \App\Http\Livewire\App\Shop\Product\View::class)->name('shop.product.view');
+    if(config('modules.shop')) {
+        Route::get('/shop/product/index', \App\Http\Livewire\App\Shop\Product\Index::class)->name('shop.product.index');
+        Route::get('/shop/cart/index', \App\Http\Livewire\App\Shop\Cart\Index::class)->name('shop.cart.index');
+        Route::get('/shop/cart/checkout', \App\Http\Livewire\App\Shop\Cart\Checkout::class)->name('shop.cart.checkout');
+        Route::get('/shop/product/view/{product}', \App\Http\Livewire\App\Shop\Product\View::class)->name('shop.product.view');
+    }
 
     Route::group(['middleware' => ['auth:sanctum', 'verified']], function() {
 
@@ -61,8 +63,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['re
             Route::get('/setting/category/index', \App\Http\Livewire\Admin\Setting\Category\Index::class)->name('admin.setting.category.index');
             Route::get('/setting/manage/index', \App\Http\Livewire\Admin\Setting\Manage\Index::class)->name('admin.setting.manage.index');
 
-            Route::get('/shop/product/index', \App\Http\Livewire\Admin\Shop\Product\Index::class)->name('admin.shop.product.index');
-            Route::get('/shop/order/index', \App\Http\Livewire\Admin\Shop\Order\Index::class)->name('admin.shop.order.index');
+            if(config('modules.shop'))  {
+                Route::get('/shop/product/index', \App\Http\Livewire\Admin\Shop\Product\Index::class)->name('admin.shop.product.index');
+                Route::get('/shop/order/index', \App\Http\Livewire\Admin\Shop\Order\Index::class)->name('admin.shop.order.index');
+            }
 
             Route::get('/content/article/index', \App\Http\Livewire\Admin\Content\Article\Index::class)->name('admin.content.article.index');
             Route::get('/content/faq/index', \App\Http\Livewire\Admin\Content\FAQ\Index::class)->name('admin.content.faq.index');
