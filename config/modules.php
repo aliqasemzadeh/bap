@@ -8,6 +8,7 @@ return [
     'user' => true,
     'user_verify' => true,
     'user_mobile_verify' => true,
+    'notification' => false,
     'content' => true,
     'support' => true,
     'wallet' => true,
