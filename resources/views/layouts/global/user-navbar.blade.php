@@ -89,10 +89,14 @@
 
         <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
             @auth
-                @if(!auth()->user()->verified_at)
-                    <a href="{{ route('user.verify') }}" class="dropdown-item">{{ __('bap.account_verify') }}</a>
+                @if(config('modules.user_verify'))
+                    @if(!auth()->user()->verified_at)
+                        <a href="{{ route('user.verify') }}" class="dropdown-item">{{ __('bap.account_verify') }}</a>
+                    @endif
                 @endif
-                <a href="{{ route('user.mobile') }}" class="dropdown-item">{{ __('bap.mobile') }}</a>
+                    @if(config('modules.user_mobile_verify'))
+                        <a href="{{ route('user.mobile') }}" class="dropdown-item">{{ __('bap.mobile') }}</a>
+                    @endif
                 <a href="{{ route('profile.show') }}" class="dropdown-item">{{ __('bap.profile') }}</a>
                 <div class="dropdown-divider"></div>
                 <a href="{{ route('logout') }}" class="dropdown-item">{{ __('bap.logout') }}</a>
