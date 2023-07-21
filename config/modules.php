@@ -12,5 +12,5 @@ return [
     'content' => true,
     'support' => true,
     'wallet' => true,
-    'shop' => true,
+    'shop' => false,
 ];
