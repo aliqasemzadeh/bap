@@ -63,12 +63,9 @@
             </div>
         @endif
     @endauth
-
     <livewire:app.shop.cart-navbar></livewire:app.shop.cart-navbar>
-
     <div class="nav-item dropdown">
         <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
-
             @auth
                 <span class="avatar avatar-sm" style="background-image: url({{ auth()->user()->gravatar }})"></span>
                 <div class="d-none d-xl-block ps-2">
