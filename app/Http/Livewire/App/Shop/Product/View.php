@@ -11,6 +11,7 @@ class View extends Component
 {
     use LivewireAlert;
     public Product $product;
+    public $select_count = 0;
 
     public function addCart(Product $product) : void
     {
@@ -26,7 +27,7 @@ class View extends Component
             'associatedModel' => $product
         ));
 
-       //dd(\Cart::getContent());
+        $this->select_count += 1;
 
         $this->emit('updateCart');
         $this->alert(
@@ -37,20 +38,37 @@ class View extends Component
 
     public function removeCart(Product $product) : void
     {
-        \Cart::update($product->id, array(
-            'quantity' => -1,
-        ));
+        if($this->select_count == 0) {
+            $this->alert(
+                'warning',
+                __('bap.please_add_first')
+            );
+        } else {
+            if(\Cart::get($product->id)->quantity == 1) {
+                \Cart::remove($product->id);
+                $this->select_count = 0;
+            } else {
+                \Cart::update($product->id, array(
+                    'quantity' => -1,
+                ));
+                $this->select_count -= 1;
+            }
 
-        $this->emit('updateCart');
-        $this->alert(
-            'success',
-            __('bap.removed')
-        );
+            $this->emit('updateCart');
+            $this->alert(
+                'success',
+                __('bap.removed')
+            );
+        }
+
     }
 
     public function mount(Product $product) : void
     {
         $this->product = $product;
+        if(\Cart::get($product->id)) {
+            $this->select_count = \Cart::get($product->id)->quantity;
+        }
     }
     public function render()
     {

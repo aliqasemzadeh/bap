@@ -22,7 +22,7 @@
                                 </button>
                             </div>
                             <div class="col">
-                                <input type="text" value="0" class="form-control" placeholder="Search for…">
+                                <input wire:model="select_count" type="text" class="form-control" placeholder="0">
                             </div>
                             <div class="col-auto">
                                 <button wire:click="addCart({{ $product->id }})" class="btn btn-success btn-icon" aria-label="Button">
