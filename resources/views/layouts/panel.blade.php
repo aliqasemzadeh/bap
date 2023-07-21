@@ -46,6 +46,7 @@
                                     </span>
                         </a>
                     </li>
+                    @if(config('modules.wallet'))
                     <li class="nav-item @if(\Illuminate\Support\Facades\Route::is('panel.wallet.index')) active @endif">
                         <a class="nav-link" href="{{ route('panel.wallet.index') }}" >
                             <svg xmlns="http://www.w3.org/2000/svg" class="nav-link-icon d-md-none d-lg-inline-block" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -55,9 +56,10 @@
                             </svg>
                             <span class="nav-link-title">
                                       {{ __('bap.wallet') }}
-                                    </span>
+                            </span>
                         </a>
                     </li>
+                    @endif
                     @includeIf('layouts.custom.panel')
 
                         <li class="nav-item dropdown @if(\Illuminate\Support\Facades\Route::is('panel.support.*')) show active @endif">

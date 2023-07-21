@@ -44,8 +44,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['re
         Route::group(['prefix' => config('bap.panel-prefix-url')], function() {
             Route::get('/dashboard/index', \App\Http\Livewire\Panel\Dashboard\Index::class)->name('panel.dashboard.index');
 
-            Route::get('/support/wallet/index', \App\Http\Livewire\Panel\Wallet\Index::class)->name('panel.wallet.index');
-
+            if(config('modules.wallet')) {
+                Route::get('/support/wallet/index', \App\Http\Livewire\Panel\Wallet\Index::class)->name('panel.wallet.index');
+            }
             Route::get('/support/ticket/index', \App\Http\Livewire\Panel\Support\Ticket\Index::class)->name('panel.support.ticket.index');
             Route::get('/support/ticket/create', \App\Http\Livewire\Panel\Support\Ticket\Create::class)->name('panel.support.ticket.create');
             Route::get('/support/ticket/view/{ticket}', \App\Http\Livewire\Panel\Support\Ticket\View::class)->name('panel.support.ticket.view');
@@ -63,7 +64,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['re
             Route::get('/setting/category/index', \App\Http\Livewire\Admin\Setting\Category\Index::class)->name('admin.setting.category.index');
             Route::get('/setting/manage/index', \App\Http\Livewire\Admin\Setting\Manage\Index::class)->name('admin.setting.manage.index');
 
-            if(config('modules.shop'))  {
+            if(config('modules.shop')) {
                 Route::get('/shop/product/index', \App\Http\Livewire\Admin\Shop\Product\Index::class)->name('admin.shop.product.index');
                 Route::get('/shop/order/index', \App\Http\Livewire\Admin\Shop\Order\Index::class)->name('admin.shop.order.index');
             }
