@@ -24,6 +24,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['re
 
     Route::get('/shop/product/index', \App\Http\Livewire\App\Shop\Product\Index::class)->name('shop.product.index');
     Route::get('/shop/cart/index', \App\Http\Livewire\App\Shop\Cart\Index::class)->name('shop.cart.index');
+    Route::get('/shop/cart/checkout', \App\Http\Livewire\App\Shop\Cart\Checkout::class)->name('shop.cart.checkout');
     Route::get('/shop/product/view/{product}', \App\Http\Livewire\App\Shop\Product\View::class)->name('shop.product.view');
 
     Route::group(['middleware' => ['auth:sanctum', 'verified']], function() {

@@ -168,6 +168,7 @@ return [
     'checkout' => 'Checkout',
     'please_add_first' => 'Please add to cart first.',
     'cart' => 'Cart',
+    'view_cart' => 'View Cart',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',

@@ -41,9 +41,9 @@
                         </div>
                     </div>
                 @endforeach
-                    <div class="list-group-item">
-                        <a href="{{ route('shop.cart.index')}}" class="btn btn-primary w-100">{{ __('bap.checkout') }}</a>
-                    </div>
+                <div class="list-group-item">
+                    <a href="{{ route('shop.cart.index')}}" class="btn btn-primary w-100">{{ __('bap.view_cart') }}</a>
+                </div>
             </div>
         </div>
     </div>
