@@ -70,4 +70,15 @@ return [
     'admin_order_delete' => 'Delete Order',
     'admin_order_create' => 'Create Order',
 
+    'admin_payment_management' => 'View Payment Management',
+    'admin_deposit_index' => 'View Deposit Index',
+    'admin_deposit_edit' => 'Edit Deposit',
+    'admin_deposit_delete' => 'Delete Deposit',
+    'admin_deposit_create' => 'Create Deposit',
+
+    'admin_withdraw_index' => 'View Withdraw Index',
+    'admin_withdraw_edit' => 'Edit Withdraw',
+    'admin_withdraw_delete' => 'Delete Withdraw',
+    'admin_withdraw_create' => 'Create Withdraw',
+
 ];
