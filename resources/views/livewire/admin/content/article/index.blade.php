@@ -20,7 +20,7 @@
     <x-slot name="breadcrumb">
         <ol class="breadcrumb breadcrumb-arrows" aria-label="breadcrumbs">
             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.index') }}">{{ __('bap.dashboard') }}</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('content.article.index') }}">{{ __('bap.articles') }}</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('admin.content.article.index') }}">{{ __('bap.articles') }}</a></li>
         </ol>
     </x-slot>
 
