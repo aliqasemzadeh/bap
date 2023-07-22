@@ -170,6 +170,8 @@ return [
     'cart' => 'Cart',
     'view_cart' => 'View Cart',
     'payment_management' => 'Payment Management',
+    'deposits' => 'Deposits',
+    'withdraws' => 'Withdraws',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',
