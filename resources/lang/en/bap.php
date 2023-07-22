@@ -177,5 +177,8 @@ return [
         'ticket' => 'Ticket',
         'product' => 'Product',
         'brand' => 'Brand',
+        'deposit' => 'Deposit',
+        'withdraw' => 'Withdraw',
+        'transfer' => 'Transfer',
     ]
 ];
