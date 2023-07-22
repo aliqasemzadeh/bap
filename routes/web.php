@@ -69,6 +69,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['re
                 Route::get('/shop/order/index', \App\Http\Livewire\Admin\Shop\Order\Index::class)->name('admin.shop.order.index');
             }
 
+            if(config('modules.wallet')) {
+                Route::get('/payment/deposit/index', \App\Http\Livewire\Admin\Payment\Deposit\Index::class)->name('admin.payment.deposit.index');
+                Route::get('/payment/withdraw/index', \App\Http\Livewire\Admin\Payment\Withdraw\Index::class)->name('admin.payment.withdraw.index');
+            }
+
             Route::get('/content/article/index', \App\Http\Livewire\Admin\Content\Article\Index::class)->name('admin.content.article.index');
             Route::get('/content/faq/index', \App\Http\Livewire\Admin\Content\FAQ\Index::class)->name('admin.content.faq.index');
             Route::get('/content/carousel/index', \App\Http\Livewire\Admin\Content\Carousel\Index::class)->name('admin.content.carousel.index');

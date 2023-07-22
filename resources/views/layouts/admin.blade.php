@@ -153,6 +153,38 @@
                             @endcan
                         @endif
 
+                        @if(config('modules.wallet'))
+                            @can('admin_payment_management')
+                                <li class="nav-item dropdown @if(\Illuminate\Support\Facades\Route::is('admin.payment.*')) show  active @endif">
+                                    <a class="nav-link dropdown-toggle" href="#navbar-user" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="true">
+                                      <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="nav-link-icon d-md-none d-lg-inline-block" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M17 8v-3a1 1 0 0 0 -1 -1h-10a2 2 0 0 0 0 4h12a1 1 0 0 1 1 1v3m0 4v3a1 1 0 0 1 -1 1h-12a2 2 0 0 1 -2 -2v-12"></path>
+                                            <path d="M20 12v4h-4a2 2 0 0 1 0 -4h4"></path>
+                                        </svg>
+                                      </span>
+                                        <span class="nav-link-title">
+                                        {{ __('bap.payment_management') }}
+                                      </span>
+                                    </a>
+                                    <div class="dropdown-menu @if(\Illuminate\Support\Facades\Route::is('admin.payment.*')) show @endif " data-bs-popper="none">
+                                        @can('admin_deposit_index')
+                                            <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('admin.payment.deposit.index')) active @endif" href="{{ route('admin.payment.deposit.index') }}">
+                                                {{ __('bap.deposits') }}
+                                            </a>
+                                        @endcan
+                                        @can('admin_withdraw_index')
+                                            <a class="dropdown-item @if(\Illuminate\Support\Facades\Route::is('admin.payment.withdraw.index')) active @endif" href="{{ route('admin.payment.withdraw.index') }}">
+                                                {{ __('bap.withdraws') }}
+                                            </a>
+                                        @endcan
+
+                                    </div>
+                                </li>
+                            @endcan
+                        @endif
+
                         @can('admin_setting_management')
                             <li class="nav-item dropdown @if(\Illuminate\Support\Facades\Route::is('admin.setting.*')) show  active  @endif">
                                 <a class="nav-link dropdown-toggle" href="#navbar-user" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="true">

@@ -169,6 +169,7 @@ return [
     'please_add_first' => 'Please add to cart first.',
     'cart' => 'Cart',
     'view_cart' => 'View Cart',
+    'payment_management' => 'Payment Management',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',
