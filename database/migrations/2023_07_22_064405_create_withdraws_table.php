@@ -11,15 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('wallets', function (Blueprint $table) {
+        Schema::create('withdraws', function (Blueprint $table) {
             $table->id();
+            $table->string('status')->index()->default('Pending');
+            $table->bigInteger('wallet_id')->index();
             $table->bigInteger('user_id')->index();
             $table->string('symbol')->index();
-            $table->double('balance')->default(0);
-            $table->double('locked')->default(0);
-            $table->double('input')->default(0);
-            $table->double('output')->default(0);
-            $table->text('note')->nullable();
+            $table->string('network')->index();
+            $table->string('txid')->index()->nullable();
+            $table->string('address')->index();
+            $table->double('rate')->default(0);
+            $table->double('amount')->default(0);
+            $table->longText('options')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -30,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('wallets');
+        Schema::dropIfExists('withdraws');
     }
 };

@@ -172,6 +172,7 @@ return [
     'payment_management' => 'Payment Management',
     'deposits' => 'Deposits',
     'withdraws' => 'Withdraws',
+    'no_user' => 'No User',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',

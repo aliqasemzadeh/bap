@@ -28,5 +28,17 @@ class CategorySeeder extends Seeder
         $category->type = 'article';
         $category->language = 'en';
         $category->save();
+
+        $category = new Category();
+        $category->title = 'Deposit';
+        $category->type = 'deposit';
+        $category->language = 'en';
+        $category->save();
+
+        $category = new Category();
+        $category->title = 'Withdraw';
+        $category->type = 'withdraw';
+        $category->language = 'en';
+        $category->save();
     }
 }

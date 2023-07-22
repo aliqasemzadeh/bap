@@ -11,15 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('wallets', function (Blueprint $table) {
+        Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id')->index();
-            $table->string('symbol')->index();
-            $table->double('balance')->default(0);
-            $table->double('locked')->default(0);
-            $table->double('input')->default(0);
-            $table->double('output')->default(0);
-            $table->text('note')->nullable();
+            $table->string('type')->index();
+            $table->bigInteger('wallet_id')->index();
+            $table->bigInteger('linker_id')->index();
+            $table->double('amount')->default(0);
+            $table->text('options')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('wallets');
+        Schema::dropIfExists('transactions');
     }
 };
