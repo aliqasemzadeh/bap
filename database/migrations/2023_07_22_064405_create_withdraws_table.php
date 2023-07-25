@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('withdraws', function (Blueprint $table) {
             $table->id();
-            $table->string('status')->index()->default('Pending');
+            $table->string('status')->index()->default('pending');
             $table->bigInteger('wallet_id')->index();
             $table->bigInteger('user_id')->index();
             $table->string('symbol')->index();
