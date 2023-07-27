@@ -173,6 +173,7 @@ return [
     'deposits' => 'Deposits',
     'withdraws' => 'Withdraws',
     'no_user' => 'No User',
+    'user_wallets' => 'User Wallets',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',
