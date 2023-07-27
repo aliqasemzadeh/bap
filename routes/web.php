@@ -38,6 +38,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['re
         Route::get('/user/verify/verify_file/{verify}',  [\App\Http\Livewire\Panel\User\Verify\UploadVerifyFile::class, 'displayVerifyFile'])->name('user.verify.verify_file');
         Route::get('/user/mobile', \App\Http\Livewire\Panel\User\Mobile::class)->name('user.mobile')->middleware(['password.confirm', 'user.verify']);
 
+
         Route::any('/notification/view/{notification}', \App\Http\Livewire\App\Notification\View::class)->name('notification.view');
         Route::any('/faqs/index', \App\Http\Livewire\App\FAQ\Index::class)->name('faqs.index');
 
@@ -45,7 +46,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['re
             Route::get('/dashboard/index', \App\Http\Livewire\Panel\Dashboard\Index::class)->name('panel.dashboard.index');
 
             if(config('modules.wallet')) {
-                Route::get('/support/wallet/index', \App\Http\Livewire\Panel\Wallet\Index::class)->name('panel.wallet.index');
+                Route::get('/panel/user/wallet/index', \App\Http\Livewire\Panel\User\Mobile::class)->name('panel.user.wallet.index')->middleware(['password.confirm', 'user.verify']);
+                Route::get('/panel/wallet/index', \App\Http\Livewire\Panel\Wallet\Index::class)->name('panel.wallet.index');
             }
             Route::get('/support/ticket/index', \App\Http\Livewire\Panel\Support\Ticket\Index::class)->name('panel.support.ticket.index');
             Route::get('/support/ticket/create', \App\Http\Livewire\Panel\Support\Ticket\Create::class)->name('panel.support.ticket.create');

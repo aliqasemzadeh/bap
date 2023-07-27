@@ -175,6 +175,7 @@ return [
     'no_user' => 'No User',
     'user_wallets' => 'User Wallets',
     'create_user_wallet' => 'Create User Wallet',
+    'wallets' => 'Wallets',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',
