@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('status')->index()->default('unused');
             $table->bigInteger('user_id')->index();
-            $table->string('type')->default('password')->index(); //password, withdraw, change
+            $table->string('type')->default('password')->index(); //password, withdraw, change, wallet
             $table->string('method')->default('email')->index(); //email, sms
             $table->string('ip')->nullable();
             $table->string('value')->nullable();

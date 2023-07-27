@@ -36,7 +36,7 @@
                             <option value="{{ $key }}">{{ config('laravellocalization.supportedLocales.'.$key.'.name') }}</option>
                         @endforeach
                     </select>
-                    @error('type')
+                    @error('language')
                     <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>

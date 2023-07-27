@@ -174,6 +174,7 @@ return [
     'withdraws' => 'Withdraws',
     'no_user' => 'No User',
     'user_wallets' => 'User Wallets',
+    'create_user_wallet' => 'Create User Wallet',
     'category_types' => [
         'article' => 'Article',
         'ticket' => 'Ticket',
