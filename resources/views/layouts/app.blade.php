@@ -12,8 +12,6 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
-        <!-- Styles -->
-        @livewireStyles
 
     </head>
     <body class="antialiased" x-data="{ darkTheme: $persist(false) }" :data-bs-theme="darkTheme ? '' : 'dark'">

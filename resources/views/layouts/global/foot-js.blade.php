@@ -1,4 +1,3 @@
-@stack('modals')
 
 <livewire:modals />
 @livewireScripts
