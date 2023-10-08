@@ -39,8 +39,8 @@ class Create extends Component
         $user->last_name = $this->last_name;
         $user->save();
 
-        $this->emitTo(\App\Http\Livewire\Admin\User\Index::getName(), 'updateList');
-        $this->emit('hideModal');
+        $this->dispatchTo(\App\Http\Livewire\Admin\User\Index::getName(), 'updateList');
+        $this->dispatch('hideModal');
 
         $this->alert('success', __('bap.created'));
     }
