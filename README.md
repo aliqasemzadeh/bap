@@ -1,3 +1,5 @@
+#Note: We start new version ny the name jetadmin soon available.
+
 ✔️ Bootstrap Admin Panel
 ======================
 >  Easy way to create Admin Panel.
