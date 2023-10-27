@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'class_namespace' => 'App\\Htto\\Livewire',
+    'class_namespace' => 'App\\Livewire',
 
     /*
     |---------------------------------------------------------------------------
