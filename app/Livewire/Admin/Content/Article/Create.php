@@ -12,6 +12,7 @@ class Create extends Component
 {
     use LivewireAlert;
     use WithFileUploads;
+
     public $description;
     public $body;
     public $category_id;
@@ -23,9 +24,14 @@ class Create extends Component
         'updateList' => 'render'
     ];
 
+    public function openCreate()
+    {
+        $this->dispatch('showModal', ['alias' => 'admin.content.article.create', 'params' => ['name' => 'test']]);
+    }
+
     public function create()
     {
-        if(!auth()->user()->can('admin_article_create')) {
+        if (!auth()->user()->can('admin_article_create')) {
             return abort(403);
         }
 
