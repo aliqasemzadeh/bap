@@ -54,7 +54,7 @@ class Index extends Component
 
     public function delete(Article $article)
     {
-        if(!auth()->user()->can('admin_user_delete')) {
+        if (!auth()->user()->can('admin_user_delete')) {
             return abort(403);
         }
         $this->confirm(__('bap.are_you_sure'), [
@@ -69,9 +69,14 @@ class Index extends Component
     }
 
 
+    public function openCreate()
+    {
+        $this->dispatch('showModal', ['alias' => 'admin.user.create', 'params' => ['name' => 'test']]);
+    }
+
     public function confirmedDeleteArticle()
     {
-        if(!auth()->user()->can('admin_user_delete')) {
+        if (!auth()->user()->can('admin_user_delete')) {
             return abort(403);
         }
         $this->article->delete();
@@ -97,7 +102,7 @@ class Index extends Component
 
     public function updatedSelectAll($value)
     {
-        if($value) {
+        if ($value) {
             $this->selectedItems = Article::pluck('id')->toArray();
         } else {
             $this->selectedItems = [];
@@ -106,14 +111,14 @@ class Index extends Component
 
     public function updatedSelectedItems($value)
     {
-        if($this->selectAll) {
+        if ($this->selectAll) {
             $this->selectAll = false;
         }
     }
 
     public function deleteSelected()
     {
-        if(!auth()->user()->can('admin_user_delete')) {
+        if (!auth()->user()->can('admin_user_delete')) {
             return abort(403);
         }
         $this->confirm(__('bap.are_you_sure'), [
@@ -128,7 +133,7 @@ class Index extends Component
 
     public function deleteSelectedQuery()
     {
-        if(!auth()->user()->can('admin_user_delete')) {
+        if (!auth()->user()->can('admin_user_delete')) {
             return abort(403);
         }
         Article::query()
@@ -145,7 +150,7 @@ class Index extends Component
 
     public function render()
     {
-        if(!auth()->user()->can('admin_article_index')) {
+        if (!auth()->user()->can('admin_article_index')) {
             return abort(403);
         }
         $articles = Article::with(['user', 'category'])->filter(['search' => $this->search])->orderBy($this->sortColumn, $this->sortDirection)->paginate($this->perPage);

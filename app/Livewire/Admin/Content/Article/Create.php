@@ -24,11 +24,6 @@ class Create extends Component
         'updateList' => 'render'
     ];
 
-    public function openCreate()
-    {
-        $this->dispatch('showModal', ['alias' => 'admin.content.article.create', 'params' => ['name' => 'test']]);
-    }
-
     public function create()
     {
         if (!auth()->user()->can('admin_article_create')) {
