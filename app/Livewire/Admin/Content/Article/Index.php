@@ -68,12 +68,6 @@ class Index extends Component
         $this->article = $article;
     }
 
-
-    public function openCreate()
-    {
-        $this->dispatch('showModal', ['alias' => 'admin.user.create', 'params' => ['name' => 'test']]);
-    }
-
     public function confirmedDeleteArticle()
     {
         if (!auth()->user()->can('admin_user_delete')) {
