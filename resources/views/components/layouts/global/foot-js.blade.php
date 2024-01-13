@@ -1,5 +1,5 @@
 <livewire:modals/>
-<livewire:scripts/>
+@livewireScriptConfig
 <x-livewire-alert::scripts />
 <script src="{{ asset('js/app.js') }}"></script>
 

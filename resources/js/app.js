@@ -8,7 +8,7 @@ Alpine.plugin(Clipboard.configure({
     onCopy: () => {
         Swal.fire('Copied.');
     }
-}))
+}));
 
 Alpine.plugin(Persist);
 Alpine.plugin(Clipboard);
