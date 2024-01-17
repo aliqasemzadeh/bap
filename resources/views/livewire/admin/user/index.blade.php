@@ -2,7 +2,6 @@
    <x-slot name="title">
        {{ __('bap.users') }}
    </x-slot>
-    <x-slot name="actions">
         @can('admin_user_create')
         <div class="col-auto ms-auto d-print-none">
             <div class="btn-list">
@@ -16,20 +15,16 @@
             </div>
         </div>
         @endcan
-   </x-slot>
-    <x-slot name="breadcrumb">
         <ol class="breadcrumb breadcrumb-arrows" aria-label="breadcrumbs">
             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.index') }}">{{ __('bap.dashboard') }}</a></li>
             <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('admin.user.index') }}">{{ __('bap.users') }}</a></li>
         </ol>
-    </x-slot>
 
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">{{ __('bap.users') }}</h3>
         </div>
         <div class="card-body">
-            <button wire:click="$dispatch('showModal', {data: {'alias' : 'admin.user.create'}})">LogMe</button>
             <div class="d-flex">
                 <div class="text-muted">
                     {{ __('bap.per_page') }}:
