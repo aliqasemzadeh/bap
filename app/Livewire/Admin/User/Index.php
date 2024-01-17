@@ -4,6 +4,7 @@ namespace App\Livewire\Admin\User;
 
 use App\Exports\UsersExport;
 use App\Models\User;
+use Illuminate\Support\Facades\Log;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -153,6 +154,7 @@ class Index extends Component
 
     public function render()
     {
+        Log::info("admin_user_index");
         if(!auth()->user()->can('admin_user_index')) {
             return abort(403);
         }
