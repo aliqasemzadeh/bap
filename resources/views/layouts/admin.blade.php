@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@if(isset($title)){{ $title }} - @endif{{ config('bap.name', 'BAP') }}</title>
+    <title>
+        @if(isset($title)){{ $title }} - @endif{{ config('bap.name', 'BAP') }}
+    </title>
 
     @include('layouts.global.favicon')
 
@@ -254,6 +256,7 @@
                             <h2 class="page-title">
                                 {{ $title }}
                             </h2>
+
                             @if(isset($breadcrumb))
                                 {{ $breadcrumb }}
                             @endif
@@ -265,7 +268,6 @@
                 </div>
             @endif
             <div class="page-body">
-
                 {{ $slot }}
             </div>
         </main>
