@@ -29,6 +29,7 @@
             <h3 class="card-title">{{ __('bap.users') }}</h3>
         </div>
         <div class="card-body">
+            <a href="{{ route('admin.content.carousel.index') }}" wire:navigate>carousel</a>
             <button wire:click="$dispatch('showModal', {data: {'alias' : 'admin.user.create'}})">LogMe</button>
             <div class="d-flex">
                 <div class="text-muted">
