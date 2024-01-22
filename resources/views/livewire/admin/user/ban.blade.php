@@ -1,6 +1,5 @@
-<div class="modal-dialog">
+<div>
     <form wire:submit.prevent="ban">
-        <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">{{ __('bap.ban') }}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{ __('bap.close') }}"></button>
@@ -40,6 +39,5 @@
                     <button type="button" wire:click="unban()" class="btn btn-success">{{ __('bap.unban') }}</button>
                 @endif
             </div>
-        </div>
     </form>
 </div>

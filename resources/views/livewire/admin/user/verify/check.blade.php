@@ -1,5 +1,4 @@
-<div class="modal-dialog modal-lg">
-        <div class="modal-content">
+<div>
             <div class="modal-header">
                 <h5 class="modal-title">{{ __('bap.verify') }}: {{ $verify->first_name }} {{ $verify->first_name }}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{ __('bap.close') }}"></button>
@@ -92,5 +91,4 @@
                 <button type="button" class="btn btn-success" wire:click="accept">{{ __('bap.accept') }}</button>
                 <button type="button" class="btn btn-danger" wire:click="reject">{{ __('bap.reject') }}</button>
             </div>
-        </div>
 </div>
