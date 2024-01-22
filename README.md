@@ -1,4 +1,3 @@
-#Note: We start new version ny the name jetadmin soon available.
 ✔️ Bootstrap Admin Panel
 ======================
 >  Easy way to create Admin Panel.
@@ -46,3 +45,5 @@ I decide to change Base Admin Panel to Bootstrap Admin Panel because is much bet
 
 Note 2:
 Any misuse of this software to launch illegal sites is not allowed and the responsibility for its use lies with the user's site.
+
+Note 3: We start new version ny the name jetadmin soon available.
