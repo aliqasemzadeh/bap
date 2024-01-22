@@ -83,13 +83,6 @@ class Index extends Component
         );
     }
 
-    #[On('openCreate')]
-    public function openCreate()
-    {
-        Log::info("openCreate");
-        $this->dispatch('showModal', [ 'data' => ['alias' => 'admin.content.article.index'] ]);
-    }
-
     public function cancelledDeleteArticle()
     {
         $this->alert(
