@@ -3,9 +3,11 @@
 namespace App\Livewire\Admin\Content\Article;
 
 use App\Models\Article;
+use Illuminate\Support\Facades\Log;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Livewire\Attributes\On;
 
 class Index extends Component
 {
@@ -79,6 +81,13 @@ class Index extends Component
             'success',
             __('bap.removed')
         );
+    }
+
+    #[On('openCreate')]
+    public function openCreate()
+    {
+        Log::info("openCreate");
+        $this->dispatch('showModal', [ 'data' => ['alias' => 'admin.content.article.index'] ]);
     }
 
     public function cancelledDeleteArticle()
