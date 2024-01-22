@@ -1,6 +1,5 @@
-<div class="modal-dialog">
+<div>
     <form wire:submit.prevent="create">
-        <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">{{ __('bap.create_role') }}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{ __('bap.close') }}"></button>
@@ -19,7 +18,6 @@
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('bap.close') }}</button>
                 <button type="submit" class="btn btn-primary">{{ __('bap.create') }}</button>
             </div>
-        </div>
     </form>
 </div>
 
