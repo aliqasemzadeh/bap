@@ -1,7 +1,7 @@
 <div>
         <div class="modal-header">
             <h5 class="modal-title">{{ __('bap.roles_word') }}</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{ __('bap.close') }}"></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" wire:click="$dispatch('hideModal')" aria-label="{{ __('bap.close') }}"></button>
         </div>
         <div class="modal-body">
 

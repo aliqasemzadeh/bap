@@ -2,7 +2,7 @@
     <form wire:submit.prevent="create">
             <div class="modal-header">
                 <h5 class="modal-title">{{ __('bap.create_faq') }}</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{ __('bap.close') }}"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" wire:click="$dispatch('hideModal')" aria-label="{{ __('bap.close') }}"></button>
             </div>
             <div class="modal-body">
 
@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('bap.close') }}</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" wire:click="$dispatch('hideModal')">{{ __('bap.close') }}</button>
                 <button type="submit" class="btn btn-primary">{{ __('bap.create') }}</button>
             </div>
     </form>

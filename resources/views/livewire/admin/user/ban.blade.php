@@ -2,7 +2,7 @@
     <form wire:submit.prevent="ban">
             <div class="modal-header">
                 <h5 class="modal-title">{{ __('bap.ban') }}</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{ __('bap.close') }}"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" wire:click="$dispatch('hideModal')" aria-label="{{ __('bap.close') }}"></button>
             </div>
             <div class="modal-body">
                 <div class="mb-3">
@@ -31,7 +31,7 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('bap.close') }}</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" wire:click="$dispatch('hideModal')">{{ __('bap.close') }}</button>
                 @if($user->isNotBanned())
                     <button type="submit" class="btn btn-primary">{{ __('bap.ban') }}</button>
                 @endif
