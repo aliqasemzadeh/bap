@@ -22,7 +22,7 @@
                         <path d="M20 12v4h-4a2 2 0 0 1 0 -4h4"></path>
                     </svg>
                 </a>
-                <button onclick="Livewire.emit('showModal', 'panel.wallet.deposit')"
+                <button wire:click="$dispatch('showModal', 'panel.wallet.deposit')"
                         class="btn btn-success d-none d-sm-inline-block">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-download" width="24"
                          height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -34,7 +34,7 @@
                     </svg>
                     {{ __('bap.deposit') }}
                 </button>
-                <button onclick="Livewire.emit('showModal', 'panel.wallet.deposit')"
+                <button wire:click="$dispatch('showModal', 'panel.wallet.deposit')"
                         class="btn btn-success d-sm-none btn-icon" aria-label="{{ __('bap.deposit') }}">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-download" width="24"
                          height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -45,7 +45,7 @@
                         <path d="M12 4l0 12"></path>
                     </svg>
                 </button>
-                <button onclick="Livewire.emit('showModal', 'panel.wallet.withdraw')"
+                <button wire:click="$dispatch('showModal', 'panel.wallet.withdraw')"
                         class="btn btn-danger d-none d-sm-inline-block">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-upload" width="24"
                          height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -57,7 +57,7 @@
                     </svg>
                     {{ __('bap.withdraw') }}
                 </button>
-                <button onclick="Livewire.emit('showModal', 'panel.wallet.withdraw')"
+                <button wire:click="$dispatch('showModal', 'panel.wallet.withdraw')"
                         class="btn btn-danger d-sm-none btn-icon" aria-label="{{ __('bap.withdraw') }}">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-upload" width="24"
                          height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -207,7 +207,7 @@
                         </td>
                         <td>{{ $wallet->balance }}</td>
                         <td class="text-end">
-                            <button onclick="Livewire.emit('showModal', 'panel.wallet.deposit')"
+                            <button wire:click="$dispatch('showModal', 'panel.wallet.deposit')"
                                     class="btn btn-sm btn-success d-none d-sm-inline-block">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-download"
                                      width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
@@ -219,7 +219,7 @@
                                 </svg>
                                 {{ __('bap.deposit') }}
                             </button>
-                            <button onclick="Livewire.emit('showModal', 'panel.wallet.deposit')"
+                            <button wire:click="$dispatch('showModal', 'panel.wallet.deposit')"
                                     class="btn btn-sm btn-success d-sm-none btn-icon"
                                     aria-label="{{ __('bap.deposit') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-download"
@@ -231,7 +231,7 @@
                                     <path d="M12 4l0 12"></path>
                                 </svg>
                             </button>
-                            <button onclick="Livewire.emit('showModal', 'panel.wallet.withdraw')"
+                            <button wire:click="$dispatch('showModal', 'panel.wallet.withdraw')"
                                     class="btn btn-sm btn-danger d-none d-sm-inline-block">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-upload"
                                      width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
@@ -243,7 +243,7 @@
                                 </svg>
                                 {{ __('bap.withdraw') }}
                             </button>
-                            <button onclick="Livewire.emit('showModal', 'panel.wallet.withdraw')"
+                            <button wire:click="$dispatch('showModal', 'panel.wallet.withdraw')"
                                     class="btn btn-sm btn-danger d-sm-none btn-icon"
                                     aria-label="{{ __('bap.withdraw') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-upload"
@@ -256,7 +256,7 @@
                                 </svg>
                             </button>
 
-                            <button onclick="Livewire.emit('showModal', 'panel.wallet.trade')"
+                            <button wire:click="$dispatch('showModal', 'panel.wallet.trade')"
                                     class="btn btn-sm btn-purple d-none d-sm-inline-block">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                      class="icon icon-tabler icon-tabler-arrows-exchange-2" width="24" height="24"
@@ -268,7 +268,7 @@
                                 </svg>
                                 {{ __('bap.trade') }}
                             </button>
-                            <button onclick="Livewire.emit('showModal', 'panel.wallet.trade')"
+                            <button wire:click="$dispatch('showModal', 'panel.wallet.trade')"
                                     class="btn btn-sm btn-purple d-sm-none btn-icon" aria-label="{{ __('bap.trade') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                      class="icon icon-tabler icon-tabler-arrows-exchange-2" width="24" height="24"
@@ -282,7 +282,7 @@
 
 
                             @if(config('wallet.'.$wallet->symbol.'.stack'))
-                                <button onclick="Livewire.emit('showModal', 'panel.wallet.stack')"
+                                <button wire:click="$dispatch('showModal', 'panel.wallet.stack')"
                                         class="btn btn-sm btn-primary d-none d-sm-inline-block">
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                          class="icon icon-tabler icon-tabler-brand-stackoverflow" width="24" height="24"
@@ -297,7 +297,7 @@
                                     </svg>
                                     {{ __('bap.stack') }}
                                 </button>
-                                <button onclick="Livewire.emit('showModal', 'panel.wallet.stack')"
+                                <button wire:click="$dispatch('showModal', 'panel.wallet.stack')"
                                         class="btn btn-sm btn-primary d-sm-none btn-icon"
                                         aria-label="{{ __('bap.stack') }}">
                                     <svg xmlns="http://www.w3.org/2000/svg"

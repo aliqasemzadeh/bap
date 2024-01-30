@@ -5,11 +5,11 @@
     <x-slot name="actions">
         <div class="col-auto ms-auto d-print-none">
             <div class="btn-list">
-                <button onclick="Livewire.emit('showModal', 'admin.user.role.create')" class="btn btn-primary d-none d-sm-inline-block">
+                <button wire:click="$dispatch('showModal', 'admin.user.role.create')" class="btn btn-primary d-none d-sm-inline-block">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                     {{ __('bap.create_role') }}
                 </button>
-                <button onclick="Livewire.emit('showModal', 'admin.user.role.create')" class="btn btn-primary d-sm-none btn-icon" aria-label="Create new report">
+                <button wire:click="$dispatch('showModal', 'admin.user.role.create')" class="btn btn-primary d-sm-none btn-icon" aria-label="Create new report">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                 </button>
             </div>
@@ -84,11 +84,11 @@
                         <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select User" value="{{ $role->id }}" name="selectedUsers" wire:model="selectedRoles"></td>
                         <td>{{ __('roles.'.$role->name) }}</td>
                         <td class="text-end">
-                            <button onclick="Livewire.emit('showModal', 'admin.user.role.permissions', '{{ json_encode($role->id) }}')" class="btn btn-warning btn-icon btn-sm">
+                            <button wire:click="$dispatch('showModal', 'admin.user.role.permissions', '{{ json_encode($role->id) }}')" class="btn btn-warning btn-icon btn-sm">
                                 <!-- Download SVG icon from http://tabler-icons.io/i/lock-access -->
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8v-2a2 2 0 0 1 2 -2h2" /><path d="M4 16v2a2 2 0 0 0 2 2h2" /><path d="M16 4h2a2 2 0 0 1 2 2v2" /><path d="M16 20h2a2 2 0 0 0 2 -2v-2" /><rect x="8" y="11" width="8" height="5" rx="1" /><path d="M10 11v-2a2 2 0 1 1 4 0v2" /></svg>
                             </button>
-                            <button onclick="Livewire.emit('showModal', 'admin.user.role.users', '{{ json_encode($role->id) }}')" class="btn btn-secondary btn-icon btn-sm">
+                            <button wire:click="$dispatch('showModal', 'admin.user.role.users', '{{ json_encode($role->id) }}')" class="btn btn-secondary btn-icon btn-sm">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-users" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                     <circle cx="9" cy="7" r="4"></circle>
@@ -97,7 +97,7 @@
                                     <path d="M21 21v-2a4 4 0 0 0 -3 -3.85"></path>
                                 </svg>
                             </button>
-                            <button onclick="Livewire.emit('showModal', 'admin.user.role.edit', '{{ json_encode($role->id) }}')" class="btn btn-primary btn-icon btn-sm">
+                            <button wire:click="$dispatch('showModal', 'admin.user.role.edit', '{{ json_encode($role->id) }}')" class="btn btn-primary btn-icon btn-sm">
                                 <!-- Download SVG icon from http://tabler-icons.io/i/edit -->
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" /><path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" /><line x1="16" y1="5" x2="19" y2="8" /></svg>
                             </button>
