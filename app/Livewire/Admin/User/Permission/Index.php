@@ -75,7 +75,7 @@ class Index extends Component
         }
 
         $this->permission->delete();
-        $this->emit('updateList');
+        $this->dispatch('updateList');
         $this->alert(
             'success',
             __('bap.removed')

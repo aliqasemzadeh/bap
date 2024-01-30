@@ -61,8 +61,8 @@ class Create extends Component
         $image = $this->image->store('products');
         $product->addMedia(storage_path('app/' . $image))->toMediaCollection();
 
-        $this->emitTo(\App\Livewire\Admin\Shop\Product\Index::getName(), 'updateList');
-        $this->emit('hideModal');
+        $this->dispatchTo(\App\Livewire\Admin\Shop\Product\Index::getName(), 'updateList');
+        $this->dispatch('hideModal');
 
         $this->alert('success', __('bap.created'));
     }

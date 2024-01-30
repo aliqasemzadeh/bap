@@ -28,7 +28,7 @@ class View extends Component
 
         $this->select_count += 1;
 
-        $this->emit('updateCart');
+        $this->dispatch('updateCart');
         $this->alert(
             'success',
             __('bap.added')
@@ -53,7 +53,7 @@ class View extends Component
                 $this->select_count -= 1;
             }
 
-            $this->emit('updateCart');
+            $this->dispatch('updateCart');
             $this->alert(
                 'success',
                 __('bap.removed')

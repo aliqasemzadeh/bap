@@ -61,8 +61,8 @@ class Edit extends Component
         $carousel->save();
 
 
-        $this->emitTo(\App\Livewire\Admin\Content\Carousel\Index::getName(), 'updateList');
-        $this->emit('hideModal');
+        $this->dispatchTo(\App\Livewire\Admin\Content\Carousel\Index::getName(), 'updateList');
+        $this->dispatch('hideModal');
 
         $this->alert('success', __('bap.created'));
     }

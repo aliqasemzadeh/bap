@@ -23,8 +23,8 @@ class Create extends Component
 
         Role::create(['name' => $this->name]);
 
-        $this->emitTo(\App\Livewire\Admin\User\Role\Index::getName(), 'updateList');
-        $this->emit('hideModal');
+        $this->dispatchTo(\App\Livewire\Admin\User\Role\Index::getName(), 'updateList');
+        $this->dispatch('hideModal');
 
         $this->alert('success', __('bap.created'));
     }

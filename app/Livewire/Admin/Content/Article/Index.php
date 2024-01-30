@@ -76,7 +76,7 @@ class Index extends Component
             return abort(403);
         }
         $this->article->delete();
-        $this->emit('updateList');
+        $this->dispatch('updateList');
         $this->alert(
             'success',
             __('bap.removed')

@@ -12,7 +12,7 @@ class Index extends Component
     public function removeItem($itemId)
     {
         \Cart::remove($itemId);
-        $this->emit('updateCartIndex');
+        $this->dispatch('updateCartIndex');
     }
     public function render()
     {

@@ -33,8 +33,8 @@ class Ban extends Component
             ]);
         }
 
-        $this->emitTo(\App\Livewire\Admin\User\Index::getName(), 'updateList');
-        $this->emit('hideModal');
+        $this->dispatchTo(\App\Livewire\Admin\User\Index::getName(), 'updateList');
+        $this->dispatch('hideModal');
 
         $this->alert('success', __('bap.banned'));
     }
@@ -43,8 +43,8 @@ class Ban extends Component
     {
         $this->user->unban();
 
-        $this->emitTo(\App\Livewire\Admin\User\Index::getName(), 'updateList');
-        $this->emit('hideModal');
+        $this->dispatchTo(\App\Livewire\Admin\User\Index::getName(), 'updateList');
+        $this->dispatch('hideModal');
 
         $this->alert('success', __('bap.unbanned'));
     }

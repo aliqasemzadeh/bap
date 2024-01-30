@@ -56,7 +56,7 @@ class Permissions extends Component
         }
 
         $this->role->givePermissionTo($permission->name);
-        $this->emit('updatePermissionList');
+        $this->dispatch('updatePermissionList');
         $this->alert(
             'success',
             __('bap.added')
@@ -72,7 +72,7 @@ class Permissions extends Component
         }
 
         $this->role->revokePermissionTo($this->permission->name);
-        $this->emit('updatePermissionList');
+        $this->dispatch('updatePermissionList');
         $this->alert(
             'success',
             __('bap.removed')

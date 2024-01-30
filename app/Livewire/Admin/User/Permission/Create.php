@@ -23,8 +23,8 @@ class Create extends Component
 
         Permission::create(['guard_name' => 'web', 'name' => $this->name]);
 
-        $this->emitTo(\App\Livewire\Admin\User\Permission\Index::getName(), 'updateList');
-        $this->emit('hideModal');
+        $this->dispatchTo(\App\Livewire\Admin\User\Permission\Index::getName(), 'updateList');
+        $this->dispatch('hideModal');
 
         $this->alert('success', __('bap.created'));
     }

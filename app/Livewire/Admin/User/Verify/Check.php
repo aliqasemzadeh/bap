@@ -42,8 +42,8 @@ class Check extends Component
         $this->verify->status = 'accept';
         $this->verify->save();
 
-        $this->emitTo(\App\Livewire\Admin\User\Verify\Index::getName(), 'updateList');
-        $this->emit('hideModal');
+        $this->dispatchTo(\App\Livewire\Admin\User\Verify\Index::getName(), 'updateList');
+        $this->dispatch('hideModal');
 
         $this->alert('success', __('bap.accepted'));
     }
@@ -53,8 +53,8 @@ class Check extends Component
         $this->verify->status = 'reject';
         $this->verify->save();
 
-        $this->emitTo(\App\Livewire\Admin\User\Verify\Index::getName(), 'updateList');
-        $this->emit('hideModal');
+        $this->dispatchTo(\App\Livewire\Admin\User\Verify\Index::getName(), 'updateList');
+        $this->dispatch('hideModal');
 
         $this->alert('success', __('bap.rejected'));
     }

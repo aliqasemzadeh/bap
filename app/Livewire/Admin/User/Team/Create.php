@@ -36,8 +36,8 @@ class Create extends Component
         $team->personal_team = $this->personal;
         $team->save();
 
-        $this->emitTo(\App\Livewire\Admin\User\Team\Index::getName(), 'updateList');
-        $this->emit('hideModal');
+        $this->dispatchTo(\App\Livewire\Admin\User\Team\Index::getName(), 'updateList');
+        $this->dispatch('hideModal');
 
         $this->alert(
             'success',

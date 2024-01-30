@@ -52,7 +52,7 @@ class Roles extends Component
             return abort(403);
         }
         $this->user->assignRole($role->name);
-        $this->emit('updateRoleList');
+        $this->dispatch('updateRoleList');
         $this->alert(
             'success',
             __('bap.added')
@@ -65,7 +65,7 @@ class Roles extends Component
             return abort(403);
         }
         $this->user->removeRole($this->role->name);
-        $this->emit('updatePermissionList');
+        $this->dispatch('updatePermissionList');
         $this->alert(
             'success',
             __('bap.removed')

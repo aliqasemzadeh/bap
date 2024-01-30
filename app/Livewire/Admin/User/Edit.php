@@ -54,8 +54,8 @@ class Edit extends Component
         }
         $this->user->save();
 
-        $this->emitTo(\App\Livewire\Admin\User\Index::getName(), 'updateList');
-        $this->emit('hideModal');
+        $this->dispatchTo(\App\Livewire\Admin\User\Index::getName(), 'updateList');
+        $this->dispatch('hideModal');
 
         $this->alert('success', __('bap.edited'));
     }

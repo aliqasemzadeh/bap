@@ -27,8 +27,8 @@ class Create extends Component
         $faq->answer = $this->answer;
         $faq->save();
 
-        $this->emitTo(\App\Livewire\Admin\Content\FAQ\Index::getName(), 'updateList');
-        $this->emit('hideModal');
+        $this->dispatchTo(\App\Livewire\Admin\Content\FAQ\Index::getName(), 'updateList');
+        $this->dispatch('hideModal');
 
         $this->alert('success', __('bap.created'));
     }
