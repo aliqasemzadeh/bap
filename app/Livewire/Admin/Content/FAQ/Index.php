@@ -4,6 +4,7 @@ namespace App\Livewire\Admin\Content\FAQ;
 
 use App\Models\FrequentlyAskedQuestion;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -143,6 +144,8 @@ class Index extends Component
             __('bap.removed')
         );
     }
+
+    #[On('admin.content.f-a-q.index')]
     public function render()
     {
         if(!auth()->user()->can('admin_article_index')) {

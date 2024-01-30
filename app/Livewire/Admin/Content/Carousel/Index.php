@@ -4,6 +4,7 @@ namespace App\Livewire\Admin\Content\Carousel;
 
 use App\Models\Carousel;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -144,6 +145,7 @@ class Index extends Component
         );
     }
 
+    #[On('admin.content.carousel.index')]
     public function render()
     {
         if(!auth()->user()->can('admin_carousel_index')) {

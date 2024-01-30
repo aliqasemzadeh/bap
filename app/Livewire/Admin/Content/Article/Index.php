@@ -143,7 +143,7 @@ class Index extends Component
             __('bap.removed')
         );
     }
-
+    #[On('admin.content.article.index')]
     public function render()
     {
         if (!auth()->user()->can('admin_article_index')) {
