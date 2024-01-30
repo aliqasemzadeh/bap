@@ -11,8 +11,8 @@
 
 ## 🧰 Built with
 
-- Laravel 10
-- Livewire
+- Laravel 10.X
+- Livewire 3.X
 - Bootstrap 5
 - Tabler.io
 - SweetAlert2
