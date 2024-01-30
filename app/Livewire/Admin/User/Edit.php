@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
+use Livewire\Attributes\On;
 
 class Edit extends Component
 {
@@ -54,7 +55,7 @@ class Edit extends Component
         }
         $this->user->save();
 
-        $this->dispatchTo(\App\Livewire\Admin\User\Index::getName(), 'updateList');
+        $this->dispatch('admin.user.index');
         $this->dispatch('hideModal');
 
         $this->alert('success', __('bap.edited'));

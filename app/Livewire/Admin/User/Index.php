@@ -9,6 +9,7 @@ use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Maatwebsite\Excel\Facades\Excel;
+use Livewire\Attributes\On;
 
 class Index extends Component
 {
@@ -152,6 +153,7 @@ class Index extends Component
         return Excel::download(new UsersExport($this->selectedUsers), 'users-'.date('Y-m-d').'.xlsx');
     }
 
+    #[On('admin.user.index')]
     public function render()
     {
         Log::info("admin_user_index");
