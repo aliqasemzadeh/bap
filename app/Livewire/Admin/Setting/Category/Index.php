@@ -4,6 +4,7 @@ namespace App\Livewire\Admin\Setting\Category;
 
 use App\Models\Category;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -145,7 +146,7 @@ class Index extends Component
         );
     }
 
-
+    #[On('admin.setting.category.index')]
     public function render()
     {
         if(!auth()->user()->can('admin_user_index')) {
