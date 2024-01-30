@@ -62,7 +62,7 @@ class Edit extends Component
         $article->description = $this->description;
         $article->save();
 
-        $this->dispatchTo(\App\Livewire\Admin\Content\Article\Index::getName(), 'updateList');
+        $this->dispatch('admin.content.article.index');
         $this->dispatch('hideModal');
 
         $this->alert('success', __('bap.edited'));

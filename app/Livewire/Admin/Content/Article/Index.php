@@ -76,7 +76,7 @@ class Index extends Component
             return abort(403);
         }
         $this->article->delete();
-        $this->dispatch('updateList');
+        $this->dispatch('admin.content.article.index');
         $this->alert(
             'success',
             __('bap.removed')
