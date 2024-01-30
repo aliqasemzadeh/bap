@@ -18,17 +18,17 @@ class Edit extends Component
     public $last_name;
     public $title;
 
-    public function mount(User $user)
+    public function mount($id)
     {
         if(!auth()->user()->can('admin_user_edit')) {
             return abort(403);
         }
 
-        $this->user = $user;
-        $this->email = $user->email;
-        $this->first_name = $user->first_name;
-        $this->last_name = $user->last_name;
-        $this->title = $user->title;
+        $this->user = User::findOrFail($id);
+        $this->email = $this->user->email;
+        $this->first_name = $this->user->first_name;
+        $this->last_name = $this->user->last_name;
+        $this->title = $this->user->title;
     }
 
     public function edit()
