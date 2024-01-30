@@ -4,6 +4,7 @@ namespace App\Livewire\Admin\User\Team;
 
 use App\Models\Team;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -134,6 +135,7 @@ class Index extends Component
         );
     }
 
+    #[On('admin.user.team.index')]
     public function render()
     {
         if(!auth()->user()->can('admin_user_teams')) {

@@ -4,6 +4,7 @@ namespace App\Livewire\Admin\User\Verify;
 
 use App\Models\UserVerify;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -52,6 +53,7 @@ class Index extends Component
         }
     }
 
+    #[On('admin.user.verify.index')]
     public function render()
     {
         if(!auth()->user()->can('admin_user_verify')) {

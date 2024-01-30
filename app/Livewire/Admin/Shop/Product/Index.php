@@ -5,6 +5,7 @@ namespace App\Livewire\Admin\Shop\Product;
 use App\Exports\ProductsExport;
 use App\Models\Product;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Maatwebsite\Excel\Facades\Excel;
@@ -150,6 +151,7 @@ class Index extends Component
         return Excel::download(new ProductsExport($this->selectedItems), 'products-'.date('Y-m-d').'.xlsx');
     }
 
+    #[On('admin.shop.product.index')]
     public function render()
     {
         if(!auth()->user()->can('admin_product_index')) {

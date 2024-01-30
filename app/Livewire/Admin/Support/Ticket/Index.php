@@ -4,6 +4,7 @@ namespace App\Livewire\Admin\Support\Ticket;
 
 use App\Models\Ticket;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -110,6 +111,7 @@ class Index extends Component
         }
     }
 
+    #[On('admin.support.ticket.index')]
     public function render()
     {
         if(!auth()->user()->can('admin_ticket_index')) {

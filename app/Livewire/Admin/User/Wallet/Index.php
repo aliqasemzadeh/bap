@@ -4,16 +4,19 @@ namespace App\Livewire\Admin\User\Wallet;
 
 use App\Models\User;
 use App\Models\Wallet;
+use Livewire\Attributes\On;
 use Livewire\Component;
 
 class Index extends Component
 {
     public $user_id;
 
-    public function mount($user_id)
+    public function mount($id)
     {
-        $this->user_id = $user_id;
+        $this->user_id = $id;
     }
+
+    #[On('admin.user.wallet.index')]
 
     public function render()
     {

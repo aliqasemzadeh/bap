@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\User\Role;
 
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Spatie\Permission\Models\Role;
@@ -147,7 +148,7 @@ class Index extends Component
         );
     }
 
-
+    #[On('admin.user.role.index')]
     public function render()
     {
         if(!auth()->user()->can('admin_roles_index')) {

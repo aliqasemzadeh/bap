@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\User\Permission;
 
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Spatie\Permission\Models\Permission;
@@ -150,6 +151,8 @@ class Index extends Component
             __('bap.removed')
         );
     }
+
+    #[On('admin.user.permission.index')]
     public function render()
     {
         if(!auth()->user()->can('admin_permissions_index')) {
