@@ -4,6 +4,7 @@ namespace App\Livewire\Panel\Support\Ticket;
 
 use App\Models\Ticket;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -101,6 +102,7 @@ class Index extends Component
         }
     }
 
+    #[On('panel.support.ticket.index')]
     public function render()
     {
         $tickets = Ticket::with(['category'])->filter(['search' => $this->search])->where('user_id', auth()->user()->id)->orderBy($this->sortColumn, $this->sortDirection)->paginate($this->perPage);
