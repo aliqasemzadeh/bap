@@ -90,12 +90,16 @@
                     <tr>
                         <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select User" value="{{ $role->id }}" name="selectedUsers" wire:model="selectedRoles"></td>
                         <td>{{ __('roles.'.$role->name) }}</td>
+
                         <td class="text-end">
-                            <button wire:click="$dispatch('showModal', 'admin.user.role.permissions', '{{ json_encode($role->id) }}')" class="btn btn-warning btn-icon btn-sm">
+                            @can('admin_role_permissions')
+                            <button wire:click="$dispatch('showModal', {data:{alias:'admin.user.role.permissions', params:{role_id: '{{ $role->id }}'}}})" class="btn btn-warning btn-icon btn-sm">
                                 <!-- Download SVG icon from http://tabler-icons.io/i/lock-access -->
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8v-2a2 2 0 0 1 2 -2h2" /><path d="M4 16v2a2 2 0 0 0 2 2h2" /><path d="M16 4h2a2 2 0 0 1 2 2v2" /><path d="M16 20h2a2 2 0 0 0 2 -2v-2" /><rect x="8" y="11" width="8" height="5" rx="1" /><path d="M10 11v-2a2 2 0 1 1 4 0v2" /></svg>
                             </button>
-                            <button wire:click="$dispatch('showModal', 'admin.user.role.users', '{{ json_encode($role->id) }}')" class="btn btn-secondary btn-icon btn-sm">
+                            @endcan
+                            @can('admin_role_users')
+                            <button wire:click="$dispatch('showModal', {data:{alias:'admin.user.role.users', params:{role_id: '{{ $role->id }}'}}})" class="btn btn-secondary btn-icon btn-sm">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-users" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                     <circle cx="9" cy="7" r="4"></circle>
@@ -104,14 +108,19 @@
                                     <path d="M21 21v-2a4 4 0 0 0 -3 -3.85"></path>
                                 </svg>
                             </button>
-                            <button wire:click="$dispatch('showModal', {data:{alias:'admin.user.role.edit', role_id:'{{ $role->id }}'}})" class="btn btn-primary btn-icon btn-sm">
+                            @endcan
+                            @can('admin_role_edit')
+                            <button wire:click="$dispatch('showModal', {data:{alias:'admin.user.role.edit', params:{role_id: '{{ $role->id }}'}})" class="btn btn-primary btn-icon btn-sm">
                                 <!-- Download SVG icon from http://tabler-icons.io/i/edit -->
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" /><path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" /><line x1="16" y1="5" x2="19" y2="8" /></svg>
                             </button>
+                            @endcan
+                            @can('admin_role_delete')
                             <button wire:click="delete({{ $role->id }})" class="btn btn-danger btn-icon btn-sm">
                                 <!-- Download SVG icon from http://tabler-icons.io/i/trash -->
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="4" y1="7" x2="20" y2="7" /><line x1="10" y1="11" x2="10" y2="17" /><line x1="14" y1="11" x2="14" y2="17" /><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" /><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>
                             </button>
+                            @endcan
                         </td>
                     </tr>
                 @endforeach
