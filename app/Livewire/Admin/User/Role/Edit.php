@@ -12,14 +12,14 @@ class Edit extends Component
     public $name;
     public $role;
 
-    public function mount(Role $role)
+    public function mount($role_id)
     {
         if(!auth()->user()->can('admin_roles_edit')) {
             return abort(403);
         }
 
-        $this->role = $role;
-        $this->name = $role->name;
+        $this->role = Role::findOrFail($role_id);
+        $this->name = $this->role->name;
     }
 
     public function edit()

@@ -1,28 +1,35 @@
-<div>
-    <x-slot name="title">
-        {{ __('bap.roles_word') }}
-    </x-slot>
-    <x-slot name="actions">
-        <div class="col-auto ms-auto d-print-none">
-            <div class="btn-list">
-                <button wire:click="$dispatch('showModal', 'admin.user.role.create')" class="btn btn-primary d-none d-sm-inline-block">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                    {{ __('bap.create_role') }}
-                </button>
-                <button wire:click="$dispatch('showModal', 'admin.user.role.create')" class="btn btn-primary d-sm-none btn-icon" aria-label="Create new report">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                </button>
+<x-slot name="title">
+    {{ __('bap.roles_word') }}
+</x-slot>
+<main class="{{ config('bap.container', 'container-fluid') }}">
+    <div class="page-header d-print-none">
+        <div class="row align-items-center">
+            <div class="col">
+                <h2 class="page-title">
+                    {{ __('bap.roles_word') }}
+                </h2>
+                <ol class="breadcrumb breadcrumb-arrows" aria-label="breadcrumbs">
+                    <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.index') }}">{{ __('bap.dashboard') }}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('admin.user.role.index') }}">{{ __('bap.roles_word') }}</a></li>
+                </ol>
             </div>
+            @can('admin_roles_create')
+                <div class="col-auto ms-auto d-print-none">
+                    <div class="btn-list">
+                        <button wire:click="$dispatch('showModal', {data:{alias:'admin.user.role.create'}})" class="btn btn-primary d-none d-sm-inline-block">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                            {{ __('bap.create_role') }}
+                        </button>
+                        <button wire:click="$dispatch('showModal', {data:{alias:'admin.user.role.create'}})" class="btn btn-primary d-sm-none btn-icon" aria-label="Create new report">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
+                </div>
+            @endcan
         </div>
-    </x-slot>
-    <x-slot name="breadcrumb">
-        <ol class="breadcrumb breadcrumb-arrows" aria-label="breadcrumbs">
-            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.index') }}">{{ __('bap.dashboard') }}</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('admin.user.role.index') }}">{{ __('bap.roles_word') }}</a></li>
-        </ol>
-    </x-slot>
-
-    <div class="card">
+    </div>
+    <div class="page-body">
+        <div class="card">
         <div class="card-header">
             <h3 class="card-title">{{ __('bap.roles_word') }}</h3>
         </div>
@@ -125,4 +132,5 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
+</main>
