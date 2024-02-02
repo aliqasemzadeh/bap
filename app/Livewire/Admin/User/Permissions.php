@@ -5,6 +5,7 @@ namespace App\Livewire\Admin\User;
 use App\Models\User;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Spatie\Permission\Models\Permission;
 
@@ -82,6 +83,7 @@ class Permissions extends Component
         );
     }
 
+    #[On('admin.user.permissions')]
     public function render()
     {
         if(!auth()->user()->can('admin_user_permissions')) {
