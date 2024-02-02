@@ -4,7 +4,6 @@ namespace App\Livewire\Admin\User\Permission;
 
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
-use Spatie\Permission\Models\Permission;
 
 class Edit extends Component
 {
@@ -18,7 +17,7 @@ class Edit extends Component
             return abort(403);
         }
 
-        $this->permission = Spatie\Permission\Models\Permission::findOrFail($permission_id);
+        $this->permission = \Spatie\Permission\Models\Permission::findOrFail($permission_id);
         $this->name = $this->permission->name;
     }
 
