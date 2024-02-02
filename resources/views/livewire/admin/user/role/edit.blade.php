@@ -1,4 +1,3 @@
-<div class="modal-dialog">
     <form wire:submit.prevent="edit">
         <div class="modal-content">
             <div class="modal-header">
@@ -21,5 +20,3 @@
             </div>
         </div>
     </form>
-</div>
-
