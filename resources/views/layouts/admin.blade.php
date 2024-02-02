@@ -240,36 +240,8 @@
     </aside>
     @include('layouts.global.header')
     <!-- Page Content -->
-    {{ $slot }}
     <div class="page-wrapper">
-        <main class="{{ config('bap.container', 'container-fluid') }}">
-            @if(isset($pretitle))
-                <div class="page-pretitle">
-                    {{ $pretitle }}
-                </div>
-            @endif
-            @if(isset($title))
-                <div class="page-header d-print-none">
-                    <div class="row align-items-center">
-                        <div class="col">
-                            <h2 class="page-title">
-                                {{ $title }}
-                            </h2>
-
-                            @if(isset($breadcrumb))
-                                {{ $breadcrumb }}
-                            @endif
-                        </div>
-                        @if(isset($actions))
-                            {{ $actions }}
-                        @endif
-                    </div>
-                </div>
-            @endif
-            <div class="page-body">
-
-            </div>
-        </main>
+        {{ $slot }}
         @include('layouts.global.footer', ['container' => config('bap.container-admin')])
     </div>
 </div>
