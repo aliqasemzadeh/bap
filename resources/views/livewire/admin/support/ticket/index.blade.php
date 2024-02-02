@@ -1,15 +1,22 @@
-<div>
-    <x-slot name="title">
-        {{ __('bap.tickets') }}
-    </x-slot>
-    <x-slot name="breadcrumb">
-        <ol class="breadcrumb breadcrumb-arrows" aria-label="breadcrumbs">
-            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.index') }}">{{ __('bap.dashboard') }}</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('admin.support.ticket.index') }}">{{ __('bap.tickets') }}</a></li>
-        </ol>
-    </x-slot>
-
-    <div class="card">
+<x-slot name="title">
+    {{ __('bap.tickets') }}
+</x-slot>
+<main class="{{ config('bap.container', 'container-fluid') }}">
+    <div class="page-header d-print-none">
+        <div class="row align-items-center">
+            <div class="col">
+                <h2 class="page-title">
+                    {{ __('bap.tickets') }}
+                </h2>
+                <ol class="breadcrumb breadcrumb-arrows" aria-label="breadcrumbs">
+                    <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.index') }}">{{ __('bap.dashboard') }}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('admin.support.ticket.index') }}">{{ __('bap.tickets') }}</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="page-body">
+        <div class="card">
         <div class="card-header">
             <h3 class="card-title">{{ __('bap.tickets') }}</h3>
         </div>
@@ -154,4 +161,5 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
+</main>
