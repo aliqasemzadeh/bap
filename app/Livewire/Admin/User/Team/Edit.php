@@ -19,12 +19,12 @@ class Edit extends Component
     protected $updatesQueryString = ['search'];
 
 
-    public function mount(Team $team)
+    public function mount($team_id)
     {
-        $this->team = $team;
-        $this->name = $team->name;
-        $this->user_id = $team->user_id;
-        $this->personal = $team->personal_team;
+        $this->team = Team::findOrFail($team_id);
+        $this->name = $this->team->name;
+        $this->user_id = $this->team->user_id;
+        $this->personal = $this->team->personal_team;
 
         $this->search = User::findOrFail($this->user_id)->name;
 
@@ -48,7 +48,7 @@ class Edit extends Component
         $this->team->personal_team = $this->personal;
         $this->team ->save();
 
-        $this->dispatchTo(\App\Livewire\Admin\User\Team\Index::getName(), 'updateList');
+        $this->dispatch('admin.user.team.index');
         $this->dispatch('hideModal');
 
         $this->alert(
