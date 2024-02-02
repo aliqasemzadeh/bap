@@ -6,7 +6,7 @@ return [
     'container-admin' => 'container-fluid',
     'admin-prefix-url' => 'admin',
     'panel-prefix-url' => 'panel',
-    'test-mode' => 1,
+    'test-mode' => 0,
     'per-page' => 15,
     'verify_code_start' => 101010,
     'verify_code_finish' => 989898,
