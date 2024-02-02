@@ -240,6 +240,7 @@
     </aside>
     @include('layouts.global.header')
     <!-- Page Content -->
+    {{ $slot }}
     <div class="page-wrapper">
         <main class="{{ config('bap.container', 'container-fluid') }}">
             @if(isset($pretitle))
@@ -266,7 +267,7 @@
                 </div>
             @endif
             <div class="page-body">
-                {{ $slot }}
+
             </div>
         </main>
         @include('layouts.global.footer', ['container' => config('bap.container-admin')])
