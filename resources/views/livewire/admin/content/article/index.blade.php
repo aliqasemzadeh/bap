@@ -1,7 +1,6 @@
 <x-slot name="title">
     {{ __('bap.articles') }}
 </x-slot>
-
 <main class="{{ config('bap.container', 'container-fluid') }}">
     <div class="page-header d-print-none">
         <div class="row align-items-center">
