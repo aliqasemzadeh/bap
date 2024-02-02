@@ -1,34 +1,39 @@
-<div>
-    <x-slot name="title">
-        {{ __('bap.carousels') }}
-    </x-slot>
-    <x-slot name="actions">
-        @can('admin_carousel_create')
-            <div class="col-auto ms-auto d-print-none">
-                <div class="btn-list">
-                    <button wire:click="$dispatch('showModal', {data: {'alias' : 'admin.content.carousel.create'}})" class="btn btn-primary d-none d-sm-inline-block">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                        {{ __('bap.create_carousel') }}
-                    </button>
-                    <button wire:click="$dispatch('showModal', {data: {'alias' : 'admin.content.carousel.create'}})" class="btn btn-primary d-sm-none btn-icon" aria-label="{{ __('bap.create_carousel') }}">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                    </button>
-                </div>
+<x-slot name="title">
+    {{ __('bap.carousels') }}
+</x-slot>
+<main class="{{ config('bap.container', 'container-fluid') }}">
+    <div class="page-header d-print-none">
+        <div class="row align-items-center">
+            <div class="col">
+                <h2 class="page-title">
+                    {{ __('bap.carousels') }}
+                </h2>
+                <ol class="breadcrumb breadcrumb-arrows" aria-label="breadcrumbs">
+                    <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.index') }}">{{ __('bap.dashboard') }}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('admin.content.carousel.index') }}">{{ __('bap.carousels') }}</a></li>
+                </ol>
             </div>
-        @endcan
-    </x-slot>
-    <x-slot name="breadcrumb">
-        <ol class="breadcrumb breadcrumb-arrows" aria-label="breadcrumbs">
-            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.index') }}">{{ __('bap.dashboard') }}</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('admin.content.carousel.index') }}">{{ __('bap.carousels') }}</a></li>
-        </ol>
-    </x-slot>
-
-    <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">{{ __('bap.carousels') }}</h3>
+            @can('admin_carousel_create')
+                <div class="col-auto ms-auto d-print-none">
+                    <div class="btn-list">
+                        <button wire:click="$dispatch('showModal', {data: {'alias' : 'admin.content.carousel.create'}})" class="btn btn-primary d-none d-sm-inline-block">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                            {{ __('bap.create_carousel') }}
+                        </button>
+                        <button wire:click="$dispatch('showModal', {data: {'alias' : 'admin.content.carousel.create'}})" class="btn btn-primary d-sm-none btn-icon" aria-label="{{ __('bap.create_carousel') }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
+                </div>
+            @endcan
         </div>
-        <div class="card-body">
+    </div>
+    <div class="page-body">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">{{ __('bap.carousels') }}</h3>
+            </div>
+            <div class="card-body">
             @if(config('bap.test-mode'))
             <a href="{{ route('admin.user.index') }}" wire:navigate>user</a>
             <button wire:click="$dispatch('showModal', {data: {'alias' : 'admin.user.create'}})">LogMe</button>
@@ -63,7 +68,7 @@
                 </div>
             </div>
         </div>
-        <div class="table-responsive">
+            <div class="table-responsive">
             <table class="table card-table table-vcenter text-nowrap datatable">
                 <thead>
                 <tr>
@@ -141,7 +146,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="card-footer d-flex justify-content-between">
+            <div class="card-footer d-flex justify-content-between">
             <div>
                 <div class="btn-group btn-group-sm w-100">
                     <button type="button" wire:click="deleteSelected" class="btn">{{ __('bap.delete') }} ({{ count($selectedItems) }})</button>
@@ -153,5 +158,6 @@
                 {{ $carousels->links() }}
             </div>
         </div>
+        </div>
     </div>
-</div>
+</main>
