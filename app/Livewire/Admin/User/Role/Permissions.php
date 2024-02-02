@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\User\Role;
 
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
@@ -87,6 +88,7 @@ class Permissions extends Component
         );
     }
 
+    #[On('admin.user.role.permissions')]
     public function render()
     {
         if(!auth()->user()->can('admin_roles_permissions')) {
