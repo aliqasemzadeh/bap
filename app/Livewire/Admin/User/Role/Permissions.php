@@ -41,13 +41,13 @@ class Permissions extends Component
         $this->permission = $permission;
     }
 
-    public function mount(Role $role)
+    public function mount($role_id)
     {
         if(!auth()->user()->can('admin_roles_permissions')) {
             return abort(403);
         }
 
-        $this->role = $role;
+        $this->role = Role::findOrFail($role_id);
     }
 
     public function assign(Permission $permission)
