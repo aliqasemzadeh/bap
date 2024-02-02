@@ -1,30 +1,36 @@
-<div>
-    <x-slot name="title">
-        {{ __('bap.faqs') }}
-    </x-slot>
-    <x-slot name="actions">
-        @can('admin_faq_create')
-            <div class="col-auto ms-auto d-print-none">
-                <div class="btn-list">
-                    <button wire:click="$dispatch('showModal', 'admin.content.f-a-q.create')" class="btn btn-primary d-none d-sm-inline-block">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                        {{ __('bap.create_faq') }}
-                    </button>
-                    <button wire:click="$dispatch('showModal', 'admin.content.f-a-q.create')" class="btn btn-primary d-sm-none btn-icon" aria-label="Create new report">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                    </button>
-                </div>
-            </div>
-        @endcan
-    </x-slot>
-    <x-slot name="breadcrumb">
-        <ol class="breadcrumb breadcrumb-arrows" aria-label="breadcrumbs">
-            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.index') }}">{{ __('bap.dashboard') }}</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('admin.content.faq.index') }}">{{ __('bap.faqs') }}</a></li>
-        </ol>
-    </x-slot>
+<x-slot name="title">
+    {{ __('bap.faqs') }}
+</x-slot>
 
-    <div class="card">
+<main class="{{ config('bap.container', 'container-fluid') }}">
+    <div class="page-header d-print-none">
+        <div class="row align-items-center">
+            <div class="col">
+                <h2 class="page-title">
+                    {{ __('bap.faqs') }}
+                </h2>
+                <ol class="breadcrumb breadcrumb-arrows" aria-label="breadcrumbs">
+                    <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.index') }}">{{ __('bap.dashboard') }}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('admin.content.faq.index') }}">{{ __('bap.faqs') }}</a></li>
+                </ol>
+            </div>
+            @can('admin_faq_create')
+                <div class="col-auto ms-auto d-print-none">
+                    <div class="btn-list">
+                        <button wire:click="$dispatch('showModal', 'admin.content.f-a-q.create')" class="btn btn-primary d-none d-sm-inline-block">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                            {{ __('bap.create_faq') }}
+                        </button>
+                        <button wire:click="$dispatch('showModal', 'admin.content.f-a-q.create')" class="btn btn-primary d-sm-none btn-icon" aria-label="Create new report">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        </button>
+                    </div>
+                </div>
+            @endcan
+        </div>
+    </div>
+    <div class="page-body">
+        <div class="card">
         <div class="card-header">
             <h3 class="card-title">{{ __('bap.faqs') }}</h3>
         </div>
@@ -105,27 +111,26 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($faqs as $faq)
-                    <tr>
-                        <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select User" value="{{ $faq->id }}" name="selectedItems" wire:model="selectedItems"></td>
-                        <td>{{ $faq->id }}</td>
-                        <td>{{ $faq->question }}</td>
-                        <td>{{ $faq->answer }}</td>
-                        <td class="text-end">
-                            @can('admin_article_edit')
-                                <button wire:click="$dispatch('showModal', 'admin.content.f-a-q.edit', '{{ json_encode($faq->id) }}')" class="btn btn-primary btn-icon btn-sm">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" /><path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" /><line x1="16" y1="5" x2="19" y2="8" /></svg>
-                                </button>
-                            @endcan
-                            @can('admin_faq_delete')
-                                <button wire:click="delete({{ $faq->id }})" class="btn btn-danger btn-icon btn-sm">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="4" y1="7" x2="20" y2="7" /><line x1="10" y1="11" x2="10" y2="17" /><line x1="14" y1="11" x2="14" y2="17" /><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" /><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>
-                                </button>
-                            @endcan
-                        </td>
-                    </tr>
-                @endforeach
-
+                    @foreach($faqs as $faq)
+                        <tr>
+                            <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select User" value="{{ $faq->id }}" name="selectedItems" wire:model="selectedItems"></td>
+                            <td>{{ $faq->id }}</td>
+                            <td>{{ $faq->question }}</td>
+                            <td>{{ $faq->answer }}</td>
+                            <td class="text-end">
+                                @can('admin_article_edit')
+                                    <button wire:click="$dispatch('showModal', 'admin.content.f-a-q.edit', '{{ json_encode($faq->id) }}')" class="btn btn-primary btn-icon btn-sm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" /><path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" /><line x1="16" y1="5" x2="19" y2="8" /></svg>
+                                    </button>
+                                @endcan
+                                @can('admin_faq_delete')
+                                    <button wire:click="delete({{ $faq->id }})" class="btn btn-danger btn-icon btn-sm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="4" y1="7" x2="20" y2="7" /><line x1="10" y1="11" x2="10" y2="17" /><line x1="14" y1="11" x2="14" y2="17" /><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" /><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>
+                                    </button>
+                                @endcan
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
@@ -136,10 +141,10 @@
                 </div>
 
             </div>
-
             <div>
                 {{ $faqs->links() }}
             </div>
         </div>
     </div>
-</div>
+    </div>
+</main>
