@@ -1,4 +1,3 @@
-<div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">{{ __('bap.permissions_word') }}</h5>
@@ -43,5 +42,4 @@
                 </div>
             </div>
         </div>
-</div>
 
