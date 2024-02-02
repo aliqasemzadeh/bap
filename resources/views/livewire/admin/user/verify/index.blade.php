@@ -1,16 +1,23 @@
-<div>
-    <x-slot name="title">
-        {{ __('bap.user_verifies') }}
-    </x-slot>
-    <x-slot name="breadcrumb">
-        <ol class="breadcrumb breadcrumb-arrows" aria-label="breadcrumbs">
-            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.index') }}">{{ __('bap.dashboard') }}</a></li>
-            <li class="breadcrumb-item" aria-current="page"><a href="{{ route('admin.user.index') }}">{{ __('bap.users') }}</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('admin.user.verify.index') }}">{{ __('bap.user_verifies') }}</a></li>
-        </ol>
-    </x-slot>
-
-    <div class="card">
+<x-slot name="title">
+    {{ __('bap.user_verifies') }}
+</x-slot>
+<main class="{{ config('bap.container', 'container-fluid') }}">
+    <div class="page-header d-print-none">
+        <div class="row align-items-center">
+            <div class="col">
+                <h2 class="page-title">
+                    {{ __('bap.user_verifies') }}
+                </h2>
+                <ol class="breadcrumb breadcrumb-arrows" aria-label="breadcrumbs">
+                    <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.index') }}">{{ __('bap.dashboard') }}</a></li>
+                    <li class="breadcrumb-item" aria-current="page"><a href="{{ route('admin.user.index') }}">{{ __('bap.users') }}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('admin.user.verify.index') }}">{{ __('bap.user_verifies') }}</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="page-body">
+        <div class="card">
         <div class="card-header">
             <h3 class="card-title">{{ __('bap.user_verifies') }}</h3>
         </div>
@@ -158,4 +165,5 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
+</main>
