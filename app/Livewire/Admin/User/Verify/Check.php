@@ -18,9 +18,9 @@ class Check extends Component
     public $birth_at;
     public $note;
 
-    public function mount(UserVerify $verify)
+    public function mount(UserVerify $verify_id)
     {
-        $this->verify = $verify;
+        $this->verify = UserVerify::findOrFail($verify_id);
 
         $this->first_name = $this->verify->first_name;
         $this->last_name = $this->verify->last_name;
@@ -42,7 +42,7 @@ class Check extends Component
         $this->verify->status = 'accept';
         $this->verify->save();
 
-        $this->dispatchTo(\App\Livewire\Admin\User\Verify\Index::getName(), 'updateList');
+        $this->dispatch('admin.user.verify.index');
         $this->dispatch('hideModal');
 
         $this->alert('success', __('bap.accepted'));
@@ -53,7 +53,7 @@ class Check extends Component
         $this->verify->status = 'reject';
         $this->verify->save();
 
-        $this->dispatchTo(\App\Livewire\Admin\User\Verify\Index::getName(), 'updateList');
+        $this->dispatch('admin.user.verify.index');
         $this->dispatch('hideModal');
 
         $this->alert('success', __('bap.rejected'));
