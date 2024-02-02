@@ -17,6 +17,7 @@ return [
     'admin_roles_create' => 'Create Roles',
     'admin_roles_delete' => 'Delete Roles',
     'admin_roles_permissions' => 'Access Role Permissions',
+    'admin_roles_users' => 'Access Role Users',
     'admin_permissions_index' => 'View Permissions',
     'admin_permissions_edit' => 'Edit Permissions',
     'admin_permissions_create' => 'Create Permissions',
