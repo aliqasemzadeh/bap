@@ -11,7 +11,6 @@
         "arcanedev/log-viewer": "^10.0",
         "creativeorange/gravatar": "^1.0",
         "cybercog/laravel-ban": "^4.7",
-        "darryldecode/cart": "^4.2",
         "guzzlehttp/guzzle": "^7.2",
         "jantinnerezo/livewire-alert": "^3.0@beta",
         "laravel/framework": "^10.0",

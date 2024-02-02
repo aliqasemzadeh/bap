@@ -11,6 +11,4 @@ return [
     'notification' => false,
     'content' => true,
     'support' => true,
-    'wallet' => true,
-    'shop' => false,
 ];
