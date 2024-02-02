@@ -12,14 +12,14 @@ class Edit extends Component
     public $name;
     public $permission;
 
-    public function mount(Permission $permission)
+    public function mount($permission_id)
     {
         if(!auth()->user()->can('admin_permissions_edit')) {
             return abort(403);
         }
 
-        $this->permission = $permission;
-        $this->name = $permission->name;
+        $this->permission = Spatie\Permission\Models\Permission::findOrFail($permission_id);
+        $this->name = $this->permission->name;
     }
 
     public function edit()
