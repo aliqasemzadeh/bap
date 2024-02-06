@@ -18,6 +18,7 @@
 - SweetAlert2
 - spatie/laravel-permission
 - Laravel Mix Build Tools
+- JetAdmin
 
 
 ## 🧾 Installation
