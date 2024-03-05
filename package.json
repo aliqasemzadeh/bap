@@ -18,7 +18,8 @@
         "lodash": "^4.17.21",
         "resolve-url-loader": "^5.0.0",
         "sass": "^1.63.6",
-        "sass-loader": "^13.3.2"
+        "sass-loader": "^13.3.2",
+        "webpack": "^5.90.3"
     },
     "dependencies": {
         "@alpinejs/intersect": "^3.13.3",
