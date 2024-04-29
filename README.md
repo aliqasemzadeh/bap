@@ -7,7 +7,7 @@
 - PHP version: >= 8.0
 - Composer
 - Node.js
-
+- PHP extensions: GD, GMP, ZIP
 
 ## 🧰 Built with
 
